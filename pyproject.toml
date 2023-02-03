@@ -1,0 +1,33 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Federico Simonetta", email = "fsimonetta@iccmu.es"},
+]
+requires-python = ">=3.10, <3.11"
+license = {text = "MIT"}
+dependencies = [
+    "numpy==1.23.3",
+    "scipy==1.8.1",
+    "auto-sklearn==0.15.0",
+    "pandas==1.5.0",
+    "plotly==5.10.0",
+    "kaleido==0.2.1",
+    "graphviz==0.20.1",
+    "fire>=0.4.0",
+    "musif @ git+https://github.com/DIDONEproject/musiF@galuppi-perez",
+    "statsmodels==0.13.5",
+    "umap-learn==0.5.3",
+]
+[project.optional-dependencies]
+
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "ipdb>=0.13.9",
+]
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"

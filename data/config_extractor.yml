@@ -1,0 +1,65 @@
+# metadata_dir: ./metadata
+data_dir: null
+musescore_dir: null
+# cache_dir: data/cache
+expand_repeats: false
+window_size: null
+overlap: null
+dfs_dir: data/dfs
+# parallel is the number of parallel processes to be used as defined by joblib: 
+# 1 => no parallel
+# 2 => 2 processes
+# -1 => all available virtual cores
+# -2 => all available virtual cores except 1
+parallel: -1
+log:
+  file_path: logs/musif_test.log
+  file_level: INFO
+  console_level: INFO
+basic_modules_addresses: ["musif.extract.basic_modules", "modeling.feature_extraction.custom_basic_modules"]
+precache_hooks: ["modeling.feature_extraction.hooks.only_theme_a"]
+
+basic_modules:
+  - scoring
+  - file_name
+  - metadata
+  - composer
+  - librettist
+
+features:
+  - core
+  - ambitus
+  - interval
+  - tempo
+  - density
+  - texture
+  - harmony
+  - lyrics
+  - scale
+  - scale_relative
+  - key
+  - dynamics    
+  - rhythm
+
+split_keywords:  # Used to split the possible layers present depending on the instrument name
+  - woodwind
+  - brass
+  - wind
+  - viola
+  - strings.cello
+  - bass
+  - oboi
+  
+parts_filter:
+  # - vnI
+  # - vnII
+  # - obI
+  # - obII
+  # - va
+  # - bs
+  # - sop
+  # - ten
+  # - alt
+  # - bar
+  # - bass
+  # - bbar

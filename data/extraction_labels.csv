@@ -1,0 +1,226 @@
+Id,WindowId,Label_BasicPassion,Label_Passions,Label_Sentiment,Label_Time,Label_RoleType
+0017,0,hatred,"anger,pity",Negative,Future,Female lover 1
+0033,0,wonder,"pride,boldness",Positive,Present,Female lover 1
+0034,0,sadness,"sadness,love",Negative,Future,Female lover 1
+0089,0,sadness,"terror,pity",Negative,Past,Male lover 1
+0093,0,sadness,"terror,pity",Negative,Past,Male lover 1
+0105,0,desire,irresolution,Negative,Future,Male lover 1
+0109,0,desire,irresolution,Negative,Future,Male lover 1
+0110,0,sadness,"sadness,generosity",Negative,Past,Female lover 1
+0115,0,sadness,"sadness,generosity",Negative,Past,Female lover 1
+0117,0,sadness,"sadness,generosity",Negative,Past,Female lover 1
+0129,0,hatred,contempt,Negative,Future,Male lover 2
+0130,0,hatred,contempt,Negative,Future,Male lover 2
+0233,0,love,"love,sadness,generosity",Positive,Future,Female lover 2
+0235,0,love,"veneration,abjectness",Negative,Future,Antagonist
+0236,0,wonder,"pride,abjectness",Negative,Present,Male lover 2
+0239,0,wonder,"pride,boldness",Negative,Future,Male lover 1
+0241,0,hatred,anger,Negative,Present,Male lover 2
+0244,0,wonder,"esteem,boldness",Negative,Future,Male lover 3
+0245,0,hatred,"shame,anger",Negative,Future,Male lover 2
+0247,0,NA,NA,NA,NA,Female lover 2
+0249,0,NA,NA,NA,NA,Male lover 3
+0250,0,wonder,"generosity,contempt",Positive,Future,Male lover 1
+0252,0,NA,NA,NA,NA,Male lover 2
+0253,0,NA,NA,NA,NA,Male lover 1
+0255,0,NA,NA,NA,NA,Female lover 2
+0256,0,hatred,anger,Negative,Present,Male lover 2
+0258,0,NA,NA,NA,NA,Female lover 1
+0261,0,NA,NA,NA,NA,Male lover 1
+0263,0,NA,NA,NA,NA,Male lover 3
+0267,0,sadness,despair,Negative,Future,Female lover 1
+0268,0,sadness,"despair,sadness",Negative,Future,Female lover 2
+0485,0,love,"love,sadness,generosity",Positive,Future,Female lover 2
+0488,0,wonder,"pride,boldness",Negative,Future,Male lover 1
+0493,0,sadness,pity,Negative,Future,Female lover 2
+0506,0,sadness,"sadness,love",Negative,Future,Female lover 1
+0515,0,desire,boldness,Positive,Future,Male lover 2
+0516,0,NA,NA,NA,NA,Male lover 2
+0665,0,love,pity,Negative,Future,Female lover 2
+0666,0,joy,"pride,boldness",Positive,Future,Male lover 1
+0667,0,love,"love,sadness,generosity",Positive,Future,Female lover 2
+0668,0,desire,veneration,Positive,Future,Male lover 3
+0669,0,hatred,anger,Negative,Future,Male lover 1
+0670,0,wonder,generosity,Positive,Present,Male lover 2
+0671,0,wonder,contempt,Negative,Future,Female lover 2
+0672,0,hatred,anger,Negative,Present,Antagonist
+0673,0,love,"love,hope,boldness",Positive,Future,Male lover 1
+0674,0,love,love,Positive,Future,Female lover 1
+0675,0,desire,jealousy,Negative,Future,Male lover 1
+0676,0,NA,NA,NA,NA,Male lover 3
+0677,0,joy,esteem,Positive,Present,Male lover 2
+0678,0,love,"love,hope,boldness",Positive,Future,"Female lover 1,Male lover 1"
+0679,0,NA,NA,NA,NA,Male lover 3
+0680,0,sadness,sadness,Negative,Past,Female lover 2
+0681,0,NA,NA,NA,NA,Male lover 2
+0682,0,love,"love,veneration",Positive,Present,Female lover 1
+0683,0,hatred,"anger,boldness",Negative,Present,Male lover 1
+0684,0,love,"veneration,abjectness",Negative,Future,Antagonist
+0685,0,wonder,"pride,abjectness",Negative,Present,Male lover 2
+0686,0,wonder,"esteem,boldness",Negative,Future,Male lover 3
+0687,0,hatred,"shame,anger",Negative,Future,Male lover 2
+0688,0,desire,"abjectness,hope",Negative,Future,Antagonist
+0689,0,sadness,"despair,sadness",Negative,Future,Female lover 2
+0690,0,NA,NA,NA,NA,Male lover 1
+0691,0,NA,NA,NA,NA,Male lover 2
+0692,0,NA,NA,NA,NA,Female lover 2
+0693,0,NA,NA,NA,NA,Antagonist
+0694,0,NA,NA,NA,NA,Male lover 1
+0695,0,NA,NA,NA,NA,Female lover 1
+0696,0,NA,NA,NA,NA,Male lover 3
+0697,0,NA,NA,NA,NA,"Female lover 1,Male lover 1"
+0698,0,NA,NA,NA,NA,Male lover 1
+0699,0,NA,NA,NA,NA,Male lover 3
+0700,0,wonder,esteem,Positive,Present,Male lover 2
+0701,0,NA,NA,NA,NA,Female lover 1
+0702,0,NA,NA,NA,NA,Female lover 1
+0703,0,wonder,"contempt,pity",Negative,Future,Male lover 2
+0704,0,sadness,repentance,Negative,Future,Antagonist
+0705,0,hatred,"jealousy,anger",Negative,Present,Male lover 1
+0706,0,love,"love,sadness",Negative,Future,Male lover 3
+0707,0,sadness,"fear,sadness",Negative,Present,Female lover 2
+0708,0,sadness,"pity,despair",Negative,Present,Female lover 1
+0709,0,NA,NA,NA,NA,Female lover 1
+0710,0,NA,NA,NA,NA,Male lover 1
+0711,0,NA,NA,NA,NA,Male lover 2
+0712,0,NA,NA,NA,NA,Female lover 1
+0713,0,NA,NA,NA,NA,Male lover 3
+0714,0,NA,NA,NA,NA,Female lover 2
+0715,0,NA,NA,NA,NA,Female lover 1
+0716,0,NA,NA,NA,NA,Antagonist
+0718,0,NA,NA,NA,NA,Female lover 2
+0719,0,NA,NA,NA,NA,Male lover 2
+0767,0,NA,NA,NA,NA,Male lover 1
+0768,0,NA,NA,NA,NA,Male lover 3
+0769,0,NA,NA,NA,NA,Male lover 2
+0770,0,NA,NA,NA,NA,Male lover 1
+0771,0,NA,NA,NA,NA,Male lover 1
+0772,0,NA,NA,NA,NA,Female lover 1
+0773,0,NA,NA,NA,NA,Female lover 1
+0774,0,NA,NA,NA,NA,Female lover 1
+0775,0,NA,NA,NA,NA,Antagonist
+0776,0,NA,NA,NA,NA,Female lover 1
+0777,0,NA,NA,NA,NA,Senior ruler
+0778,0,NA,NA,NA,NA,Confidant
+0779,0,NA,NA,NA,NA,Male lover 1
+0780,0,NA,NA,NA,NA,Male lover 2
+0781,0,NA,NA,NA,NA,Female lover 2
+0782,0,NA,NA,NA,NA,Male lover 2
+0783,0,NA,NA,NA,NA,Female lover 1
+0784,0,NA,NA,NA,NA,Male lover 1
+0785,0,NA,NA,NA,NA,Male lover 1
+0786,0,NA,NA,NA,NA,Senior ruler
+0787,0,NA,NA,NA,NA,Antagonist
+0788,0,NA,NA,NA,NA,Male lover 2
+0789,0,NA,NA,NA,NA,Female lover 2
+0790,0,NA,NA,NA,NA,Senior ruler
+0791,0,NA,NA,NA,NA,"Female lover 1,Male lover 1"
+0792,0,NA,NA,NA,NA,Confidant
+0793,0,NA,NA,NA,NA,Male lover 2
+0794,0,NA,NA,NA,NA,Antagonist
+0795,0,NA,NA,NA,NA,Senior ruler
+0796,0,NA,NA,NA,NA,Female lover 1
+0797,0,NA,NA,NA,NA,Female lover 2
+0798,0,NA,NA,NA,NA,Female lover 1
+0809,0,NA,NA,NA,NA,Female lover 1
+0831,0,NA,NA,NA,NA,"Female lover 1,Male lover 1,Male lover 2"
+0832,0,NA,NA,NA,NA,Male lover 3
+1053,0,NA,NA,NA,NA,Male lover 3
+1054,0,NA,NA,NA,NA,Male lover 1
+1055,0,NA,NA,NA,NA,Male lover 2
+1056,0,NA,NA,NA,NA,Female lover 2
+1057,0,NA,NA,NA,NA,Antagonist
+1058,0,NA,NA,NA,NA,Male lover 1
+1059,0,NA,NA,NA,NA,Female lover 1
+1060,0,NA,NA,NA,NA,Male lover 1
+1061,0,NA,NA,NA,NA,Male lover 1
+1062,0,NA,NA,NA,NA,Female lover 2
+1063,0,NA,NA,NA,NA,Male lover 3
+1064,0,NA,NA,NA,NA,Male lover 2
+1065,0,NA,NA,NA,NA,Female lover 1
+1066,0,NA,NA,NA,NA,Male lover 2
+1067,0,NA,NA,NA,NA,Antagonist
+1068,0,NA,NA,NA,NA,Male lover 1
+1069,0,NA,NA,NA,NA,Male lover 3
+1070,0,NA,NA,NA,NA,Female lover 2
+1071,0,NA,NA,NA,NA,Female lover 1
+1144,0,NA,NA,NA,NA,Female lover 1
+1145,0,NA,NA,NA,NA,Female lover 1
+1146,0,NA,NA,NA,NA,Male lover 1
+1147,0,NA,NA,NA,NA,Antagonist
+1148,0,NA,NA,NA,NA,Confidant
+1159,0,NA,NA,NA,NA,Female lover 1
+1161,0,NA,NA,NA,NA,Male lover 2
+1162,0,NA,NA,NA,NA,Male lover 1
+1165,0,NA,NA,NA,NA,Female lover 2
+1166,0,NA,NA,NA,NA,Female lover 1
+1167,0,NA,NA,NA,NA,Male lover 2
+1168,0,NA,NA,NA,NA,Antagonist
+1207,0,NA,NA,NA,NA,Female lover 1
+1208,0,NA,NA,NA,NA,Senior ruler
+1209,0,NA,NA,NA,NA,Male lover 2
+1210,0,NA,NA,NA,NA,Female lover 2
+1211,0,NA,NA,NA,NA,Female lover 1
+1212,0,NA,NA,NA,NA,Male lover 1
+1213,0,NA,NA,NA,NA,Male lover 1
+1214,0,NA,NA,NA,NA,Antagonist
+1215,0,NA,NA,NA,NA,Male lover 2
+1226,0,NA,NA,NA,NA,Senior ruler
+1227,0,NA,NA,NA,NA,"Female lover 1,Male lover 1"
+1228,0,NA,NA,NA,NA,Confidant
+1229,0,NA,NA,NA,NA,Male lover 2
+1230,0,NA,NA,NA,NA,Senior ruler
+1231,0,NA,NA,NA,NA,Female lover 1
+1238,0,NA,NA,NA,NA,Female lover 2
+1239,0,NA,NA,NA,NA,Female lover 2
+1240,0,NA,NA,NA,NA,Male lover 2
+1241,0,NA,NA,NA,NA,Male lover 1
+1242,0,NA,NA,NA,NA,Female lover 2
+1243,0,NA,NA,NA,NA,Female lover 1
+1261,0,NA,NA,NA,NA,Male lover 1
+1262,0,NA,NA,NA,NA,Male lover 3
+1263,0,NA,NA,NA,NA,Male lover 1
+1266,0,NA,NA,NA,NA,Male lover 2
+1267,0,NA,NA,NA,NA,Female lover 2
+1268,0,NA,NA,NA,NA,Antagonist
+1274,0,NA,NA,NA,NA,Male lover 1
+1275,0,NA,NA,NA,NA,Female lover 1
+1276,0,NA,NA,NA,NA,Male lover 1
+1277,0,NA,NA,NA,NA,Male lover 3
+1278,0,NA,NA,NA,NA,"Female lover 1,Male lover 1"
+1279,0,NA,NA,NA,NA,Female lover 1
+1280,0,NA,NA,NA,NA,Male lover 1
+1281,0,NA,NA,NA,NA,Antagonist
+1282,0,NA,NA,NA,NA,Female lover 2
+1283,0,NA,NA,NA,NA,Antagonist
+1284,0,NA,NA,NA,NA,Male lover 1
+1285,0,NA,NA,NA,NA,Female lover 2
+1341,0,NA,NA,NA,NA,Male lover 3
+1342,0,NA,NA,NA,NA,Male lover 1
+1343,0,NA,NA,NA,NA,Male lover 2
+1344,0,NA,NA,NA,NA,Female lover 2
+1349,0,NA,NA,NA,NA,Antagonist
+1350,0,NA,NA,NA,NA,Male lover 1
+1351,0,NA,NA,NA,NA,Male lover 1
+1368,0,NA,NA,NA,NA,Female lover 1
+1369,0,NA,NA,NA,NA,"Female lover 1,Male lover 1"
+1370,0,NA,NA,NA,NA,Male lover 3
+1371,0,NA,NA,NA,NA,Female lover 1
+1372,0,NA,NA,NA,NA,Male lover 2
+1373,0,NA,NA,NA,NA,Female lover 1
+1374,0,NA,NA,NA,NA,Male lover 1
+1375,0,NA,NA,NA,NA,Antagonist
+1376,0,NA,NA,NA,NA,Male lover 2
+1377,0,NA,NA,NA,NA,Female lover 1
+1378,0,NA,NA,NA,NA,Male lover 3
+1379,0,NA,NA,NA,NA,Female lover 2
+1380,0,NA,NA,NA,NA,Female lover 1
+1381,0,NA,NA,NA,NA,Male lover 2
+1382,0,NA,NA,NA,NA,Male lover 1
+1383,0,NA,NA,NA,NA,Male lover 3
+1384,0,NA,NA,NA,NA,Female lover 2
+1385,0,NA,NA,NA,NA,Female lover 1
+1714,0,NA,NA,NA,NA,Prima donna
+1716,0,NA,NA,NA,NA,Secondo uomo
+1721,0,NA,NA,NA,NA,Prima donna
+1722,0,NA,NA,NA,NA,Secondo uomo
