@@ -20,7 +20,7 @@ from sklearn.base import BaseEstimator, TransformerMixin, clone, is_classifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.exceptions import NotFittedError
 from sklearn.metrics import balanced_accuracy_score, make_scorer
-from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import GridSearchCV, ParameterGrid
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from tqdm import tqdm
@@ -320,6 +320,8 @@ def grid_tune_pipeline(X, y, splitter):
     print(
         f"Evaluating {len(delayed_fittings)} pipelines (each with its hyper-parameter space)"
     )
+    tot_hyperparams = sum(len(ParameterGrid(d[2].param_grid)) for d in delayed_fittings)
+    print(f"Evaluating in total {tot_hyperparams} hyper-parameters.")
     results = []
     timings = defaultdict(lambda: (0, 0))
     for p in tqdm(delayed_fittings):
