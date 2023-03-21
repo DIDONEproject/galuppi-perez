@@ -11,18 +11,19 @@ TODO add:
  * example to use restricted pipeline
  * example to regress somethings
 """
+import warnings
 from copy import copy
 
 import numpy as np
 import pandas as pd
 from sklearn import metrics, model_selection
+from sklearn.exceptions import ConvergenceWarning
 
 from .conf_matrix_hack import CustomEval
 from .plotting import plot_confusion_matrices
 
-import warnings
-from sklearn.exceptions import ConvergenceWarning
 warnings.filterwarnings(action="ignore", category=ConvergenceWarning)
+
 
 def crossvalidation(
     estimator,
@@ -96,13 +97,13 @@ def crossvalidation(
     if type(_scoring) is str:
         _scoring = [_scoring]
 
-    # if user asks to plot, add the confusion matrix!
-    if plotting and "confusion_matrix" not in _scoring:
-        _scoring.append("confusion_matrix")
+    _scoring.append("confusion_matrix")
+    _scoring.append("proba_collector")
 
     # create the callables
     # note: this is needed because some metrics available in sklearn.metrics
     # would not be usable otherwise ( e.g. confusion_matrix, matthews_corrcoef)
+    labels = np.unique(y)
     for i, sc in enumerate(_scoring):
         if sc == "confusion_matrix":
             # Note: CustomEval is a dummy class which inherits from
@@ -110,8 +111,15 @@ def crossvalidation(
             # stored in the field `.eval["matrix"]`. This is needed because sklearn
             # doesn't accept that the return value of the metric is not a
             # number. See `conf_matrix_hack.py` for more info.
-            labels = np.unique(y)
-            _scoring[i] = (sc, metrics.make_scorer(CustomEval(labels)))
+            _scoring[i] = (sc,
+                           metrics.make_scorer(CustomEval(labels,
+                                                          confusion_matrix=True)))
+        elif sc == "proba_collector":
+            _scoring[i] = (
+                sc,
+                metrics.make_scorer(CustomEval(labels,
+                                               confusion_matrix=False), needs_proba=True),
+            )
         else:
             _scoring[i] = (sc, metrics.make_scorer(getattr(metrics, sc)))
 

@@ -11,8 +11,8 @@ returns a number
 
 """
 
-from sklearn.metrics import confusion_matrix
 import numpy as np
+from sklearn.metrics import confusion_matrix
 
 asarray_back = np.asarray
 
@@ -44,22 +44,28 @@ np.array = new_array
 
 
 class CustomEval(np.ndarray):
+    __name__ = "custom_eval_hack"
 
-    __name__ = 'custom_eval_hack'
-
-    def __init__(self, labels):
+    def __init__(self, labels, confusion_matrix=True):
         super().__init__()
         self.labels = labels
+        self.confusion_matrix = confusion_matrix
 
     def __call__(self, *args, **kwargs):
         true = args[0]
         pred = args[1]
         self.eval = {}
-        self.eval['matrix'] = confusion_matrix(*args, **kwargs, labels=self.labels)
-        if hasattr(true, 'index'):
-            self.eval['wrong'] = true.index[true != pred]
-            self.eval['indices'] = true.index
-        self.eval['predicted'] = pred
+        self.eval["predicted"] = pred
+        if self.confusion_matrix:
+            self.eval["matrix"] = confusion_matrix(*args, **kwargs, labels=self.labels)
+        if hasattr(true, "index"):
+            if np.issubdtype(pred.dtype, np.floating):
+                # discretizing pred and enumerating labels
+                pred = np.round(pred)
+                for i, label in enumerate(self.labels):
+                    true[true == label] = i
+            self.eval["wrong"] = true.index[true != pred]
+            self.eval["indices"] = true.index
         return self
 
     def item(self, *args, **kwargs):
@@ -68,7 +74,7 @@ class CustomEval(np.ndarray):
         return obj
 
     def __array_finalize__(self, obj):
-        self.eval = getattr(obj, 'eval', None)
+        self.eval = getattr(obj, "eval", None)
         return self
 
     def __new__(cls, *args, **kwargs):
@@ -79,21 +85,24 @@ class CustomEval(np.ndarray):
         return obj
 
     def __reduce__(self):
-        return CustomEval, (self.labels, ), {
-            'eval': self.eval,
-        }
+        return (
+            CustomEval,
+            (self.labels,),
+            {
+                "eval": self.eval,
+            },
+        )
 
     def __setstate__(self, state):
-        self.eval = state['eval']
+        self.eval = state["eval"]
 
 
 class CustomEvalFloat(float):
-
     def __init__(self):
         super().__init__()
 
     def __sum__(self, x):
-        return self.eval['matrix'] + x.eval['matrix']
+        return self.eval["matrix"] + x.eval["matrix"]
 
     def __repr__(self):
         return "CustomEvalDummyFloat"
