@@ -225,7 +225,7 @@ def automl(
     # Fitting the model
     if skipsearches:
         # fnames = sorted(Path(output_dir).glob("automl-*.pkl"), key=lambda x: x.stat().st_mtime)
-        classifier = pickle.load(open("classifier.pkl", "rb"))
+        classifier = pickle.load(open(output_dir / "ensemble.pkl", "rb"))
     else:
         print("Starting AutoML")
         ensemble.fit(X, encoded_y, dataset_name="Didone")
@@ -244,19 +244,19 @@ def automl(
         if output_dir:
             time_stamp = datetime.now().strftime("%m_%d-%H_%M")
             pickle.dump(
-                ensemble, open(Path(output_dir) / f"automl-{time_stamp}.pkl", "wb")
+                ensemble, open(output_dir / f"automl-{time_stamp}.pkl", "wb")
             )
             plot_time_performance(
                 ensemble, fname=output_dir / f"automl_optimization-{time_stamp}.svg"
             )
-            pickle.dump(classifier, open(Path(output_dir) / "ensemble.pkl", "wb"))
+            pickle.dump(classifier, open(output_dir / "ensemble.pkl", "wb"))
 
     if not skipbagfitting:
         bag = DidoneBagging.default_init(classifier)
         print("Building best model using the whole dataset")
         bag.fit(X_, y)
         if output_dir:
-            pickle.dump(bag, open(Path(output_dir) / "bag.pkl", "wb"))
+            pickle.dump(bag, open(output_dir / "bag.pkl", "wb"))
 
     print("Evaluating the best automl pipeline")
 
@@ -275,8 +275,8 @@ def automl(
 
     # Saving model
     if output_dir:
-        plotly_save(validation_fig, Path(output_dir) / "crossvalidation.svg")
-        pickle.dump(scores, open(Path(output_dir) / "crossval_scores.pkl", "wb"))
+        plotly_save(validation_fig, output_dir / "crossvalidation.svg")
+        pickle.dump(scores, open(output_dir / "crossval_scores.pkl", "wb"))
 
     AutoMLResult = namedtuple("AutoMLResult", ["crossval_scores", "crossval_figure"])
     return AutoMLResult(scores, validation_fig)
