@@ -121,7 +121,7 @@ class Model(object):
         """
         Performs post-hoc analysis
         """
-        from .easy_tools import post_analysis
+        from .post_analysis import post_analysis
 
         self.__load_data()
 
