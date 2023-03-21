@@ -2,12 +2,18 @@
 Some tools to make it easy work from terminal
 """
 
-
 import pickle
+from itertools import combinations
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from scipy.stats import kruskal, wilcoxon
+from sklearn.metrics import confusion_matrix
+from statsmodels.stats.contingency_tables import StratifiedTable, mcnemar
+from statsmodels.stats.multitest import multipletests
 
 from . import settings as S
 
@@ -144,7 +150,6 @@ def test_novelty_detection():
 
 
 def test_suspected_arias(experiments_dir, refit=True):
-
     data_test, X_test, y_test = pickle.load(open(S.FINAL_TEST_FILE, "rb"))
     if refit:
         X, y = get_xy()
@@ -157,8 +162,8 @@ def test_suspected_arias(experiments_dir, refit=True):
         print(f"{C.OKGREEN}Predictions using {mfile}{C.ENDC}")
         try:
             m = pickle.load(open(mfile, "rb"))
-            if refit or (hasattr(m, 'fitted') and not m.fitted):
-                if 'X' not in vars():
+            if refit or (hasattr(m, "fitted") and not m.fitted):
+                if "X" not in vars():
                     # same as `if not refit`
                     X, y = get_xy()
                 m.fit(X, y)
@@ -175,6 +180,7 @@ def test_suspected_arias(experiments_dir, refit=True):
         except Exception as e:
             print(f"{C.FAIL}Cannot predict with this model due to the following error:")
             import traceback
+
             print(traceback.print_exception(e))
             print(C.ENDC)
         else:
@@ -198,10 +204,10 @@ def load_model(path):
 
 
 def post_analysis(data, X, y, experiments_dir):
-
     experiments_dir = Path(experiments_dir)
     wrong_sets = []
     prediction_lists = []
+    probs_lists = []
     for mfile in experiments_dir.glob("**/crossval_scores.pkl"):
         print(f"{C.OKGREEN}Analyzing errors for {mfile}{C.ENDC}")
         s = pickle.load(open(mfile, "rb"))
@@ -213,32 +219,46 @@ def post_analysis(data, X, y, experiments_dir):
             # this skips trees
             continue
 
-        # storing wrong predictions and whole predictions
-        wrongs = []
+        # storing wrong predictions, whole predictions, ad probs
+        wrong_index = []
+        wrong_locations = []
         predictions = []
-        for score in s["test_confusion_matrix"]:
-            predictions.append(score.eval["predicted"])
-            wrongs.append(score.eval["wrong"].to_list())
-        wrongs = np.concatenate(wrongs).astype(np.int32)
-        wrong_sets.append(set(wrongs))
+        probs = []
+        conf_matrices = s["test_confusion_matrix"]
+        proba_collector = s["test_proba_collector"]
+        for idx in range(len(conf_matrices)):
+            d = conf_matrices[idx].eval
+            predictions.append(d["predicted"])
+            wrong_index.append(d["wrong"].to_list())
+            wrong_locations.append(d["indices"].isin(d["wrong"]))
+            probs.append(proba_collector[idx].eval["predicted"])
+        wrong_index = np.concatenate(wrong_index).astype(np.int32)
+        wrong_sets.append(set(wrong_index))
         prediction_lists.append((mfile.parent.name, np.concatenate(predictions)))
-        if len(wrongs) == 0:
+        probs_lists.append((mfile.parent, np.concatenate(probs)))
+        wrong_locations = np.concatenate(wrong_locations)
+        if len(wrong_index) == 0:
             print("   There were no wrong predictions!")
             continue
 
         # Building a mini-report
-        report = data.iloc[wrongs]
+        report = data.iloc[wrong_index]
         report = report[["Id", "AriaLabel", "AriaName"]]
-        report["Label"] = y.iloc[wrongs].to_list()
+        report["Label"] = y.iloc[wrong_index].to_list()
         # X_wrongs = X.iloc[wrongs]
         # report["Confidence"] = m.decision_function(X_wrongs)
         print(C.OKCYAN)
+        print("Wrong arias:")
         print(report)
         print(C.ENDC)
 
     # compute McNemar tests
     print(f"{C.OKGREEN}Bonferroni-Holm corrected McNemar p-values:{C.ENDC}")
-    mcnemar_corrected(*prediction_lists)
+    mcnemar_corrected(prediction_lists)
+    print(f"{C.OKGREEN}Kruskal-Wallis p-values:{C.ENDC}")
+    kruskalwallis(prediction_lists)
+    print(f"{C.OKGREEN}Bonferroni-Holm corrected Wilcoxon p-values:{C.ENDC}")
+    wilcoxon_corrected(probs_lists)
 
     # now compute the intersection of linear and blacbox automl
     wrong_ab_intersection = wrong_sets[0].intersection(wrong_sets[1])
@@ -269,12 +289,65 @@ def post_analysis(data, X, y, experiments_dir):
     print(df.T)
     print(C.ENDC)
 
+    print("Computing histograms of probabilities.")
+    probability_histogram(probs_lists, wrong_locations)
 
-def mcnemar_corrected(*predictions):
-    from sklearn.metrics import confusion_matrix
-    from statsmodels.stats.contingency_tables import StratifiedTable, mcnemar
-    from statsmodels.stats.multitest import multipletests
 
+def probability_histogram(probs_lists, wrong_locations):
+
+    from .plotting import plotly_save
+
+    for probs in probs_lists:
+        fig = go.Figure()
+
+        fig.add_trace(
+            go.Histogram(
+                x=probs[1][wrong_locations],
+                # nbinsx=10,
+                name="Wrong predictions",
+                marker=dict(color="red"),
+            )
+        )
+        fig.add_trace(
+            go.Histogram(
+                x=probs[1],
+                # nbinsx=10,
+                name="Predictions",
+                marker=dict(color="blue"),
+            )
+        )
+
+        fig.update_layout(
+            yaxis_type="log",
+            xaxis_title="Probability of being Perez",
+            yaxis_title="Number of data (log)",
+            xaxis=dict(
+                tickmode='array',
+                tickvals=[min(probs[1]), max(probs[1])]
+            )
+        )
+
+        plotly_save(fig, probs[0] / "prob_histogram.svg")
+
+
+def kruskalwallis(probs_lists):
+    kw_results = kruskal(*[prob_tuple[1] for prob_tuple in probs_lists])
+    print(kw_results)
+
+
+def wilcoxon_corrected(probs_lists):
+    p_values = []
+    for pair in combinations(probs_lists, 2):
+        _, p_value = wilcoxon(pair[0][1], pair[1][1])
+        p_values.append(p_value)
+    corrected_p_values = multipletests(p_values, alpha=0.05, method="holm")[1]
+
+    print("p-values:")
+    for i, pairs in enumerate(combinations(probs_lists, 2)):
+        print(f"{pairs[0][0]} vs {pairs[1][0]}", corrected_p_values[i])
+
+
+def mcnemar_corrected(predictions):
     pvals = []
     mats = []
     print("p-value order:")
@@ -316,7 +389,7 @@ def custom_inspection(experiments_dir, output_dir, X, y):
     for m in experiments_dir.glob("**/bag.pkl"):
         # computing and plotting most important features
         dir_name = m.parent.name
-        if 'blackbox' in dir_name:
+        if "blackbox" in dir_name:
             continue
         print(">>> " + dir_name)
         # loading the bag
@@ -329,7 +402,9 @@ def custom_inspection(experiments_dir, output_dir, X, y):
         simple_model = pickle.load(open(simple_model, "rb"))
         simple_model.fit(X, y)
         try:
-            plotter = bag.get_plotter(base_model=simple_model, top_k=0.5, feature_names=X.columns)
+            plotter = bag.get_plotter(
+                base_model=simple_model, top_k=0.5, feature_names=X.columns
+            )
             plotter.plot(X, y, output_dir, prefix=dir_name)
             del bag, plotter
         except InspectionError:
