@@ -301,8 +301,8 @@ def partial_dependence(
 
     print(">>> creating partial dependence")
     classes = model.classes_
-    print(">>>>> P=0.0 -> " + classes[0])
-    print(">>>>> P=1.0 -> " + classes[1])
+    print(">>>>> P=0.0 -> " + classes[1])
+    print(">>>>> P=1.0 -> " + classes[0])
     angular_coeffs = {}
     if linear:
         grid_resolution = 10
