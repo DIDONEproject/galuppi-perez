@@ -364,7 +364,8 @@ def grid_tune_pipeline(X, y, splitter):
     return best_model, results
 
 
-def gridsearch(data_x_y, splitter, output_dir, skipsearches=False):
+def gridsearch(data_x_y, splitter, output_dir, skipsearches=False,
+               skipbagfitting=False):
     """
     1. Performs a grid_search on `get_custom_grid(X, y)` using train_idx.
     2. Saves the best model and the list of grid-search objects in `output_dir`
@@ -386,19 +387,18 @@ def gridsearch(data_x_y, splitter, output_dir, skipsearches=False):
 
         print("Best model found:")
         print(model)
-
         pickle.dump(model, open(output_dir / "best_model.pkl", "wb"))
         pickle.dump(trajectory, open(output_dir / "trajectory.pkl", "wb"))
 
-    bag = DidoneBagging.default_init(model)
-    bag.fit(X, y)
-    bag.get_plotter(top_k=0.25, feature_names=X.columns).plot(output_dir)
-
-    fig = crossvalidation(bag, X, y, cv=splitter)[1]
-    plotly_save(fig, output_dir / "crossvalidation_bag.svg")
+    if not skipbagfitting:
+        bag = DidoneBagging.default_init(model)
+        print("Building best model using the whole dataset")
+        bag.fit(X, y)
+        pickle.dump(bag, gzip.open(output_dir / "bag.pkl", "wb"))
 
     scores, fig = crossvalidation(model, X, y, cv=splitter)
-    plotly_save(fig, output_dir / "crossvalidation.svg")
-    pickle.dump(scores, open(Path(output_dir) / "crossval_scores.pkl", "wb"))
 
-    pickle.dump(bag, gzip.open(output_dir / "bag.pkl.gz", "wb"))
+    if output_dir:
+        plotly_save(fig, output_dir / "crossvalidation_bag.svg")
+        plotly_save(fig, output_dir / "crossvalidation.svg")
+        pickle.dump(scores, open(Path(output_dir) / "crossval_scores.pkl", "wb"))

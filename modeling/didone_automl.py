@@ -45,7 +45,7 @@ def automl(
     automl_time=4 * 3600,
     crossvalidation_kwargs={},
     skipsearches=False,
-    skipbagfitting=False
+    skipbagfitting=False,
 ):
     """
     Performs a full optimization and validation using auto-sklearn.
@@ -224,47 +224,39 @@ def automl(
 
     # Fitting the model
     if skipsearches:
-        fnames = sorted(Path(output_dir).glob("automl-*.pkl"), key=lambda x: x.stat().st_mtime)
-        ensemble = pickle.load(open(fnames[-1], "rb"))
+        # fnames = sorted(Path(output_dir).glob("automl-*.pkl"), key=lambda x: x.stat().st_mtime)
+        classifier = pickle.load(open("classifier.pkl", "rb"))
     else:
         print("Starting AutoML")
         ensemble.fit(X, encoded_y, dataset_name="Didone")
+        # DidoneClassifier is an object that prevents the call to `fit` and instead
+        # uses `refit`
+        classifier = DidoneClassifier(
+            ensemble.automl_.models_,
+            ensemble.automl_.ensemble_,
+            autosklearn_mae,
+            x_encoder,
+            y_encoder,
+            standardize=False,
+            n_jobs=our_autosklearn_kwargs["n_jobs"],
+        )
 
         if output_dir:
             time_stamp = datetime.now().strftime("%m_%d-%H_%M")
-            pickle.dump(ensemble, open(Path(output_dir) / f"automl-{time_stamp}.pkl", "wb"))
+            pickle.dump(
+                ensemble, open(Path(output_dir) / f"automl-{time_stamp}.pkl", "wb")
+            )
             plot_time_performance(
                 ensemble, fname=output_dir / f"automl_optimization-{time_stamp}.svg"
             )
+            pickle.dump(classifier, open(Path(output_dir) / "ensemble.pkl", "wb"))
 
-    # DidoneClassifier is an object that prevents the call to `fit` and instead
-    # uses `refit`
-    classifier = DidoneClassifier(
-        ensemble.automl_.models_,
-        ensemble.automl_.ensemble_,
-        autosklearn_mae,
-        x_encoder,
-        y_encoder,
-        standardize=False,
-        n_jobs=our_autosklearn_kwargs["n_jobs"],
-    )
-    
-    if skipbagfitting:
-        bag = pickle.load(open(Path(output_dir) / "bag.pkl", "rb"))
-        print("Loaded ensemble!")
-    else:
+    if not skipbagfitting:
         bag = DidoneBagging.default_init(classifier)
         print("Building best model using the whole dataset")
         bag.fit(X_, y)
-
-    # Saving model
-    if output_dir:
-        pickle.dump(classifier, open(Path(output_dir) / "ensemble.pkl", "wb"))
-        pickle.dump(bag, open(Path(output_dir) / "bag.pkl", "wb"))
-
-    # TODO: remove these lines
-    import sys
-    sys.exit()
+        if output_dir:
+            pickle.dump(bag, open(Path(output_dir) / "bag.pkl", "wb"))
 
     print("Evaluating the best automl pipeline")
 
@@ -280,11 +272,11 @@ def automl(
         classes=y_encoder.classes_,
         **crossvalidation_kwargs,
     )
-    plotly_save(validation_fig, Path(output_dir) / "crossvalidation.svg")
 
-    AutoMLResult = namedtuple(
-        "AutoMLResult", ["crossval_scores", "crossval_figure"]
-    )
-    pickle.dump(scores, open(Path(output_dir) / "crossval_scores.pkl", "wb"))
+    # Saving model
+    if output_dir:
+        plotly_save(validation_fig, Path(output_dir) / "crossvalidation.svg")
+        pickle.dump(scores, open(Path(output_dir) / "crossval_scores.pkl", "wb"))
 
+    AutoMLResult = namedtuple("AutoMLResult", ["crossval_scores", "crossval_figure"])
     return AutoMLResult(scores, validation_fig)

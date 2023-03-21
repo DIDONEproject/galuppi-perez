@@ -181,6 +181,7 @@ class Model(object):
             splitter=self.splitter,
             output_dir=self.output_dir,
             skipsearches=self.skipsearches,
+            skipbagfitting=self.skipbagfitting,
         )
 
     def test(self):
