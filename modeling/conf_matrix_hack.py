@@ -52,21 +52,25 @@ class CustomEval(np.ndarray):
         self.confusion_matrix = confusion_matrix
 
     def __call__(self, *args, **kwargs):
-        true = args[0]
-        pred = args[1]
+        true = args[0].copy()
+        pred = args[1].copy()
         self.eval = {}
         self.eval["predicted"] = pred
         if self.confusion_matrix:
             self.eval["matrix"] = confusion_matrix(*args, **kwargs, labels=self.labels)
         if hasattr(true, "index"):
-            if np.issubdtype(pred.dtype, np.floating):
-                # discretizing pred and enumerating labels
-                pred = np.round(pred)
-                for i, label in enumerate(self.labels):
-                    true[true == label] = i
+            true, pred = self._discretize(true, pred)
             self.eval["wrong"] = true.index[true != pred]
             self.eval["indices"] = true.index
         return self
+
+    def _discretize(self, true, pred):
+        if np.issubdtype(pred.dtype, np.floating):
+            # discretizing pred and enumerating labels
+            pred = np.round(pred)
+            for i, label in enumerate(self.labels):
+                true[true == label] = i
+        return true, pred
 
     def item(self, *args, **kwargs):
         obj = CustomEvalFloat()

@@ -33,7 +33,7 @@ def crossvalidation(
     plotting=True,
     scoring=["balanced_accuracy_score", "matthews_corrcoef", "confusion_matrix"],
     cv=10,
-    n_jobs=-1,
+    # n_jobs=-1,
     verbose=1,
     return_train_score=True,
     title=None,
@@ -106,19 +106,16 @@ def crossvalidation(
     labels = np.unique(y)
     for i, sc in enumerate(_scoring):
         if sc == "confusion_matrix":
-            # Note: CustomEval is a dummy class which inherits from
-            # np.ndarray and represents one number only; a confusion matrix is actually
-            # stored in the field `.eval["matrix"]`. This is needed because sklearn
-            # doesn't accept that the return value of the metric is not a
-            # number. See `conf_matrix_hack.py` for more info.
-            _scoring[i] = (sc,
-                           metrics.make_scorer(CustomEval(labels,
-                                                          confusion_matrix=True)))
+            _scoring[i] = (
+                sc,
+                metrics.make_scorer(CustomEval(labels, confusion_matrix=True)),
+            )
         elif sc == "proba_collector":
             _scoring[i] = (
                 sc,
-                metrics.make_scorer(CustomEval(labels,
-                                               confusion_matrix=False), needs_proba=True),
+                metrics.make_scorer(
+                    CustomEval(labels, confusion_matrix=False), needs_proba=True
+                ),
             )
         else:
             _scoring[i] = (sc, metrics.make_scorer(getattr(metrics, sc)))
@@ -133,7 +130,9 @@ def crossvalidation(
         y=y,
         scoring=dict(_scoring),
         cv=cv,
-        n_jobs=n_jobs,
+        # seems there's a bug when using both disrcrete and continuous
+        # predictions (needs proba) and parallel processing
+        n_jobs=1,
         return_train_score=return_train_score,
         verbose=verbose,
         return_estimator=classes is None,

@@ -268,7 +268,7 @@ def automl(
         plotting=True,
         stdout=False,
         cv=splitter,
-        n_jobs=-1,
+        # n_jobs=-1,
         classes=y_encoder.classes_,
         **crossvalidation_kwargs,
     )
