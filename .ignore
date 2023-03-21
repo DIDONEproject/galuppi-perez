@@ -27,10 +27,7 @@ dustenv/pyenv/**
 
 **/bag.pkl
 
-experiments/blackbox_automl/bag.pkl.gz
-experiments/gridsearch/bag.pkl.gz
-experiments/linear_automl/bag.pkl.gz
-experiments/tree_automl/bag.pkl.gz
+experiments
 experiments.myback
 
 dustenv/pyenv
