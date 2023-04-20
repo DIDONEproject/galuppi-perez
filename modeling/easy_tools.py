@@ -23,7 +23,7 @@ class C:
     UNDERLINE = "\033[4m"
 
 
-def select_dummy(data, X, y):
+def select_dummy(data, X, y, **kwargs):
     """
     Just a dummy function which only removes features that are `nan`
     and that have too few samples (> S.MIN_CARDINALITY)
@@ -40,7 +40,7 @@ def select_dummy(data, X, y):
     return X[idx], y[idx]
 
 
-def select_galuppi_perez(data, X, y):
+def select_galuppi_perez(data, X, y, holdout=0.):
     """
     This takes care of keeping only the data that we want.
 
@@ -83,7 +83,41 @@ def select_galuppi_perez(data, X, y):
     print(f"    of which by Galuppi: {y_train[y_train == 'Galuppi'].shape[0]}")
     print(f"Num of arias in test: {X_test.shape[0]}")
     print(f"Number of features: {X_train.shape[1]}{C.ENDC}")
+
+    if holdout > 0.:
+        X_train, y_train = select_galuppi_perez_holdout(data, X_train, y_train,
+                                                        holdout)
     return X_train, y_train
+
+
+def select_galuppi_perez_holdout(data, X, y, size):
+    """Same as select_galuppi_perez, but this also saves a holdout to file and removes
+    it from X and y, so that successive steps doesn't use it. The holdout, always
+    The seed is based on the size parameter.
+    contain the "final test" arias."""
+    rng = np.random.default_rng(int(size*100))
+
+    # remove `size` percentage of data from X and y
+    if isinstance(X, pd.DataFrame):
+        holdout_X = X.sample(frac=size)
+        X = X.drop(holdout_X.index)
+    else:
+        holdout_X = X[rng.choice(
+            X.shape[0], size=int(size*X.shape[0]), replace=False)]
+        X = np.delete(X, np.s_[holdout_X], axis=0)
+
+    if isinstance(y, pd.Series):
+        holdout_y = y.sample(frac=size)
+        y = y.drop(holdout_y.index)
+    else:
+        holdout_y = y[rng.choice(
+            y.shape[0], size=int(size*y.shape[0]), replace=False)]
+        y = np.delete(y, np.s_[holdout_y], axis=0)
+
+    # save the holdout
+    pickle.dump((holdout_X, holdout_y), open(str(size) + "_" + S.HOLDOUT_FILE, 'wb'))
+
+    return X, y
 
 
 def get_xy():

@@ -34,6 +34,8 @@ class Model(object):
     Options:
         --output_dir : directory for saving images and models
         --debug : if using debug mode (no metalearning and only 3 runs)
+        --holdout : use a hold-out strategy with more arias than the ones in the final
+        test (10%) of the data; --prehook is disregarded in this case.
         --prehook : name of function in `easy_tool` to be used for
             preprocessing the dataframes before of the experiment
     """
@@ -45,6 +47,7 @@ class Model(object):
         debug=S.AUTOML_DEBUG,
         skipsearches=S.SKIPSEARCHES,
         skipbagfitting=S.SKIPBAGFITTING,
+        holdout=S.HOLDOUT,
         prehook="select_galuppi_perez",
     ):
         S.GRID_DEBUG = debug
@@ -63,9 +66,14 @@ class Model(object):
 
         self.skipsearches = skipsearches
         self.skipbagfitting = skipbagfitting
+        self.prehook = prehook
+        self.holdout = holdout
+        if self.holdout > 0.:
+            print("Using holdout, disregarding prehook option.")
+            self.prehook = "select_galuppi_perez"
+        output_dir = Path(str(output_dir) + f"-holdout_{self.holdout}")
         self.output_dir_original = Path(output_dir)
         self.output_dir = Path(output_dir)
-        self.prehook = prehook
         self.tmp_folder = S.TMP_FOLDER
 
     def linear(self, *, nsize: int = 5):
@@ -111,7 +119,8 @@ class Model(object):
 
     def __load_data(self):
         data, X, y = load_features(S.Y_VARIABLE)
-        self.X, self.y = getattr(easy_tools, self.prehook)(data, X, y)
+        self.X, self.y = getattr(easy_tools, self.prehook)(
+            data, X, y, holdout=self.holdout)
         self.data = data.iloc[self.X.index]
         self.splitter = sklearn.model_selection.StratifiedKFold(
             n_splits=S.FOLDS, shuffle=True, random_state=8734
@@ -125,7 +134,7 @@ class Model(object):
 
         self.__load_data()
 
-        post_analysis(self.data, self.X, self.y, self.output_dir)
+        post_analysis(self.data, self.X, self.y, self.output_dir, self.holdout)
 
     def inspection(self):
         """

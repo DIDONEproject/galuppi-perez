@@ -84,6 +84,27 @@ def _statistical_significance(prediction_lists, probs_lists):
 
 
 def _load_outputs(data, experiments_dir, y):
+    """
+    Loads outputs from cross-validation experiments and collects statistics on wrong
+    predictions.
+
+    Returns:
+    Tuple[pd.DataFrame, List[List[int]], List[List[float]], Dict[str, List[int]],
+          Dict[str, Dict[str, List[int]]]]: A tuple containing:
+        - The input data with additional columns for predicted values and probabilities.
+        - A list of lists containing the predicted values for each cross-validation
+          fold (concatenated).
+        - A list of lists containing the predicted probabilities for each
+          cross-validation fold (concatenated).
+        - A dictionary mapping experiment directories to lists of indices of wrong
+          predictions.
+        - A dictionary mapping experiment directories to dictionaries mapping file paths
+          to lists of indices of wrong predictions.
+
+    Raises:
+    FileNotFoundError: If a crossval_scores.pkl file is not found in the experiments
+    directory.
+    """
     data = data[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]].copy()
     experiments_dir = Path(experiments_dir)
     wrong_indices = {}
@@ -121,7 +142,28 @@ def _load_outputs(data, experiments_dir, y):
     return data, prediction_lists, probs_lists, wrong_indices, wrong_locations_dict
 
 
-def post_analysis(data, X, y, experiments_dir):
+def _holdout_probability_histogram(X, y, experiments_dir, holdout_data):
+    print("Testing hold-out set")
+    holdout_X, holdout_y = holdout_data
+    models = list(experiments_dir.glob("**/ensemble.pkl"))
+    models += list(experiments_dir.glob("**/best_model.pkl"))
+    holdout_probs_lists = []
+    holdout_wrong_locations_dict = {}
+    for mfile in models:
+        model = pickle.load(open(mfile, 'rb'))
+        model.fit(X, y)
+        if hasattr(model, 'predict_proba'):
+            probs = model.predict_proba(holdout_X)[:, 0]
+            preds = model.predict(holdout_X)
+            wrong_locations = preds != holdout_y
+        holdout_probs_lists.append((mfile.parent, probs))
+        holdout_wrong_locations_dict[str(mfile.parent)] = wrong_locations
+    print("Computing histograms for hold-out set.")
+    probability_histogram(holdout_probs_lists, holdout_wrong_locations_dict,
+                          fname="prob_histogram_holdout.svg")
+
+
+def post_analysis(data, X, y, experiments_dir, holdout):
     data = data.sort_index()
     X = X.sort_index()
     y = y.sort_index()
@@ -132,6 +174,10 @@ def post_analysis(data, X, y, experiments_dir):
         wrong_indices,
         wrong_locations_dict,
     ) = _load_outputs(data, experiments_dir, y)
+
+    if holdout > 0:
+        holdout_data = pickle.load(open(S.HOLDOUT_FILE, 'rb'))
+        _holdout_probability_histogram(X, y, experiments_dir, holdout_data)
 
     print("Computing histograms of probabilities.")
     probability_histogram(probs_lists, wrong_locations_dict)
@@ -197,7 +243,7 @@ def find_most_typical_arias(data, names, wrong_indices, percentile=90):
     print(f"{C.ENDC}")
 
 
-def probability_histogram(probs_lists, wrong_locations):
+def probability_histogram(probs_lists, wrong_locations, fname="prob_histogram.svg"):
     from .plotting import plotly_save
 
     for probs in probs_lists:
@@ -229,7 +275,7 @@ def probability_histogram(probs_lists, wrong_locations):
             ),
         )
 
-        plotly_save(fig, probs[0] / "prob_histogram.svg")
+        plotly_save(fig, probs[0] / fname)
 
 
 def kruskalwallis(probs_lists):
@@ -254,7 +300,7 @@ def mcnemar_corrected(predictions):
     mats = []
     print("p-value order:")
     for i, (name1, p1) in enumerate(predictions[:-1]):
-        for name2, p2 in predictions[i + 1 :]:
+        for name2, p2 in predictions[i + 1:]:
             mat = confusion_matrix(p1, p2)
             mats.append(mat)
             # compute mcnemar
