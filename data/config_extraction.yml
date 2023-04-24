@@ -1,11 +1,8 @@
-# metadata_dir: ./metadata
-data_dir: null
-musescore_dir: null
-# cache_dir: data/cache
 expand_repeats: false
+internal_data_dir: ./internal_data # custom config
+dfs_dir: data/dfs
 window_size: null
 overlap: null
-dfs_dir: data/dfs
 # parallel is the number of parallel processes to be used as defined by joblib: 
 # 1 => no parallel
 # 2 => 2 processes
@@ -19,17 +16,20 @@ log:
 basic_modules_addresses: ["musif.extract.basic_modules", "modeling.feature_extraction.custom_basic_modules"]
 precache_hooks: ["modeling.feature_extraction.hooks.only_theme_a"]
 
+end_of_theme_a: "EndOfThemeA"
+theme_a_metadata: "theme_a_per_aria.csv"
+
 basic_modules:
   - scoring
-  - file_name
-  - metadata
-  - composer
-  - librettist
+  - file_name # custom feature
+  - metadata # custom feature
+  - composer # custom feature
+  - librettist # custom feature
 
 features:
   - core
   - ambitus
-  - interval
+  - melody
   - tempo
   - density
   - texture
@@ -40,6 +40,8 @@ features:
   - key
   - dynamics    
   - rhythm
+  - music21
+  - jsymbolic
 
 split_keywords:  # Used to split the possible layers present depending on the instrument name
   - woodwind
@@ -63,3 +65,4 @@ parts_filter:
   # - bar
   # - bass
   # - bbar
+  #

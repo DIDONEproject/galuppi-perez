@@ -1,7 +1,7 @@
 from ntpath import basename
 from typing import List
 
-from musif.config import Configuration
+from musif.config import ExtractConfiguration
 from musif.extract.constants import DATA_FILE
 from musif.logs import lwarn
 from .constants import *
@@ -11,7 +11,7 @@ from ...utils import get_ariaid
 def update_score_objects(
     score_data: dict,
     parts_data: List[dict],
-    cfg: Configuration,
+    cfg: ExtractConfiguration,
     parts_features: List[dict],
     score_features: dict,
 ):
@@ -69,6 +69,6 @@ def update_score_objects(
 
 
 def update_part_objects(
-    score_data: dict, part_data: dict, cfg: Configuration, part_features: dict
+    score_data: dict, part_data: dict, cfg: ExtractConfiguration, part_features: dict
 ):
     pass

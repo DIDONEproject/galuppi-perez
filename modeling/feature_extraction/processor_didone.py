@@ -1,5 +1,6 @@
 import difflib
 import os
+from typing import Union
 
 import numpy as np
 import pandas as pd
@@ -11,7 +12,7 @@ from musif.extract.basic_modules.scoring.constants import (
     SCORING,
     VOICES,
 )
-from musif.extract.constants import WINDOW_ID
+from musif.extract.constants import ID, WINDOW_ID
 from musif.extract.features.ambitus.constants import (
     HIGHEST_NOTE_INDEX,
     LOWEST_NOTE_INDEX,
@@ -20,6 +21,7 @@ from musif.extract.features.core.constants import FILE_NAME
 from musif.extract.features.harmony.constants import HARMONY_AVAILABLE
 from musif.extract.features.key.constants import KEY, KEY_SIGNATURE, KEY_SIGNATURE_TYPE
 from musif.extract.features.prefix import get_part_prefix, get_sound_prefix
+from musif.extract.features.texture.constants import TEXTURE
 from musif.logs import perr, pinfo, pwarn
 from musif.process.constants import voices_list_prefixes
 from musif.process.processor import DataProcessor
@@ -88,11 +90,11 @@ metadata_columns = [
 
 
 class DataProcessorDidone(DataProcessor):
-    def process(self) -> DataFrame:
-        if FILE_NAME in self.data:
-            self.data[FILE_NAME].to_csv(self._post_config.check_file, index=False)
+    def __init__(self, info: Union[str, DataFrame], *args, **kwargs):
+        super().__init__(info, *args, **kwargs)
 
-        if self._post_config.delete_files:
+    def process(self) -> DataFrame:
+        if self._post_config.delete_failed_files:
             self.delete_previous_items()
 
         if self._post_config.merge_voices:
@@ -100,8 +102,14 @@ class DataProcessorDidone(DataProcessor):
 
         super().process()
 
+        # Delete Vn when it is alone
+        to_delete = [i for i in self.data.columns if get_part_prefix("Vn") in i]
+        to_delete.append(f"PartVnI__PartVoice__{TEXTURE}")
+        self.data.drop(columns=to_delete, inplace=True, errors="ignore")
+
         pinfo("\nScanning info looking for missing data...")
         self._scan_dataframe()
+        # self.save(self.destination_route)
         return self.data
 
     def assign_labels(self) -> None:
@@ -110,7 +118,7 @@ class DataProcessorDidone(DataProcessor):
         gets assigned to its own Label
         """
         passions = read_dicts_from_csv(
-            os.path.join(self.internal_data_dir, "Passions.csv")
+            os.path.join(self._post_config.internal_data_dir, "Passions.csv")
         )
 
         data_by_aria_label = {
@@ -194,55 +202,72 @@ class DataProcessorDidone(DataProcessor):
                     pwarn("Item {0} from errors.csv was deleted.".format(item))
         else:
             perr(
-                '\nA file called "errors.csv" must be created containing Filenames to be deleted.'
+                '\nA file called "errors.csv" must be created containing FileNames to be deleted.'
             )
 
     def _scan_dataframe(self):
-        self.composer_counter = []
-        self.novoices_counter = []
+        # self.composer_counter = []
+        # self.novoices_counter = []
         self._scan_composers()
         self._scan_voices()
 
     def _scan_voices(self):
-        for i, voice in enumerate(self.data[VOICES].values):
-            if pd.isnull(voice):
-                self.novoices_counter.append(self.data[FILE_NAME][i])
-                self.data.drop(i, axis=0, inplace=True)
+        to_delete = self.data[VOICES].isna()
+        self.data = self.data[~to_delete]
 
     def _scan_composers(self):
-        composers_path = os.path.join(self.internal_data_dir, "composers.csv")
+        composers_path = os.path.join(
+            self._post_config.internal_data_dir, "composers.csv"
+        )
 
         if os.path.exists(composers_path):
             composers = pd.read_csv(composers_path)
             composers = [i for i in composers.iloc[:, 0].to_list() if str(i) != "nan"]
 
-            for i, comp in enumerate(self.data[COMPOSER].values):
-                if pd.isnull(comp):
-                    self.composer_counter.append(self.data[FILE_NAME][i])
-                    self.data.drop(i, axis=0, inplace=True)
-                elif comp.strip() not in composers:
-                    aria_name = self.data.at[i, FILE_NAME]
-                    correction = difflib.get_close_matches(comp, composers)
-                    correction = correction[0] if correction else "NA"
-                    self.data.at[i, COMPOSER] = correction
-                    pwarn(
-                        f"Composer {comp} in aria {aria_name} was not found. Replaced with: {correction}"
+            to_delete = []
+            index = self.data.index
+            if index.nlevels > 1:
+                index = index.levels[0]
+            for i, _ in enumerate(index):
+                comp = self.data[COMPOSER][i]
+                if not isinstance(comp, (pd.DataFrame, pd.Series)):
+                    comp = pd.Series([comp])
+                if pd.isnull(comp).any():
+                    # self.composer_counter.append(self.data[FILE_NAME][i])
+                    to_delete.append(i)
+                elif comp.str.strip().isin(composers).any():
+                    aria_name = self.data.loc[i, FILE_NAME]
+                    corrections = comp.apply(
+                        lambda x: self._get_close_matches(x, composers)
                     )
-                    if correction == "NA":
-                        self.composer_counter.append(self.data[FILE_NAME][i])
-                        self.data.drop(i, axis=0, inplace=True)  # ?
-
+                    if corrections[0] == "NA":
+                        # self.composer_counter.append(self.data[FILE_NAME][i])
+                        to_delete.append(i)
+                    elif any(corrections != comp):
+                        pwarn(
+                            f"Composer {comp[0]} in aria {aria_name[0]} was not found. Replaced with: {corrections[0]}"
+                        )
+                        self.data.loc[i, COMPOSER] = corrections
+            self.data.drop(index=to_delete, inplace=True)
         else:
             perr("Composers file could not be found.")
 
-    def save(self, dest_path, ft="csv") -> None:
+    def _get_close_matches(self, comp, composers):
+        correction = difflib.get_close_matches(comp, composers)
+        correction = correction[0] if correction else "NA"
+        return correction
 
-        super().save(dest_path, ft)
+    def save(self, dest_path, ext=".csv", ft="csv", **kwargs) -> None:
+
+        super().save(dest_path, ft=ft, ext=ext)
         ft = "to_" + ft
         dest_path = str(dest_path)
-        getattr(self.label_dataframe, ft)(dest_path + "_labels.csv", index=False)
-        getattr(self.metadata_dataframe, ft)(dest_path + "_metadata.csv", index=False)
-        getattr(self.features_dataframe, ft)(dest_path + "_features.csv", index=False)
+        if ft == "to_csv":
+            kwargs["index"] = False
+        getattr(self.label_dataframe, ft)(dest_path + "_labels" + ext, **kwargs)
+        getattr(self.metadata_dataframe, ft)(dest_path + "_metadata" + ext, **kwargs)
+        getattr(self.features_dataframe, ft)(dest_path + "_features" + ext, **kwargs)
+        getattr(self.data, ft)(dest_path + "_alldata" + ext, **kwargs)
 
     def _final_data_processing(self) -> None:
         super()._final_data_processing()
@@ -251,15 +276,19 @@ class DataProcessorDidone(DataProcessor):
     def _split_metadata_and_labels(self) -> None:
         self.data.rename(columns={ROLE_TYPE: "Label_" + ROLE_TYPE}, inplace=True)
         label_columns = list(self.data.filter(like="Label_", axis=1))
-
         self.label_dataframe = self.data[[ARIA_ID, WINDOW_ID] + label_columns]
-        self.metadata_dataframe = self.data[[ARIA_ID, WINDOW_ID] + metadata_columns]
-        # TODO: donde estan key y key signature
-        self.data = sort_columns(self.data, [ARIA_ID, WINDOW_ID] + priority_columns)
 
+        self.metadata_dataframe = self.data[[ARIA_ID, WINDOW_ID] + metadata_columns]
+        self.data = sort_columns(self.data, [ARIA_ID, WINDOW_ID] + priority_columns)
+        priority_columns.remove(KEY)
+        priority_columns.remove(KEY_SIGNATURE)
+        priority_columns.remove(KEY_SIGNATURE_TYPE)
+        
         self.features_dataframe = self.data.drop(
             priority_columns + label_columns, axis=1, errors="ignore"
         )
+        if not len(self.features_dataframe.columns) + len(priority_columns) + len(label_columns) == len(self.data.columns):
+            perr('Mismatch found between column numbers of all different dataframes!')
 
 
 def merge_single_voices(df: DataFrame) -> None:

@@ -1,0 +1,106 @@
+log:
+  file_path: logs/post_process.log
+  file_level: DEBUG
+  console_level: WARN
+
+internal_data_dir: internal_data
+# check_file: parsed_files.csv
+delete_files: True
+delete_files_without_harmony: True
+merge_voices: False
+grouped: True
+split_passions: True
+unbundle_instrumentation: True
+
+instruments_to_keep:
+  - vnI
+  - bs
+
+instruments_to_delete: #'Part' + inst + "_" in column
+  - Vn
+  - BsI
+  - BsII
+  - Ob
+  - Cor
+  - Bn
+  - Va
+  # - VaI
+  # - VaII!
+  # - VaIII
+  - Eh
+  - Tbn
+  - TbI
+  - Timp
+  - Tr
+  - Tpt
+  - TrI
+  - Ve
+  # - VeI
+  # - VeII
+
+# substring_to_delete: #inst in column
+
+columns_match:
+  - Presence_of_vn
+  - Presence_of_bs
+  - Presence_of_vc
+  - Presence_of_va
+  - Librettist
+
+columns_contain:
+  - _Count
+  - _SoundingMeasuresMean
+  - _SmallestSemitones
+  - _SmallestAbsolute
+  - _SmallestInterval
+  - Timp
+  - Bn
+  - VeII
+  - VnII
+  - VnIII
+  - VnIV
+  - Vc
+  - Cl
+  - Tpt
+  - Hn
+  - Fl
+  - CI
+  - CiII
+  - CiI
+  
+replace_nans:
+  - Interval
+  - Degree
+  - Harmony
+
+columns_startswith:
+  - FamilyWw
+  - FamilyBr
+  - FamilyGen
+  - FamilyGen
+  - FamilyPerc
+  - EndOfThemeA
+  - NumberOfBeats
+  - SoundVoice_Dyn
+
+columns_endswith:
+  - _HighestNote
+  - _LowestNote
+  - _Notes
+  - _SoundingMeasures
+  - _Syllables
+  - _NumberOfFilteredParts
+  - NumberOfParts
+  - _NotesMean
+  - _LargestIntervalAsc
+  - _LargestIntervalAll
+  - _LargestIntervalDesc
+  - _NotesMean
+  - 'Semitones_Sum'    
+  - _MeanInterval'
+  
+# delete_presence:
+#   - vn
+#   - bs
+#   - vc
+#   - va

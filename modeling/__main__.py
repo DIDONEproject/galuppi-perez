@@ -217,15 +217,31 @@ class Model(object):
         Extract features using musif and cached data
         """
         from musif.extract.extract import FeaturesExtractor
-
+        from .feature_extraction.custom_conf import CustomConf
         from .feature_extraction.processor_didone import DataProcessorDidone
+
+        corpus_dir = S.DATA_DIR / "corpus"
+        if corpus_dir.exists():
+            xml_dir = corpus_dir / "xml"
+            musescore_dir = corpus_dir / "musescore"
+            limit_files = list(xml_dir.glob("*Galuppi*"))
+            limit_files += list(xml_dir.glob("*Perez*"))
+        else:
+            # only use the cached files
+            limit_files = None
+            musescore_dir = None
+            xml_dir = None
 
         # this creates a large dataframe with all data in it (metadata, labels,
         # features)
         raw_df = FeaturesExtractor(
-            S.DATA_DIR / "config_extractor.yml",
-            cache_dir=S.DATA_DIR / "cache",
-            metadata_dir=S.DATA_DIR / "metadata",
+            CustomConf(S.DATA_DIR / "config_extraction.yml",
+                       xml_dir=xml_dir,
+                       musescore_dir=musescore_dir,
+                       cache_dir=S.DATA_DIR / "cache",
+                       metadata_dir=S.DATA_DIR / "metadata",
+                       ),
+            limit_files=limit_files
         ).extract()
 
         # raw_df.to_csv("temp.csv")
@@ -234,7 +250,7 @@ class Model(object):
         # this post-processes the dataframe, removing some features used for computing
         # other features, removing nans, etc.
         p = DataProcessorDidone(
-            raw_df, S.DATA_DIR / "config_processor.yml", merge_voices=True
+            raw_df, S.DATA_DIR / "config_postprocess.yml", merge_voices=True
         )
         p.process()
 

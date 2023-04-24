@@ -38,3 +38,4 @@ logs
 parsed_files.csv
 requirements.txt
 tmp_autosklearn
+data/corpus

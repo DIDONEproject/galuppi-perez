@@ -13,9 +13,9 @@ def execute(cfg, data):
     # extracting theme_a information from metadata
     aria_id = get_ariaid(path.basename(data[C.DATA_FILE]))
     last_measure = 1000000
-    for d in cfg.scores_metadata[C.THEME_A_METADATA]:
+    for d in cfg.scores_metadata[cfg.theme_a_metadata]:
         if d["Id"] == aria_id:
-            last_measure = floor(float(d.get(C.END_OF_THEME_A, last_measure)))
+            last_measure = floor(float(d.get(cfg.end_of_theme_a, last_measure)))
             break
 
     # removing everything after end of theme A
