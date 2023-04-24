@@ -8,7 +8,7 @@ overlap: null
 # 2 => 2 processes
 # -1 => all available virtual cores
 # -2 => all available virtual cores except 1
-parallel: -1
+parallel: 4
 log:
   file_path: logs/musif_test.log
   file_level: INFO
@@ -18,6 +18,8 @@ precache_hooks: ["modeling.feature_extraction.hooks.only_theme_a"]
 
 end_of_theme_a: "EndOfThemeA"
 theme_a_metadata: "theme_a_per_aria.csv"
+
+ignore_errors: true
 
 basic_modules:
   - scoring

@@ -16,7 +16,6 @@ dependencies = [
     "kaleido==0.2.1",
     "graphviz==0.20.1",
     "fire>=0.4.0",
-    "musif @ git+https://github.com/DIDONEproject/musiF@galuppi-perez",
     "statsmodels==0.13.5",
     "umap-learn==0.5.3",
 ]
@@ -26,6 +25,7 @@ dependencies = [
 [tool.pdm.dev-dependencies]
 dev = [
     "ipdb>=0.13.9",
+    "-e file:///${PROJECT_ROOT}/../musiF_tests/musif#egg=musif",
 ]
 
 [build-system]
