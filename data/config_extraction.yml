@@ -1,5 +1,4 @@
 expand_repeats: false
-internal_data_dir: ./internal_data # custom config
 dfs_dir: data/dfs
 window_size: null
 overlap: null
@@ -14,10 +13,6 @@ log:
   file_level: INFO
   console_level: INFO
 basic_modules_addresses: ["musif.extract.basic_modules", "modeling.feature_extraction.custom_basic_modules"]
-precache_hooks: ["modeling.feature_extraction.hooks.only_theme_a"]
-
-end_of_theme_a: "EndOfThemeA"
-theme_a_metadata: "theme_a_per_aria.csv"
 
 ignore_errors: true
 

@@ -3,7 +3,6 @@ log:
   file_level: DEBUG
   console_level: WARN
 
-internal_data_dir: internal_data
 # check_file: parsed_files.csv
 delete_files: True
 delete_files_without_harmony: True
@@ -72,6 +71,17 @@ replace_nans:
   - Interval
   - Degree
   - Harmony
+  - Acc
+  - Asc
+  - Dsc
+  - Spe
+  - Rhythm
+  - Duration
+  - Dyn
+  - Note
+  - Semitone
+  - js_
+  - m21_
 
 columns_startswith:
   - FamilyWw
