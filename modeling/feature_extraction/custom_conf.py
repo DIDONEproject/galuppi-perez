@@ -19,18 +19,3 @@ class CustomConf(ExtractConfiguration):
             print(
                 "\nMetadata could not be loaded properly!! Check metadata path in config file.\n"
             )
-        self.characters_gender = read_dicts_from_csv(
-            path.join(self.internal_data_dir, "characters_gender.csv")
-        )
-
-        # nnot used anymore or used in report only
-        # self.abbreviation_to_sound = {
-        #     abbreviation: sound
-        #     for sound, abbreviation in self.sound_to_abbreviation.items()
-        # }
-        # self.translations_cache = read_object_from_json_file(
-        #     path.join(self.internal_data_dir, "translations.json")
-        # )
-        # self.sorting_lists = read_object_from_json_file(
-        #     path.join(self.internal_data_dir, "sorting_lists.json")
-        # )

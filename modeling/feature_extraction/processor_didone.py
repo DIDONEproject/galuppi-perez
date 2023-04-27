@@ -33,17 +33,6 @@ from .custom_basic_modules.file_name.constants import *
 from .custom_basic_modules.file_name.constants import ARIA_ID, ARIA_LABEL
 from .custom_basic_modules.metadata.constants import *
 
-"""Dictionary to assing label prefix to columns that need to bein the _labels.csv file
-to run analysis."""
-label_by_col = {
-    "Basic_passion": "Label_BasicPassion",
-    "PassionA": "Label_PassionA",
-    "PassionB": "Label_PassionB",
-    "Value": "Label_Value",
-    "Value2": "Label_Value2",
-    "Time": "Label_Time",
-}
-
 """Columns to be placed at the beginning of the exported DataFrame"""
 priority_columns = [
     FILE_NAME,
@@ -56,8 +45,6 @@ priority_columns = [
     ARIA_YEAR,
     ARIA_DECADE,
     COMPOSER,
-    ARIA_CITY,
-    TERRITORY,
     CHARACTER,
     GENDER,
     FORM,
@@ -81,8 +68,8 @@ metadata_columns = [
     ARIA_YEAR,
     ARIA_DECADE,
     COMPOSER,
-    ARIA_CITY,
-    TERRITORY,
+    # ARIA_CITY,
+    # TERRITORY,
     CHARACTER,
     GENDER,
     HARMONY_AVAILABLE,
@@ -112,35 +99,11 @@ class DataProcessorDidone(DataProcessor):
         # self.save(self.destination_route)
         return self.data
 
-    def assign_labels(self) -> None:
-        """
-        Crosses passions labels from Passions.csv file with the DataFrame so every row (aria)
-        gets assigned to its own Label
-        """
-        passions = read_dicts_from_csv(
-            os.path.join(self._post_config.internal_data_dir, "Passions.csv")
-        )
-
-        data_by_aria_label = {
-            label_data["Label"]: label_data for label_data in passions
-        }
-        for col, label in label_by_col.items():
-            values = []
-            for _, row in self.data.iterrows():
-                data_by_aria = data_by_aria_label.get(row[ARIA_LABEL])
-                label_value = data_by_aria[col] if data_by_aria else None
-                values.append(label_value)
-            self.data[label] = values
-
-        if self._post_config.split_passionA:
-            split_passion_A(self.data)
-
     def preprocess_data(self) -> None:
         """
         Adds labels to arias. Cleans data and removes columns with no information or
         rows without assigned Label
         """
-        self.assign_labels()
         if "Label_Passions" in self.data:
             del self.data["Label_Passions"]
         if "Label_Sentiment" in self.data:
@@ -208,49 +171,11 @@ class DataProcessorDidone(DataProcessor):
     def _scan_dataframe(self):
         # self.composer_counter = []
         # self.novoices_counter = []
-        self._scan_composers()
         self._scan_voices()
 
     def _scan_voices(self):
         to_delete = self.data[VOICES].isna()
         self.data = self.data[~to_delete]
-
-    def _scan_composers(self):
-        composers_path = os.path.join(
-            self._post_config.internal_data_dir, "composers.csv"
-        )
-
-        if os.path.exists(composers_path):
-            composers = pd.read_csv(composers_path)
-            composers = [i for i in composers.iloc[:, 0].to_list() if str(i) != "nan"]
-
-            to_delete = []
-            index = self.data.index
-            if index.nlevels > 1:
-                index = index.levels[0]
-            for i, _ in enumerate(index):
-                comp = self.data[COMPOSER][i]
-                if not isinstance(comp, (pd.DataFrame, pd.Series)):
-                    comp = pd.Series([comp])
-                if pd.isnull(comp).any():
-                    # self.composer_counter.append(self.data[FILE_NAME][i])
-                    to_delete.append(i)
-                elif comp.str.strip().isin(composers).any():
-                    aria_name = self.data.loc[i, FILE_NAME]
-                    corrections = comp.apply(
-                        lambda x: self._get_close_matches(x, composers)
-                    )
-                    if corrections[0] == "NA":
-                        # self.composer_counter.append(self.data[FILE_NAME][i])
-                        to_delete.append(i)
-                    elif any(corrections != comp):
-                        pwarn(
-                            f"Composer {comp[0]} in aria {aria_name[0]} was not found. Replaced with: {corrections[0]}"
-                        )
-                        self.data.loc[i, COMPOSER] = corrections
-            self.data.drop(index=to_delete, inplace=True)
-        else:
-            perr("Composers file could not be found.")
 
     def _get_close_matches(self, comp, composers):
         correction = difflib.get_close_matches(comp, composers)
@@ -258,7 +183,6 @@ class DataProcessorDidone(DataProcessor):
         return correction
 
     def save(self, dest_path, ext=".csv", ft="csv", **kwargs) -> None:
-
         super().save(dest_path, ft=ft, ext=ext)
         ft = "to_" + ft
         dest_path = str(dest_path)
@@ -283,12 +207,13 @@ class DataProcessorDidone(DataProcessor):
         priority_columns.remove(KEY)
         priority_columns.remove(KEY_SIGNATURE)
         priority_columns.remove(KEY_SIGNATURE_TYPE)
-        
         self.features_dataframe = self.data.drop(
             priority_columns + label_columns, axis=1, errors="ignore"
         )
-        if not len(self.features_dataframe.columns) + len(priority_columns) + len(label_columns) == len(self.data.columns):
-            perr('Mismatch found between column numbers of all different dataframes!')
+        if not len(self.features_dataframe.columns) + len(priority_columns) + len(
+            label_columns
+        ) == len(self.data.columns):
+            perr("Mismatch found between column numbers of all different dataframes!")
 
 
 def merge_single_voices(df: DataFrame) -> None:

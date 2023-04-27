@@ -245,7 +245,7 @@ class Model(object):
         ).extract()
 
         # raw_df.to_csv("temp.csv")
-        # raw_df = __import__("pd").read_csv("temp.csv")
+        # raw_df = __import__("pandas").read_csv("temp.csv")
 
         # this post-processes the dataframe, removing some features used for computing
         # other features, removing nans, etc.
