@@ -467,8 +467,6 @@ dependencies = [
 name = "musif"
 version = "1.1.0"
 requires_python = ">=3.10"
-editable = true
-path = "../musiF_tests/musif"
 summary = "Music feature extraction library from the DIDONE project"
 dependencies = [
     "deepdiff>=6.2.1",
@@ -962,7 +960,7 @@ summary = "Backport of pathlib-compatible object wrapper for zip files"
 [metadata]
 lock_version = "4.2"
 groups = ["default", "dev"]
-content_hash = "sha256:0a31c16cde6c4c45f67886141ab8b9937bda0dd620142f121d068f89115878ae"
+content_hash = "sha256:a0c0998299f1b064a301fa84724cf86ea6b3f0deb18e21cf4637073310dee33f"
 
 [metadata.files]
 "appnope 0.1.3" = [
@@ -1692,6 +1690,10 @@ content_hash = "sha256:0a31c16cde6c4c45f67886141ab8b9937bda0dd620142f121d068f891
 "music21 8.1.0" = [
     {url = "https://files.pythonhosted.org/packages/59/37/ac7f6e0d2c9372d55ec4fc332a82092f78c63ca95a3b8d905560569d6c49/music21-8.1.0-py3-none-any.whl", hash = "sha256:acb73e62712ea27d2927bbde89cd68ae1fc878f0ea1ec912c1addc4426fe5fc4"},
     {url = "https://files.pythonhosted.org/packages/8b/55/e4ebf741f95766ccabb5a041195614fcb3b63d4507dfe7f33e19197e6e38/music21-8.1.0.tar.gz", hash = "sha256:75512fd21c38acc7ce59eae5efb9d69c7d8d1e710d1507f9945285e443d5d505"},
+]
+"musif 1.1.0" = [
+    {url = "https://files.pythonhosted.org/packages/07/39/29ccf3d16356b14518ab563bc138c4d6b65859d2252e59b83d88176e1631/musif-1.1.0-py3-none-any.whl", hash = "sha256:549c1b1217af99b1e41751fe10fcc74fb9777f6f7494517bbe8bcbf847527a3d"},
+    {url = "https://files.pythonhosted.org/packages/81/13/cba438c428f4a33f8aa3dd41ad8d1595258d8c6af3a5015bcb93e099294e/musif-1.1.0.tar.gz", hash = "sha256:ff8ce681ee254dfda25d050c418b8c4e4075c90f4c94efd1dcf9da4b79181e14"},
 ]
 "numba 0.56.4" = [
     {url = "https://files.pythonhosted.org/packages/1a/66/de416cd8364c7e5cba8da9272809676e907e7045cdcb750f6ff5fff70c29/numba-0.56.4-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:9f62672145f8669ec08762895fe85f4cf0ead08ce3164667f2b94b2f62ab23c3"},
