@@ -1,226 +1,226 @@
-Id,WindowId,Label_BasicPassion,Label_Passions,Label_Sentiment,Label_Time,Label_RoleType
-0017,0,hatred,"anger,pity",Negative,Future,Female lover 1
-0033,0,wonder,"pride,boldness",Positive,Present,Female lover 1
-0034,0,sadness,"sadness,love",Negative,Future,Female lover 1
-0089,0,sadness,"terror,pity",Negative,Past,Male lover 1
-0093,0,sadness,"terror,pity",Negative,Past,Male lover 1
-0105,0,desire,irresolution,Negative,Future,Male lover 1
-0109,0,desire,irresolution,Negative,Future,Male lover 1
-0110,0,sadness,"sadness,generosity",Negative,Past,Female lover 1
-0115,0,sadness,"sadness,generosity",Negative,Past,Female lover 1
-0117,0,sadness,"sadness,generosity",Negative,Past,Female lover 1
-0129,0,hatred,contempt,Negative,Future,Male lover 2
-0130,0,hatred,contempt,Negative,Future,Male lover 2
-0233,0,love,"love,sadness,generosity",Positive,Future,Female lover 2
-0235,0,love,"veneration,abjectness",Negative,Future,Antagonist
-0236,0,wonder,"pride,abjectness",Negative,Present,Male lover 2
-0239,0,wonder,"pride,boldness",Negative,Future,Male lover 1
-0241,0,hatred,anger,Negative,Present,Male lover 2
-0244,0,wonder,"esteem,boldness",Negative,Future,Male lover 3
-0245,0,hatred,"shame,anger",Negative,Future,Male lover 2
-0247,0,NA,NA,NA,NA,Female lover 2
-0249,0,NA,NA,NA,NA,Male lover 3
-0250,0,wonder,"generosity,contempt",Positive,Future,Male lover 1
-0252,0,NA,NA,NA,NA,Male lover 2
-0253,0,NA,NA,NA,NA,Male lover 1
-0255,0,NA,NA,NA,NA,Female lover 2
-0256,0,hatred,anger,Negative,Present,Male lover 2
-0258,0,NA,NA,NA,NA,Female lover 1
-0261,0,NA,NA,NA,NA,Male lover 1
-0263,0,NA,NA,NA,NA,Male lover 3
-0267,0,sadness,despair,Negative,Future,Female lover 1
-0268,0,sadness,"despair,sadness",Negative,Future,Female lover 2
-0485,0,love,"love,sadness,generosity",Positive,Future,Female lover 2
-0488,0,wonder,"pride,boldness",Negative,Future,Male lover 1
-0493,0,sadness,pity,Negative,Future,Female lover 2
-0506,0,sadness,"sadness,love",Negative,Future,Female lover 1
-0515,0,desire,boldness,Positive,Future,Male lover 2
-0516,0,NA,NA,NA,NA,Male lover 2
-0665,0,love,pity,Negative,Future,Female lover 2
-0666,0,joy,"pride,boldness",Positive,Future,Male lover 1
-0667,0,love,"love,sadness,generosity",Positive,Future,Female lover 2
-0668,0,desire,veneration,Positive,Future,Male lover 3
-0669,0,hatred,anger,Negative,Future,Male lover 1
-0670,0,wonder,generosity,Positive,Present,Male lover 2
-0671,0,wonder,contempt,Negative,Future,Female lover 2
-0672,0,hatred,anger,Negative,Present,Antagonist
-0673,0,love,"love,hope,boldness",Positive,Future,Male lover 1
-0674,0,love,love,Positive,Future,Female lover 1
-0675,0,desire,jealousy,Negative,Future,Male lover 1
-0676,0,NA,NA,NA,NA,Male lover 3
-0677,0,joy,esteem,Positive,Present,Male lover 2
-0678,0,love,"love,hope,boldness",Positive,Future,"Female lover 1,Male lover 1"
-0679,0,NA,NA,NA,NA,Male lover 3
-0680,0,sadness,sadness,Negative,Past,Female lover 2
-0681,0,NA,NA,NA,NA,Male lover 2
-0682,0,love,"love,veneration",Positive,Present,Female lover 1
-0683,0,hatred,"anger,boldness",Negative,Present,Male lover 1
-0684,0,love,"veneration,abjectness",Negative,Future,Antagonist
-0685,0,wonder,"pride,abjectness",Negative,Present,Male lover 2
-0686,0,wonder,"esteem,boldness",Negative,Future,Male lover 3
-0687,0,hatred,"shame,anger",Negative,Future,Male lover 2
-0688,0,desire,"abjectness,hope",Negative,Future,Antagonist
-0689,0,sadness,"despair,sadness",Negative,Future,Female lover 2
-0690,0,NA,NA,NA,NA,Male lover 1
-0691,0,NA,NA,NA,NA,Male lover 2
-0692,0,NA,NA,NA,NA,Female lover 2
-0693,0,NA,NA,NA,NA,Antagonist
-0694,0,NA,NA,NA,NA,Male lover 1
-0695,0,NA,NA,NA,NA,Female lover 1
-0696,0,NA,NA,NA,NA,Male lover 3
-0697,0,NA,NA,NA,NA,"Female lover 1,Male lover 1"
-0698,0,NA,NA,NA,NA,Male lover 1
-0699,0,NA,NA,NA,NA,Male lover 3
-0700,0,wonder,esteem,Positive,Present,Male lover 2
-0701,0,NA,NA,NA,NA,Female lover 1
-0702,0,NA,NA,NA,NA,Female lover 1
-0703,0,wonder,"contempt,pity",Negative,Future,Male lover 2
-0704,0,sadness,repentance,Negative,Future,Antagonist
-0705,0,hatred,"jealousy,anger",Negative,Present,Male lover 1
-0706,0,love,"love,sadness",Negative,Future,Male lover 3
-0707,0,sadness,"fear,sadness",Negative,Present,Female lover 2
-0708,0,sadness,"pity,despair",Negative,Present,Female lover 1
-0709,0,NA,NA,NA,NA,Female lover 1
-0710,0,NA,NA,NA,NA,Male lover 1
-0711,0,NA,NA,NA,NA,Male lover 2
-0712,0,NA,NA,NA,NA,Female lover 1
-0713,0,NA,NA,NA,NA,Male lover 3
-0714,0,NA,NA,NA,NA,Female lover 2
-0715,0,NA,NA,NA,NA,Female lover 1
-0716,0,NA,NA,NA,NA,Antagonist
-0718,0,NA,NA,NA,NA,Female lover 2
-0719,0,NA,NA,NA,NA,Male lover 2
-0767,0,NA,NA,NA,NA,Male lover 1
-0768,0,NA,NA,NA,NA,Male lover 3
-0769,0,NA,NA,NA,NA,Male lover 2
-0770,0,NA,NA,NA,NA,Male lover 1
-0771,0,NA,NA,NA,NA,Male lover 1
-0772,0,NA,NA,NA,NA,Female lover 1
-0773,0,NA,NA,NA,NA,Female lover 1
-0774,0,NA,NA,NA,NA,Female lover 1
-0775,0,NA,NA,NA,NA,Antagonist
-0776,0,NA,NA,NA,NA,Female lover 1
-0777,0,NA,NA,NA,NA,Senior ruler
-0778,0,NA,NA,NA,NA,Confidant
-0779,0,NA,NA,NA,NA,Male lover 1
-0780,0,NA,NA,NA,NA,Male lover 2
-0781,0,NA,NA,NA,NA,Female lover 2
-0782,0,NA,NA,NA,NA,Male lover 2
-0783,0,NA,NA,NA,NA,Female lover 1
-0784,0,NA,NA,NA,NA,Male lover 1
-0785,0,NA,NA,NA,NA,Male lover 1
-0786,0,NA,NA,NA,NA,Senior ruler
-0787,0,NA,NA,NA,NA,Antagonist
-0788,0,NA,NA,NA,NA,Male lover 2
-0789,0,NA,NA,NA,NA,Female lover 2
-0790,0,NA,NA,NA,NA,Senior ruler
-0791,0,NA,NA,NA,NA,"Female lover 1,Male lover 1"
-0792,0,NA,NA,NA,NA,Confidant
-0793,0,NA,NA,NA,NA,Male lover 2
-0794,0,NA,NA,NA,NA,Antagonist
-0795,0,NA,NA,NA,NA,Senior ruler
-0796,0,NA,NA,NA,NA,Female lover 1
-0797,0,NA,NA,NA,NA,Female lover 2
-0798,0,NA,NA,NA,NA,Female lover 1
-0809,0,NA,NA,NA,NA,Female lover 1
-0831,0,NA,NA,NA,NA,"Female lover 1,Male lover 1,Male lover 2"
-0832,0,NA,NA,NA,NA,Male lover 3
-1053,0,NA,NA,NA,NA,Male lover 3
-1054,0,NA,NA,NA,NA,Male lover 1
-1055,0,NA,NA,NA,NA,Male lover 2
-1056,0,NA,NA,NA,NA,Female lover 2
-1057,0,NA,NA,NA,NA,Antagonist
-1058,0,NA,NA,NA,NA,Male lover 1
-1059,0,NA,NA,NA,NA,Female lover 1
-1060,0,NA,NA,NA,NA,Male lover 1
-1061,0,NA,NA,NA,NA,Male lover 1
-1062,0,NA,NA,NA,NA,Female lover 2
-1063,0,NA,NA,NA,NA,Male lover 3
-1064,0,NA,NA,NA,NA,Male lover 2
-1065,0,NA,NA,NA,NA,Female lover 1
-1066,0,NA,NA,NA,NA,Male lover 2
-1067,0,NA,NA,NA,NA,Antagonist
-1068,0,NA,NA,NA,NA,Male lover 1
-1069,0,NA,NA,NA,NA,Male lover 3
-1070,0,NA,NA,NA,NA,Female lover 2
-1071,0,NA,NA,NA,NA,Female lover 1
-1144,0,NA,NA,NA,NA,Female lover 1
-1145,0,NA,NA,NA,NA,Female lover 1
-1146,0,NA,NA,NA,NA,Male lover 1
-1147,0,NA,NA,NA,NA,Antagonist
-1148,0,NA,NA,NA,NA,Confidant
-1159,0,NA,NA,NA,NA,Female lover 1
-1161,0,NA,NA,NA,NA,Male lover 2
-1162,0,NA,NA,NA,NA,Male lover 1
-1165,0,NA,NA,NA,NA,Female lover 2
-1166,0,NA,NA,NA,NA,Female lover 1
-1167,0,NA,NA,NA,NA,Male lover 2
-1168,0,NA,NA,NA,NA,Antagonist
-1207,0,NA,NA,NA,NA,Female lover 1
-1208,0,NA,NA,NA,NA,Senior ruler
-1209,0,NA,NA,NA,NA,Male lover 2
-1210,0,NA,NA,NA,NA,Female lover 2
-1211,0,NA,NA,NA,NA,Female lover 1
-1212,0,NA,NA,NA,NA,Male lover 1
-1213,0,NA,NA,NA,NA,Male lover 1
-1214,0,NA,NA,NA,NA,Antagonist
-1215,0,NA,NA,NA,NA,Male lover 2
-1226,0,NA,NA,NA,NA,Senior ruler
-1227,0,NA,NA,NA,NA,"Female lover 1,Male lover 1"
-1228,0,NA,NA,NA,NA,Confidant
-1229,0,NA,NA,NA,NA,Male lover 2
-1230,0,NA,NA,NA,NA,Senior ruler
-1231,0,NA,NA,NA,NA,Female lover 1
-1238,0,NA,NA,NA,NA,Female lover 2
-1239,0,NA,NA,NA,NA,Female lover 2
-1240,0,NA,NA,NA,NA,Male lover 2
-1241,0,NA,NA,NA,NA,Male lover 1
-1242,0,NA,NA,NA,NA,Female lover 2
-1243,0,NA,NA,NA,NA,Female lover 1
-1261,0,NA,NA,NA,NA,Male lover 1
-1262,0,NA,NA,NA,NA,Male lover 3
-1263,0,NA,NA,NA,NA,Male lover 1
-1266,0,NA,NA,NA,NA,Male lover 2
-1267,0,NA,NA,NA,NA,Female lover 2
-1268,0,NA,NA,NA,NA,Antagonist
-1274,0,NA,NA,NA,NA,Male lover 1
-1275,0,NA,NA,NA,NA,Female lover 1
-1276,0,NA,NA,NA,NA,Male lover 1
-1277,0,NA,NA,NA,NA,Male lover 3
-1278,0,NA,NA,NA,NA,"Female lover 1,Male lover 1"
-1279,0,NA,NA,NA,NA,Female lover 1
-1280,0,NA,NA,NA,NA,Male lover 1
-1281,0,NA,NA,NA,NA,Antagonist
-1282,0,NA,NA,NA,NA,Female lover 2
-1283,0,NA,NA,NA,NA,Antagonist
-1284,0,NA,NA,NA,NA,Male lover 1
-1285,0,NA,NA,NA,NA,Female lover 2
-1341,0,NA,NA,NA,NA,Male lover 3
-1342,0,NA,NA,NA,NA,Male lover 1
-1343,0,NA,NA,NA,NA,Male lover 2
-1344,0,NA,NA,NA,NA,Female lover 2
-1349,0,NA,NA,NA,NA,Antagonist
-1350,0,NA,NA,NA,NA,Male lover 1
-1351,0,NA,NA,NA,NA,Male lover 1
-1368,0,NA,NA,NA,NA,Female lover 1
-1369,0,NA,NA,NA,NA,"Female lover 1,Male lover 1"
-1370,0,NA,NA,NA,NA,Male lover 3
-1371,0,NA,NA,NA,NA,Female lover 1
-1372,0,NA,NA,NA,NA,Male lover 2
-1373,0,NA,NA,NA,NA,Female lover 1
-1374,0,NA,NA,NA,NA,Male lover 1
-1375,0,NA,NA,NA,NA,Antagonist
-1376,0,NA,NA,NA,NA,Male lover 2
-1377,0,NA,NA,NA,NA,Female lover 1
-1378,0,NA,NA,NA,NA,Male lover 3
-1379,0,NA,NA,NA,NA,Female lover 2
-1380,0,NA,NA,NA,NA,Female lover 1
-1381,0,NA,NA,NA,NA,Male lover 2
-1382,0,NA,NA,NA,NA,Male lover 1
-1383,0,NA,NA,NA,NA,Male lover 3
-1384,0,NA,NA,NA,NA,Female lover 2
-1385,0,NA,NA,NA,NA,Female lover 1
-1714,0,NA,NA,NA,NA,Prima donna
-1716,0,NA,NA,NA,NA,Secondo uomo
-1721,0,NA,NA,NA,NA,Prima donna
-1722,0,NA,NA,NA,NA,Secondo uomo
+Id,WindowId,Label_RoleType
+0,0,Secondo uomo
+1,0,Secondo uomo
+2,0,Secondo uomo
+3,0,Secondo uomo
+4,0,Primo soprano
+5,0,Primo soprano
+6,0,Primo soprano
+7,0,Primo soprano
+8,0,Primo soprano
+9,0,Tenore
+10,0,Tenore
+11,0,Tenore
+12,0,Tenore
+13,0,Tenore
+14,0,Seconda donna
+15,0,Seconda donna
+16,0,Seconda donna
+17,0,Seconda donna
+18,0,Seconda donna
+19,0,Parte ultima
+20,0,Parte ultima
+21,0,Parte ultima
+22,0,Parte ultima
+23,0,"Prima donna,Primo soprano"
+24,0,"Prima donna,Primo soprano"
+25,0,"Prima donna,Primo soprano"
+26,0,"Prima donna,Primo soprano"
+27,0,Primo soprano
+28,0,Primo soprano
+29,0,Primo soprano
+30,0,Primo soprano
+31,0,Primo soprano
+32,0,Prima donna
+33,0,Prima donna
+34,0,Prima donna
+35,0,Prima donna
+36,0,Prima donna
+37,0,Primo soprano
+38,0,Primo soprano
+39,0,Primo soprano
+40,0,Primo soprano
+41,0,Primo soprano
+42,0,Seconda donna
+43,0,Secondo uomo
+44,0,Secondo uomo
+45,0,Secondo uomo
+46,0,Secondo uomo
+47,0,Prima donna
+48,0,Tenore
+49,0,Parte ultima
+50,0,Parte ultima
+51,0,Prima donna
+52,0,Tenore
+53,0,Tenore
+54,0,Seconda donna
+55,0,Primo soprano
+56,0,Tenore
+57,0,Prima donna
+58,0,Prima donna
+59,0,Prima donna
+60,0,Prima donna
+61,0,Primo soprano
+62,0,Primo soprano
+63,0,Primo soprano
+64,0,Primo soprano
+65,0,Parte ultima
+66,0,Tenore
+67,0,Tenore
+68,0,Tenore
+69,0,Prima donna
+70,0,Prima donna
+71,0,Parte ultima
+72,0,Secondo uomo
+73,0,Secondo uomo
+74,0,Seconda donna
+75,0,Seconda donna
+76,0,Seconda donna
+77,0,Prima donna
+78,0,Prima donna
+79,0,Prima donna
+80,0,Tenore
+81,0,Tenore
+82,0,Tenore
+83,0,Parte ultima
+84,0,Parte ultima
+85,0,Parte ultima
+86,0,Primo soprano
+87,0,Primo soprano
+88,0,Primo soprano
+89,0,Primo soprano
+90,0,Primo soprano
+91,0,Secondo uomo
+92,0,Secondo uomo
+93,0,Secondo uomo
+94,0,Secondo uomo
+95,0,Seconda donna
+96,0,Seconda donna
+97,0,Seconda donna
+98,0,Seconda donna
+99,0,Seconda donna
+100,0,Prima donna
+101,0,Prima donna
+102,0,Prima donna
+103,0,Prima donna
+104,0,Secondo uomo
+105,0,Secondo uomo
+106,0,Tenore
+107,0,Prima donna
+108,0,Prima donna
+109,0,Secondo uomo
+110,0,Secondo uomo
+111,0,Parte ultima
+112,0,Parte ultima
+113,0,Prima donna
+114,0,Prima donna
+115,0,Tenore
+116,0,Tenore
+117,0,Primo soprano
+118,0,Primo soprano
+119,0,Primo soprano
+120,0,Secondo uomo
+121,0,Secondo uomo
+122,0,Seconda donna
+123,0,Seconda donna
+124,0,Secondo uomo
+125,0,Secondo uomo
+126,0,Prima donna
+127,0,Prima donna
+128,0,Primo soprano
+129,0,Primo soprano
+130,0,Seconda donna
+131,0,Primo soprano
+132,0,Primo soprano
+133,0,Tenore
+134,0,Parte ultima
+135,0,Parte ultima
+136,0,Prima donna
+137,0,Prima donna
+138,0,Prima donna
+139,0,Secondo uomo
+140,0,Secondo uomo
+141,0,Seconda donna
+142,0,Tenore
+143,0,Tenore
+144,0,"Prima donna,Primo soprano"
+145,0,"Prima donna,Primo soprano"
+146,0,Settima parte
+147,0,Settima parte
+148,0,Secondo uomo
+149,0,Secondo uomo
+150,0,Parte ultima
+151,0,Primo soprano
+152,0,Primo soprano
+153,0,Tenore
+154,0,Tenore
+155,0,Prima donna
+156,0,Prima donna
+157,0,Prima donna
+158,0,Seconda donna
+159,0,Seconda donna
+160,0,Settima parte
+161,0,Seconda donna
+162,0,Seconda donna
+163,0,Seconda donna
+164,0,Prima donna
+165,0,Prima donna
+166,0,Prima donna
+167,0,Parte ultima
+168,0,Parte ultima
+169,0,Parte ultima
+170,0,Tenore
+171,0,Tenore
+172,0,Secondo uomo
+173,0,Secondo uomo
+174,0,Primo soprano
+175,0,Primo soprano
+176,0,Primo soprano
+177,0,Seconda donna
+178,0,Tenore
+179,0,Tenore
+180,0,Tenore
+181,0,Prima donna
+182,0,Prima donna
+183,0,Prima donna
+184,0,Primo soprano
+185,0,Primo soprano
+186,0,Primo soprano
+187,0,Parte ultima
+188,0,Seconda donna
+189,0,Prima donna
+190,0,Prima donna
+191,0,Prima donna
+192,0,Primo soprano
+193,0,Tenore
+194,0,Tenore
+195,0,Tenore
+196,0,Secondo uomo
+197,0,Seconda donna
+198,0,Tenore
+199,0,Tenore
+200,0,Prima donna
+201,0,Primo soprano
+202,0,Primo soprano
+203,0,Seconda donna
+204,0,Seconda donna
+205,0,Prima donna
+206,0,Prima donna
+207,0,Prima donna
+208,0,Tenore
+209,0,Tenore
+210,0,Tenore
+211,0,Prima donna
+212,0,Secondo uomo
+213,0,Tenore
+214,0,Secondo uomo
+215,0,Primo soprano
+216,0,Seconda donna
+217,0,Prima donna
+218,0,Secondo uomo
+219,0,Primo soprano
+220,0,Secondo uomo
+221,0,Primo soprano
+222,0,"Prima donna,Primo soprano,Tenore"
+223,0,Primo soprano
+224,0,Seconda donna

@@ -7,7 +7,7 @@ overlap: null
 # 2 => 2 processes
 # -1 => all available virtual cores
 # -2 => all available virtual cores except 1
-parallel: 4
+parallel: 1
 log:
   file_path: logs/musif_test.log
   file_level: INFO

@@ -238,19 +238,20 @@ class Model(object):
             CustomConf(S.DATA_DIR / "config_extraction.yml",
                        xml_dir=xml_dir,
                        musescore_dir=musescore_dir,
-                       cache_dir=S.DATA_DIR / "cache",
+                       # cache_dir=S.DATA_DIR / "cache",
                        metadata_dir=S.DATA_DIR / "metadata",
                        ),
             limit_files=limit_files
         ).extract()
 
-        # raw_df.to_csv("temp.csv")
-        # raw_df = __import__("pandas").read_csv("temp.csv")
+        raw_df.to_pickle(S.DATA_DIR / "raw_df.pkl")
+        raw_df = __import__("pandas").read_pickle(S.DATA_DIR / "raw_df.pkl")
 
         # this post-processes the dataframe, removing some features used for computing
         # other features, removing nans, etc.
         p = DataProcessorDidone(
-            raw_df, S.DATA_DIR / "config_postprocess.yml", merge_voices=True
+            raw_df, S.DATA_DIR / "config_postprocess.yml",
+            merge_voices=False
         )
         p.process()
 
