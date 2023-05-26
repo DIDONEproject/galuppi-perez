@@ -1,6 +1,6 @@
 ARIA_OPERA = "AriaOpera"
 ARIA_LABEL = "AriaLabel"
-ARIA_ID = "Id"
+ARIA_ID = "AriaId"
 ARIA_NAME = "AriaName"
 ARIA_YEAR = "Year"
 ARIA_DECADE = "Decade"

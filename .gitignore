@@ -40,3 +40,4 @@ requirements.txt
 tmp_autosklearn
 data/corpus
 data/raw_df.pkl
+musif.log*

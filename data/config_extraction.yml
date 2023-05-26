@@ -19,9 +19,7 @@ ignore_errors: true
 basic_modules:
   - scoring
   - file_name # custom feature
-  - metadata # custom feature
   - composer # custom feature
-  - librettist # custom feature
 
 features:
   - core

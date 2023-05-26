@@ -55,7 +55,7 @@ def select_galuppi_perez(data, X, y, holdout=0.):
     idx_to_keep = y.isin(["Galuppi", "Perez"])
 
     # computing indices of the suspected arias
-    idx_aria_to_test = data.Id.isin(S.FINAL_TEST_IDS)
+    idx_aria_to_test = data.AriaId.isin(S.FINAL_TEST_IDS)
     X_train = X[~idx_aria_to_test]
     y_train = y[~idx_aria_to_test]
     X_train = X.loc[idx_to_keep]

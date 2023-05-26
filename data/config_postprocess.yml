@@ -8,7 +8,6 @@ delete_files: True
 delete_files_without_harmony: True
 merge_voices: False
 grouped: True
-split_passions: True
 unbundle_instrumentation: True
 
 instruments_to_keep:
