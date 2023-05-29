@@ -70,8 +70,8 @@ metadata_columns = [
     COMPOSER,
     # ARIA_CITY,
     # TERRITORY,
-    CHARACTER,
-    GENDER,
+    # CHARACTER,
+    # GENDER,
     HARMONY_AVAILABLE,
 ]
 
