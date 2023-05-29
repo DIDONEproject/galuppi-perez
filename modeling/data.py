@@ -51,18 +51,14 @@ def load_features(label=None):
         The data that should be used as `Y`; if ``label==False``, `None` is
         returned.
     """
-    labels = pd.read_csv(Path(DATA_DIR) / LABELS_CSV)
-    idx_notna = ~labels['Id'].isna()
-    labels = labels[idx_notna]
-    metadata = pd.read_csv(Path(DATA_DIR) / METADATA_CSV)[idx_notna]
-    X = pd.read_csv(Path(DATA_DIR) / FEATURES_CSV)[idx_notna]
-    assert np.all(metadata['Id'] == labels['Id']), 'Error in metadata.Id == labels.Id'
-    assert np.all(metadata['Id'] == X['Id']), 'Error in metadata.Id == X.Id'
-    del X['Id'], labels['Id']
-    del X['WindowId'], metadata['WindowId'], labels['WindowId']
-    data = pd.concat([metadata, labels, X], axis=1)
+    metadata = pd.read_csv(Path(DATA_DIR) / METADATA_CSV)
+    X = pd.read_csv(Path(DATA_DIR) / FEATURES_CSV)
+    assert np.all(metadata['AriaId'] == X['AriaId']), 'Error in metadata.AriaId == X.AriaId'
+    del X['AriaId']
+    del X['WindowId'], metadata['WindowId']
+    data = pd.concat([metadata, X], axis=1)
     data = data.sample(frac=1.0, random_state=987)
-    
+
     data = normalize_strings(data).copy()
     # data has been shuffled, need to retake X
     X = data[X.columns].copy()

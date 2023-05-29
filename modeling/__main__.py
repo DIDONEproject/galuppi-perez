@@ -226,6 +226,7 @@ class Model(object):
             musescore_dir = corpus_dir / "musescore"
             limit_files = list(xml_dir.glob("*Galuppi*"))
             limit_files += list(xml_dir.glob("*Perez*"))
+            limit_files += list(xml_dir.glob("*1239*"))
         else:
             # only use the cached files
             limit_files = None
