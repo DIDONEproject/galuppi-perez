@@ -6,7 +6,7 @@ TMP_FOLDER = './tmp_autosklearn'
 
 # Experiments
 Y_VARIABLE = 'Composer'
-AUTOML_TIME = 60 # 4 * 3600
+AUTOML_TIME = 4 * 3600
 AUTOML_DEBUG = False
 GRID_DEBUG = False
 IMG_DIR = Path('experiments')

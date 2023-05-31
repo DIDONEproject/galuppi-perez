@@ -76,6 +76,10 @@ def get_feature_category(feature, scale):
         return "Ambitus", scale[-6]
     elif "highestnoteindex" in feature:
         return "Ambitus", scale[-6]
+    elif "js_" in feature:
+        return "jSymbolic", scale[-7]
+    elif "m21_" in feature:
+        return "music21", scale[-8]
     else:
         print(feature + ": category unknown")
         return "Unknown", scale[-6]
@@ -465,10 +469,11 @@ class DidonePlotter:
                     )
                     for col in coefs.columns
                 ],
-                title="Features for {prefix}, empty -> positive slope"
             )
             hide_duplicate_traces_from_legend(fig)
-            fig.update_layout(xaxis=dict(tickmode="linear", tick0=0.5, dtick=0.75))
+            fig.update_layout(xaxis=dict(tickmode="linear", tick0=0.5,
+                                         dtick=0.75),                 title=f"Features for {prefix}, empty -> positive slope"
+)
             figures.append(fig)
 
         self._save_figs(figures, output_dir, prefix)
