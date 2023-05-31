@@ -1,226 +1,227 @@
-Id,WindowId,Label_RoleType
-0,0,Secondo uomo
-1,0,Secondo uomo
-2,0,Secondo uomo
-3,0,Secondo uomo
-4,0,Primo soprano
-5,0,Primo soprano
-6,0,Primo soprano
-7,0,Primo soprano
-8,0,Primo soprano
-9,0,Tenore
-10,0,Tenore
-11,0,Tenore
-12,0,Tenore
-13,0,Tenore
-14,0,Seconda donna
-15,0,Seconda donna
-16,0,Seconda donna
-17,0,Seconda donna
-18,0,Seconda donna
-19,0,Parte ultima
-20,0,Parte ultima
-21,0,Parte ultima
-22,0,Parte ultima
-23,0,"Prima donna,Primo soprano"
-24,0,"Prima donna,Primo soprano"
-25,0,"Prima donna,Primo soprano"
-26,0,"Prima donna,Primo soprano"
-27,0,Primo soprano
-28,0,Primo soprano
-29,0,Primo soprano
-30,0,Primo soprano
-31,0,Primo soprano
-32,0,Prima donna
-33,0,Prima donna
-34,0,Prima donna
-35,0,Prima donna
-36,0,Prima donna
-37,0,Primo soprano
-38,0,Primo soprano
-39,0,Primo soprano
-40,0,Primo soprano
-41,0,Primo soprano
-42,0,Seconda donna
-43,0,Secondo uomo
-44,0,Secondo uomo
-45,0,Secondo uomo
-46,0,Secondo uomo
-47,0,Prima donna
-48,0,Tenore
-49,0,Parte ultima
-50,0,Parte ultima
-51,0,Prima donna
-52,0,Tenore
-53,0,Tenore
-54,0,Seconda donna
-55,0,Primo soprano
-56,0,Tenore
-57,0,Prima donna
-58,0,Prima donna
-59,0,Prima donna
-60,0,Prima donna
-61,0,Primo soprano
-62,0,Primo soprano
-63,0,Primo soprano
-64,0,Primo soprano
-65,0,Parte ultima
-66,0,Tenore
-67,0,Tenore
-68,0,Tenore
-69,0,Prima donna
-70,0,Prima donna
-71,0,Parte ultima
-72,0,Secondo uomo
-73,0,Secondo uomo
-74,0,Seconda donna
-75,0,Seconda donna
-76,0,Seconda donna
-77,0,Prima donna
-78,0,Prima donna
-79,0,Prima donna
-80,0,Tenore
-81,0,Tenore
-82,0,Tenore
-83,0,Parte ultima
-84,0,Parte ultima
-85,0,Parte ultima
-86,0,Primo soprano
-87,0,Primo soprano
-88,0,Primo soprano
-89,0,Primo soprano
-90,0,Primo soprano
-91,0,Secondo uomo
-92,0,Secondo uomo
-93,0,Secondo uomo
-94,0,Secondo uomo
-95,0,Seconda donna
-96,0,Seconda donna
-97,0,Seconda donna
-98,0,Seconda donna
-99,0,Seconda donna
-100,0,Prima donna
-101,0,Prima donna
-102,0,Prima donna
-103,0,Prima donna
-104,0,Secondo uomo
-105,0,Secondo uomo
-106,0,Tenore
-107,0,Prima donna
-108,0,Prima donna
-109,0,Secondo uomo
-110,0,Secondo uomo
-111,0,Parte ultima
-112,0,Parte ultima
-113,0,Prima donna
-114,0,Prima donna
-115,0,Tenore
-116,0,Tenore
-117,0,Primo soprano
-118,0,Primo soprano
-119,0,Primo soprano
-120,0,Secondo uomo
-121,0,Secondo uomo
-122,0,Seconda donna
-123,0,Seconda donna
-124,0,Secondo uomo
-125,0,Secondo uomo
-126,0,Prima donna
-127,0,Prima donna
-128,0,Primo soprano
-129,0,Primo soprano
-130,0,Seconda donna
-131,0,Primo soprano
-132,0,Primo soprano
-133,0,Tenore
-134,0,Parte ultima
-135,0,Parte ultima
-136,0,Prima donna
-137,0,Prima donna
-138,0,Prima donna
-139,0,Secondo uomo
-140,0,Secondo uomo
-141,0,Seconda donna
-142,0,Tenore
-143,0,Tenore
-144,0,"Prima donna,Primo soprano"
-145,0,"Prima donna,Primo soprano"
-146,0,Settima parte
-147,0,Settima parte
-148,0,Secondo uomo
-149,0,Secondo uomo
-150,0,Parte ultima
-151,0,Primo soprano
-152,0,Primo soprano
-153,0,Tenore
-154,0,Tenore
-155,0,Prima donna
-156,0,Prima donna
-157,0,Prima donna
-158,0,Seconda donna
-159,0,Seconda donna
-160,0,Settima parte
-161,0,Seconda donna
-162,0,Seconda donna
-163,0,Seconda donna
-164,0,Prima donna
-165,0,Prima donna
-166,0,Prima donna
-167,0,Parte ultima
-168,0,Parte ultima
-169,0,Parte ultima
-170,0,Tenore
-171,0,Tenore
-172,0,Secondo uomo
-173,0,Secondo uomo
-174,0,Primo soprano
-175,0,Primo soprano
-176,0,Primo soprano
-177,0,Seconda donna
-178,0,Tenore
-179,0,Tenore
-180,0,Tenore
-181,0,Prima donna
-182,0,Prima donna
-183,0,Prima donna
-184,0,Primo soprano
-185,0,Primo soprano
-186,0,Primo soprano
-187,0,Parte ultima
-188,0,Seconda donna
-189,0,Prima donna
-190,0,Prima donna
-191,0,Prima donna
-192,0,Primo soprano
-193,0,Tenore
-194,0,Tenore
-195,0,Tenore
-196,0,Secondo uomo
-197,0,Seconda donna
-198,0,Tenore
-199,0,Tenore
-200,0,Prima donna
-201,0,Primo soprano
-202,0,Primo soprano
-203,0,Seconda donna
-204,0,Seconda donna
-205,0,Prima donna
-206,0,Prima donna
-207,0,Prima donna
-208,0,Tenore
-209,0,Tenore
-210,0,Tenore
-211,0,Prima donna
-212,0,Secondo uomo
-213,0,Tenore
-214,0,Secondo uomo
-215,0,Primo soprano
-216,0,Seconda donna
-217,0,Prima donna
-218,0,Secondo uomo
-219,0,Primo soprano
-220,0,Secondo uomo
-221,0,Primo soprano
-222,0,"Prima donna,Primo soprano,Tenore"
-223,0,Primo soprano
-224,0,Seconda donna
+AriaId,WindowId
+1262,0
+1341,0
+1053,0
+0668,0
+1263,0
+1342,0
+1054,0
+0669,0
+0690,0
+1266,0
+1343,0
+1055,0
+0670,0
+0691,0
+1267,0
+1344,0
+1056,0
+0671,0
+0692,0
+1349,0
+1057,0
+0672,0
+0693,0
+1278,0
+1369,0
+0678,0
+0697,0
+1274,0
+1350,0
+1058,0
+0673,0
+0694,0
+1275,0
+1368,0
+1059,0
+0674,0
+0695,0
+1276,0
+1351,0
+1060,0
+1061,0
+0675,0
+1062,0
+1277,0
+1370,0
+1063,0
+0696,0
+1065,0
+1066,0
+1067,0
+1268,0
+1371,0
+1064,0
+0677,0
+0680,0
+1239,0
+0698,0
+1372,0
+1279,0
+1373,0
+0682,0
+0709,0
+1280,0
+1374,0
+0683,0
+0710,0
+1375,0
+0700,0
+1376,0
+0711,0
+1377,0
+0712,0
+1281,0
+1378,0
+0713,0
+1282,0
+1379,0
+0714,0
+1380,0
+0702,0
+0715,0
+1381,0
+0703,0
+0719,0
+1283,0
+0704,0
+0716,0
+1284,0
+1382,0
+1068,0
+0705,0
+0717,0
+0706,0
+1383,0
+1069,0
+0699,0
+1285,0
+1384,0
+1070,0
+0707,0
+0718,0
+1385,0
+1071,0
+0708,0
+0701,0
+0676,0
+0679,0
+0681,0
+1714,0
+1721,0
+1716,0
+1722,0
+0775,0
+1168,0
+0776,0
+1207,0
+0777,0
+1208,0
+1241,0
+0779,0
+1261,0
+0780,0
+1209,0
+0781,0
+1210,0
+1240,0
+0782,0
+0783,0
+1211,0
+0784,0
+1212,0
+1242,0
+0785,0
+1213,0
+0786,0
+0787,0
+1214,0
+0117,0
+0115,0
+0110,0
+0788,0
+1215,0
+0789,0
+0790,0
+1226,0
+0791,0
+1227,0
+0792,0
+1228,0
+0793,0
+1229,0
+0794,0
+0093,0
+0089,0
+0795,0
+1230,0
+1243,0
+0796,0
+1231,0
+0797,0
+1238,0
+0778,0
+0485,0
+0233,0
+0667,0
+1144,0
+0033,0
+0809,0
+1147,0
+0235,0
+0684,0
+0236,0
+0685,0
+0244,0
+0686,0
+0488,0
+0239,0
+0767,0
+1165,0
+0241,0
+0245,0
+0687,0
+1145,0
+0017,0
+0773,0
+1146,0
+0105,0
+0109,0
+0688,0
+0493,0
+0506,0
+0034,0
+0798,0
+0250,0
+0515,0
+0252,0
+0769,0
+1148,0
+0665,0
+1161,0
+0256,0
+1166,0
+1162,0
+0666,0
+0268,0
+0689,0
+1159,0
+0267,0
+0772,0
+1167,0
+0129,0
+0130,0
+0774,0
+0832,0
+0516,0
+0249,0
+0253,0
+0255,0
+0258,0
+0263,0
+0261,0
+0768,0
+0770,0
+0831,0
+0771,0
+0247,0

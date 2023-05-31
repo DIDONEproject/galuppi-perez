@@ -43,11 +43,11 @@ priority_columns = [
     ARIA_SCENE,
     ACTANDSCENE,
     ARIA_YEAR,
-    ARIA_DECADE,
+    # ARIA_DECADE,
     COMPOSER,
-    CHARACTER,
-    GENDER,
-    FORM,
+    # CHARACTER,
+    # GENDER,
+    # FORM,
     KEY,
     KEY_SIGNATURE,
     KEY_SIGNATURE_TYPE,
@@ -66,7 +66,7 @@ metadata_columns = [
     ARIA_SCENE,
     ACTANDSCENE,
     ARIA_YEAR,
-    ARIA_DECADE,
+    # ARIA_DECADE,
     COMPOSER,
     # ARIA_CITY,
     # TERRITORY,
@@ -210,11 +210,11 @@ class DataProcessorDidone(DataProcessor):
         self.features_dataframe = self.data.drop(
             priority_columns + label_columns, axis=1, errors="ignore"
         )
-        if not len(self.features_dataframe.columns) + len(priority_columns) + len(
+        if self.features_dataframe.shape[1] + len(priority_columns) + len(
             label_columns
-        ) == len(self.data.columns):
+        ) != self.data.shape[1]:
             perr("Mismatch found between column numbers of all different dataframes!")
-
+            perr(f"{self.features_dataframe.shape[1]} + {len(priority_columns)} + {len(label_columns)} != {self.data.shape[1]}")
 
 def merge_single_voices(df: DataFrame) -> None:
     generic_sound_voice_prefix = get_sound_prefix("Voice")

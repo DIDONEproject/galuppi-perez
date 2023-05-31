@@ -7,14 +7,14 @@ overlap: null
 # 2 => 2 processes
 # -1 => all available virtual cores
 # -2 => all available virtual cores except 1
-parallel: 1
+parallel: 4
 log:
   file_path: logs/musif_test.log
   file_level: INFO
   console_level: INFO
 basic_modules_addresses: ["musif.extract.basic_modules", "modeling.feature_extraction.custom_basic_modules"]
 
-ignore_errors: true
+ignore_errors: false
 
 basic_modules:
   - scoring
@@ -37,6 +37,8 @@ features:
   - rhythm
   - music21
   - jsymbolic
+
+jsymbolic_try_without_repeats: true
 
 split_keywords:  # Used to split the possible layers present depending on the instrument name
   - woodwind
