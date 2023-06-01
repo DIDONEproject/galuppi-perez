@@ -50,18 +50,19 @@ def select_galuppi_perez(data, X, y, holdout=0.):
     `np.nan`
     """
 
-    # the following returns a list of indices of the data that are inside a
-    # list
-    idx_to_keep = y.isin(["Galuppi", "Perez"])
-
     # computing indices of the suspected arias
     idx_aria_to_test = data.AriaId.isin(S.FINAL_TEST_IDS)
-    X_train = X[~idx_aria_to_test]
-    y_train = y[~idx_aria_to_test]
-    X_train = X.loc[idx_to_keep]
-    y_train = y.loc[idx_to_keep]
     X_test = X[idx_aria_to_test]
     y_test = y[idx_aria_to_test]
+
+    X_train = X[~idx_aria_to_test]
+    y_train = y[~idx_aria_to_test]
+
+    # the following returns a list of indices of the data that are inside a
+    # list
+    idx_to_keep = y_train.isin(["Galuppi", "Perez"])
+    X_train = X_train.loc[idx_to_keep]
+    y_train = y_train.loc[idx_to_keep]
 
     # computing columns that are valid for both X_train and X_test
     X_columns = (

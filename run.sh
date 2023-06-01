@@ -1,6 +1,6 @@
 #!/bin/env sh
 
-LOG_FILE='experiments/experiments.log'
+LOG_FILE='experiments.log'
 echo "Starting at $(date)"
 
 ####################################
@@ -13,21 +13,20 @@ then
 else
   last_index=0
 fi
-if [[ -d "experiments" ]]
+if [[ -d "experiments-holdout_?.?" ]]
 then
-  mv experiments experiments.back.$((last_index+1))
+  mv experiments-holdout_?.? experiments.back.$((last_index+1))
 fi
-mkdir experiments
 ####################################
 
 ##########################################
 ######## ECTRACTING FEATURES #############
 ##########################################
 
-echo
-echo "Extracting features" | tee -a $LOG_FILE
-./dust -m modeling features | tee -a $LOG_FILE
-echo
+# echo
+# echo "Extracting features" | tee -a $LOG_FILE
+# ./dust -m modeling features | tee -a $LOG_FILE
+# echo
 
 ####################################
 ######### EXPERIMENTS ##############

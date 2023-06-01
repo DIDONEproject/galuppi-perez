@@ -34,8 +34,7 @@ def _collect_stats(data, mfile, prediction_lists, probs_lists, s, wrong_indices)
     prediction_lists.append((mfile.parent.name, np.concatenate(predictions)))
     probs_lists.append((mfile.parent, np.concatenate(probs)))
     wrong_locations = np.concatenate(wrong_locations)
-    indices = np.concatenate(indices)
-    data[mfile.parent.name] = probs_lists[-1][1][indices - 1]
+    data.iloc[indices][mfile.parent.name] = probs_lists[-1][1]
     return data, wrong_locations
 
 
@@ -44,14 +43,14 @@ def _analyze_errors(data, wrong_indices, keys_order):
     wrong_ab_intersection = set(wrong_indices[keys_order[0]]).intersection(
         set(wrong_indices[keys_order[1]])
     )
-    wrong_ab_union = set(wrong_indices[keys_order[0]]).union(
-        set(wrong_indices[keys_order[1]])
+    wrong_abc_intersection = wrong_ab_intersection.intersection(
+        set(wrong_indices[keys_order[2]])
     )
     print(
-        f"{C.OKGREEN}Arias predicted wrongly by the first two ({keys_order[0]}, {keys_order[1]}) but not from the third ({keys_order[2]}){C.ENDC}"
+        f"{C.OKGREEN}Arias predicted wrongly by all of the three models{C.ENDC}"
     )
     df = pd.DataFrame()
-    for idx in wrong_ab_intersection.difference(set(wrong_indices[keys_order[2]])):
+    for idx in wrong_abc_intersection:
         aria = data.iloc[idx]
         df = pd.concat(
             [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
@@ -60,18 +59,34 @@ def _analyze_errors(data, wrong_indices, keys_order):
     print(df.T)
     print(C.ENDC)
 
-    print(
-        f"{C.OKGREEN}Arias predicted wrongly by the third but not from the first two{C.ENDC}"
-    )
-    df = pd.DataFrame()
-    for idx in set(wrong_indices[keys_order[2]]).difference(wrong_ab_union):
-        aria = data.iloc[idx]
-        df = pd.concat(
-            [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
-        )
-    print(C.OKBLUE)
-    print(df.T)
-    print(C.ENDC)
+    # wrong_ab_union = set(wrong_indices[keys_order[0]]).union(
+    #     set(wrong_indices[keys_order[1]])
+    # )
+    # print(
+    #     f"{C.OKGREEN}Arias predicted wrongly by the first two ({keys_order[0]}, {keys_order[1]}) but not from the third ({keys_order[2]}){C.ENDC}"
+    # )
+    # df = pd.DataFrame()
+    # for idx in wrong_ab_intersection.difference(set(wrong_indices[keys_order[2]])):
+    #     aria = data.iloc[idx]
+    #     df = pd.concat(
+    #         [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
+    #     )
+    # print(C.OKBLUE)
+    # print(df.T)
+    # print(C.ENDC)
+
+    # print(
+    #     f"{C.OKGREEN}Arias predicted wrongly by the third but not from the first two{C.ENDC}"
+    # )
+    # df = pd.DataFrame()
+    # for idx in set(wrong_indices[keys_order[2]]).difference(wrong_ab_union):
+    #     aria = data.iloc[idx]
+    #     df = pd.concat(
+    #         [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
+    #     )
+    # print(C.OKBLUE)
+    # print(df.T)
+    # print(C.ENDC)
 
 
 def _statistical_significance(prediction_lists, probs_lists):
@@ -175,6 +190,9 @@ def post_analysis(data, X, y, experiments_dir, holdout):
         wrong_locations_dict,
     ) = _load_outputs(data, experiments_dir, y)
 
+    column_names_probs = [p[0].name for p in probs_lists]
+    find_most_typical_arias(data, column_names_probs, wrong_indices, percentile=90)
+
     if holdout > 0:
         holdout_data = pickle.load(open(S.HOLDOUT_FILE, 'rb'))
         _holdout_probability_histogram(X, y, experiments_dir, holdout_data)
@@ -182,8 +200,6 @@ def post_analysis(data, X, y, experiments_dir, holdout):
     print("Computing histograms of probabilities.")
     probability_histogram(probs_lists, wrong_locations_dict)
 
-    column_names_probs = [p[0].name for p in probs_lists]
-    find_most_typical_arias(data, column_names_probs, wrong_indices, percentile=90)
     # compute statistical significance tests
     _statistical_significance(prediction_lists, probs_lists)
 

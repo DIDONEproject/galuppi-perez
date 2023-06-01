@@ -50,17 +50,19 @@ def get_feature_category(feature, scale):
         return "Melodic", scale[-1]
     elif "leaps" in feature:
         return "Melodic", scale[-1]
+    elif "dsc_avg" in feature:
+        return "Melodic", scale[-1]
+    elif "dsc_prp" in feature:
+        return "Melodic", scale[-1]
+    elif "asc_avg" in feature:
+        return "Melodic", scale[-1]
+    elif "asc_prp" in feature:
+        return "Melodic", scale[-1]
     elif "tempo" in feature:
         return "Rhythm", scale[-2]
     elif "rhythm" in feature:
         return "Rhythm", scale[-2]
-    elif "dsc_avg" in feature:
-        return "Rhythm", scale[-2]
-    elif "dsc_prp" in feature:
-        return "Rhythm", scale[-2]
-    elif "asc_avg" in feature:
-        return "Rhythm", scale[-2]
-    elif "asc_prp" in feature:
+    elif "duration" in feature:
         return "Rhythm", scale[-2]
     elif "harmony" in feature:
         return "Harmony", scale[-3]
@@ -76,13 +78,15 @@ def get_feature_category(feature, scale):
         return "Ambitus", scale[-6]
     elif "highestnoteindex" in feature:
         return "Ambitus", scale[-6]
+    elif "syllab" in feature:
+        return "Lyrics", scale[-7]
     elif "js_" in feature:
-        return "jSymbolic", scale[-7]
+        return "jSymbolic", scale[-8]
     elif "m21_" in feature:
-        return "music21", scale[-8]
+        return "music21", scale[-9]
     else:
         print(feature + ": category unknown")
-        return "Unknown", scale[-6]
+        return "Unknown", scale[-10]
 
 
 def hide_duplicate_traces_from_legend(fig):
@@ -403,6 +407,7 @@ class DidonePlotter:
             )
         except Exception as e:
             print(f"Cannot compute partial dependence: {e}")
+            dependence_coeff_sign = {k: True for k in features}
         else:
             # modifying the coeffs so that positive coeffs correspond features
             # whose larger values increase the probability of classes[1]

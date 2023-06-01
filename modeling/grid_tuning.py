@@ -6,7 +6,6 @@ import pickle
 import time
 from collections import defaultdict, namedtuple
 from copy import deepcopy
-import gzip
 from pathlib import Path
 
 # import glmnet
@@ -394,7 +393,7 @@ def gridsearch(data_x_y, splitter, output_dir, skipsearches=False,
         bag = DidoneBagging.default_init(model)
         print("Building best model using the whole dataset")
         bag.fit(X, y)
-        pickle.dump(bag, gzip.open(output_dir / "bag.pkl", "wb"))
+        pickle.dump(bag, open(output_dir / "bag.pkl", "wb"))
 
     scores, fig = crossvalidation(model, X, y, cv=splitter)
 

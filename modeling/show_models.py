@@ -10,7 +10,7 @@ from . import settings as S
 
 def main():
     pd.set_option('display.expand_frame_repr', False)
-    for fname in Path(S.IMG_DIR).glob("**/*.pkl"):
+    for fname in Path(f"{S.IMG_DIR}-holdout_{S.HOLDOUT}").glob("**/*.pkl"):
         if fname.name == "bag.pkl":
             continue
         model = pickle.load(open(fname, "rb"))
