@@ -59,34 +59,34 @@ def _analyze_errors(data, wrong_indices, keys_order):
     print(df.T)
     print(C.ENDC)
 
-    # wrong_ab_union = set(wrong_indices[keys_order[0]]).union(
-    #     set(wrong_indices[keys_order[1]])
-    # )
-    # print(
-    #     f"{C.OKGREEN}Arias predicted wrongly by the first two ({keys_order[0]}, {keys_order[1]}) but not from the third ({keys_order[2]}){C.ENDC}"
-    # )
-    # df = pd.DataFrame()
-    # for idx in wrong_ab_intersection.difference(set(wrong_indices[keys_order[2]])):
-    #     aria = data.iloc[idx]
-    #     df = pd.concat(
-    #         [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
-    #     )
-    # print(C.OKBLUE)
-    # print(df.T)
-    # print(C.ENDC)
+    wrong_ab_union = set(wrong_indices[keys_order[0]]).union(
+        set(wrong_indices[keys_order[1]])
+    )
+    print(
+        f"{C.OKGREEN}Arias predicted wrongly by the first two ({keys_order[0]}, {keys_order[1]}) but not from the third ({keys_order[2]}){C.ENDC}"
+    )
+    df = pd.DataFrame()
+    for idx in wrong_ab_intersection.difference(set(wrong_indices[keys_order[2]])):
+        aria = data.iloc[idx]
+        df = pd.concat(
+            [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
+        )
+    print(C.OKBLUE)
+    print(df.T)
+    print(C.ENDC)
 
-    # print(
-    #     f"{C.OKGREEN}Arias predicted wrongly by the third but not from the first two{C.ENDC}"
-    # )
-    # df = pd.DataFrame()
-    # for idx in set(wrong_indices[keys_order[2]]).difference(wrong_ab_union):
-    #     aria = data.iloc[idx]
-    #     df = pd.concat(
-    #         [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
-    #     )
-    # print(C.OKBLUE)
-    # print(df.T)
-    # print(C.ENDC)
+    print(
+        f"{C.OKGREEN}Arias predicted wrongly by the third but not from the first two{C.ENDC}"
+    )
+    df = pd.DataFrame()
+    for idx in set(wrong_indices[keys_order[2]]).difference(wrong_ab_union):
+        aria = data.iloc[idx]
+        df = pd.concat(
+            [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
+        )
+    print(C.OKBLUE)
+    print(df.T)
+    print(C.ENDC)
 
 
 def _statistical_significance(prediction_lists, probs_lists):
