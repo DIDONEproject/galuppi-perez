@@ -316,7 +316,7 @@ def partial_dependence(
             [feature],
             grid_resolution=grid_resolution,
             kind="average",
-            response_method="predict_proba",
+            response_method="auto",
         )
         if linear:
             y = pdp["average"][0]
