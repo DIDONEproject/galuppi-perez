@@ -167,10 +167,6 @@ def automl(
     else:
         X, y = data_x_y
 
-    # reset index to prevent possible mismatching inserted by `prehook`
-    X.reset_index(drop=True, inplace=True)
-    y.reset_index(drop=True, inplace=True)
-
     if splitter is None:
         splitter = model_selection.StratifiedShuffleSplit(
             train_size=0.8, n_splits=1, random_state=213

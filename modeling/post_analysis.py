@@ -21,20 +21,22 @@ def _collect_stats(data, mfile, prediction_lists, probs_lists, s, wrong_indices)
     probs = []
     indices = []
     conf_matrices = s["test_confusion_matrix"]
-    proba_collector = s["test_proba_collector"]
+    continuous_value_collector = s.get(
+        "test_proba_collector", s.get("test_decision_collector", None)
+    )
     for idx in range(len(conf_matrices)):
         d = conf_matrices[idx].eval
         indices.append(d["indices"])
         predictions.append(d["predicted"])
         wrong_index.append(d["wrong"].to_list())
         wrong_locations.append(d["indices"].isin(d["wrong"]))
-        probs.append(proba_collector[idx].eval["predicted"])
+        probs.append(continuous_value_collector[idx].eval["predicted"])
     wrong_index = np.concatenate(wrong_index).astype(np.int32)
     wrong_indices[mfile.parent.name] = wrong_index
     prediction_lists.append((mfile.parent.name, np.concatenate(predictions)))
     probs_lists.append((mfile.parent, np.concatenate(probs)))
     wrong_locations = np.concatenate(wrong_locations)
-    data.iloc[indices][mfile.parent.name] = probs_lists[-1][1]
+    data.loc[np.concatenate(indices), mfile.parent.name] = probs_lists[-1][1]
     return data, wrong_locations
 
 
@@ -46,9 +48,7 @@ def _analyze_errors(data, wrong_indices, keys_order):
     wrong_abc_intersection = wrong_ab_intersection.intersection(
         set(wrong_indices[keys_order[2]])
     )
-    print(
-        f"{C.OKGREEN}Arias predicted wrongly by all of the three models{C.ENDC}"
-    )
+    print(f"{C.OKGREEN}Arias predicted wrongly by all of the three models{C.ENDC}")
     df = pd.DataFrame()
     for idx in wrong_abc_intersection:
         aria = data.iloc[idx]
@@ -165,23 +165,30 @@ def _holdout_probability_histogram(X, y, experiments_dir, holdout_data):
     holdout_probs_lists = []
     holdout_wrong_locations_dict = {}
     for mfile in models:
-        model = pickle.load(open(mfile, 'rb'))
+        model = pickle.load(open(mfile, "rb"))
         model.fit(X, y)
-        if hasattr(model, 'predict_proba'):
+        if hasattr(model, "predict_proba"):
             probs = model.predict_proba(holdout_X)[:, 0]
             preds = model.predict(holdout_X)
             wrong_locations = preds != holdout_y
         holdout_probs_lists.append((mfile.parent, probs))
         holdout_wrong_locations_dict[str(mfile.parent)] = wrong_locations
     print("Computing histograms for hold-out set.")
-    probability_histogram(holdout_probs_lists, holdout_wrong_locations_dict,
-                          fname="prob_histogram_holdout.svg")
+    probability_histogram(
+        holdout_probs_lists,
+        holdout_wrong_locations_dict,
+        fname="prob_histogram_holdout.svg",
+    )
 
 
 def post_analysis(data, X, y, experiments_dir, holdout):
     data = data.sort_index()
     X = X.sort_index()
     y = y.sort_index()
+
+    data.reset_index(drop=True, inplace=True)
+    X.reset_index(drop=True, inplace=True)
+    y.reset_index(drop=True, inplace=True)
     (
         data,
         prediction_lists,
@@ -194,7 +201,7 @@ def post_analysis(data, X, y, experiments_dir, holdout):
     find_most_typical_arias(data, column_names_probs, wrong_indices, percentile=90)
 
     if holdout > 0:
-        holdout_data = pickle.load(open(S.HOLDOUT_FILE, 'rb'))
+        holdout_data = pickle.load(open(S.HOLDOUT_FILE, "rb"))
         _holdout_probability_histogram(X, y, experiments_dir, holdout_data)
 
     print("Computing histograms of probabilities.")
@@ -316,7 +323,7 @@ def mcnemar_corrected(predictions):
     mats = []
     print("p-value order:")
     for i, (name1, p1) in enumerate(predictions[:-1]):
-        for name2, p2 in predictions[i + 1:]:
+        for name2, p2 in predictions[i + 1 :]:
             mat = confusion_matrix(p1, p2)
             mats.append(mat)
             # compute mcnemar

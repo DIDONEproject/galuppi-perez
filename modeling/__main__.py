@@ -121,7 +121,11 @@ class Model(object):
         data, X, y = load_features(S.Y_VARIABLE)
         self.X, self.y = getattr(easy_tools, self.prehook)(
             data, X, y, holdout=self.holdout)
+            # reset index to prevent possible mismatching inserted by `prehook`
         self.data = data.iloc[self.X.index]
+        self.X.reset_index(drop=True, inplace=True)
+        self.y.reset_index(drop=True, inplace=True)
+        self.data.reset_index(drop=True, inplace=True)
         self.splitter = sklearn.model_selection.StratifiedKFold(
             n_splits=S.FOLDS, shuffle=True, random_state=8734
         )

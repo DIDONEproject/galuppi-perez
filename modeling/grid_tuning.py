@@ -375,7 +375,7 @@ def gridsearch(data_x_y, splitter, output_dir, skipsearches=False,
     6. Saves figures of the analysis in `output_dir`
     """
     X, y = data_x_y
-
+    
     output_dir = Path(output_dir)
 
     if skipsearches:

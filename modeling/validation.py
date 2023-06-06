@@ -98,7 +98,10 @@ def crossvalidation(
         _scoring = [_scoring]
 
     _scoring.append("confusion_matrix")
-    _scoring.append("proba_collector")
+    if hasattr(estimator, "predict_proba"):
+        _scoring.append("proba_collector")
+    elif hasattr(estimator, "decision_function"):
+        _scoring.append("decision_collector")
 
     # create the callables
     # note: this is needed because some metrics available in sklearn.metrics
@@ -114,7 +117,16 @@ def crossvalidation(
             _scoring[i] = (
                 sc,
                 metrics.make_scorer(
-                    CustomEval(labels, confusion_matrix=False), needs_proba=True
+                    CustomEval(labels, confusion_matrix=False),
+                    needs_proba=True
+                ),
+            )
+        elif sc == "decision_collector":
+            _scoring[i] = (
+                sc,
+                metrics.make_scorer(
+                    CustomEval(labels, confusion_matrix=False),
+                    needs_threshold=True
                 ),
             )
         else:
