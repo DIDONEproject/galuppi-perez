@@ -37,6 +37,7 @@ def _collect_stats(data, mfile, prediction_lists, probs_lists, s, wrong_indices)
     probs_lists.append((mfile.parent, np.concatenate(probs)))
     wrong_locations = np.concatenate(wrong_locations)
     data.loc[np.concatenate(indices), mfile.parent.name] = probs_lists[-1][1]
+    data.loc[np.concatenate(indices), "Predicted"] = np.concatenate(predictions)
     return data, wrong_locations
 
 
@@ -182,13 +183,6 @@ def _holdout_probability_histogram(X, y, experiments_dir, holdout_data):
 
 
 def post_analysis(data, X, y, experiments_dir, holdout):
-    data = data.sort_index()
-    X = X.sort_index()
-    y = y.sort_index()
-
-    data.reset_index(drop=True, inplace=True)
-    X.reset_index(drop=True, inplace=True)
-    y.reset_index(drop=True, inplace=True)
     (
         data,
         prediction_lists,

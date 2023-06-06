@@ -56,6 +56,7 @@ class CustomEval(np.ndarray):
         pred = args[1].copy()
         self.eval = {}
         self.eval["predicted"] = pred
+        self.eval["true"] = true
         if self.confusion_matrix:
             self.eval["matrix"] = confusion_matrix(*args, **kwargs, labels=self.labels)
         if hasattr(true, "index"):
