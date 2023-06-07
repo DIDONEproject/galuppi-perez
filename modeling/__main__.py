@@ -35,7 +35,8 @@ class Model(object):
         --output_dir : directory for saving images and models
         --debug : if using debug mode (no metalearning and only 3 runs)
         --holdout : use a hold-out strategy with more arias than the ones in the final
-        test (10%) of the data; --prehook is disregarded in this case.
+        test (10%) of the data; --prehook is disregarded in this case; useful
+        only for post-analysis probability distribution plots.
         --prehook : name of function in `easy_tool` to be used for
             preprocessing the dataframes before of the experiment
     """
@@ -119,13 +120,13 @@ class Model(object):
 
     def __load_data(self):
         data, X, y = load_features(S.Y_VARIABLE)
-        self.X, self.y = getattr(easy_tools, self.prehook)(
+        self.data, self.X, self.y = getattr(easy_tools, self.prehook)(
             data, X, y, holdout=self.holdout)
-            # reset index to prevent possible mismatching inserted by `prehook`
-        self.data = data.iloc[self.X.index]
+        # reset index to prevent possible mismatching inserted by `prehook`
         self.X.reset_index(drop=True, inplace=True)
         self.y.reset_index(drop=True, inplace=True)
         self.data.reset_index(drop=True, inplace=True)
+        assert all(self.data['Composer'] == self.y)
         self.splitter = sklearn.model_selection.StratifiedKFold(
             n_splits=S.FOLDS, shuffle=True, random_state=8734
         )

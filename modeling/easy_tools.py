@@ -40,7 +40,7 @@ def select_dummy(data, X, y, **kwargs):
     return X[idx], y[idx]
 
 
-def select_galuppi_perez(data, X, y, holdout=0.):
+def select_galuppi_perez(data, X, y, holdout=0.0):
     """
     This takes care of keeping only the data that we want.
 
@@ -54,15 +54,18 @@ def select_galuppi_perez(data, X, y, holdout=0.):
     idx_aria_to_test = data.AriaId.isin(S.FINAL_TEST_IDS)
     X_test = X[idx_aria_to_test]
     y_test = y[idx_aria_to_test]
+    data_test = data[idx_aria_to_test]
 
     X_train = X[~idx_aria_to_test]
     y_train = y[~idx_aria_to_test]
+    data_train = data[~idx_aria_to_test]
 
     # the following returns a list of indices of the data that are inside a
     # list
     idx_to_keep = y_train.isin(["Galuppi", "Perez"])
     X_train = X_train.loc[idx_to_keep]
     y_train = y_train.loc[idx_to_keep]
+    data_train = data_train.loc[idx_to_keep]
 
     # computing columns that are valid for both X_train and X_test
     X_columns = (
@@ -77,7 +80,7 @@ def select_galuppi_perez(data, X, y, holdout=0.):
 
     # Removing suspected arias from the dataframe and saving them to file
     # so that we can test later
-    pickle.dump((data[idx_aria_to_test], X_test, y_test), open(S.FINAL_TEST_FILE, "wb"))
+    pickle.dump((data_test, X_test, y_test), open(S.FINAL_TEST_FILE, "wb"))
 
     print(f"{C.OKGREEN}Num of arias in train: {X_train.shape[0]}")
     print(f"    of which by Perez: {y_train[y_train == 'Perez'].shape[0]}")
@@ -85,40 +88,45 @@ def select_galuppi_perez(data, X, y, holdout=0.):
     print(f"Num of arias in test: {X_test.shape[0]}")
     print(f"Number of features: {X_train.shape[1]}{C.ENDC}")
 
-    if holdout > 0.:
-        X_train, y_train = select_galuppi_perez_holdout(data, X_train, y_train,
-                                                        holdout)
-    return X_train, y_train
+    if holdout > 0.0:
+        data_train, X_train, y_train = select_galuppi_perez_holdout(
+            data, X_train, y_train, holdout
+        )
+    return data_train, X_train, y_train
 
 
 def select_galuppi_perez_holdout(data, X, y, size):
     """Same as select_galuppi_perez, but this also saves a holdout to file and removes
-    it from X and y, so that successive steps doesn't use it. The holdout, always
+    it from X and y, so that successive steps doesn't use it.
     The seed is based on the size parameter.
     contain the "final test" arias."""
-    rng = np.random.default_rng(int(size*100))
+    rng = np.random.default_rng(int(size * 100))
 
-    # remove `size` percentage of data from X and y
+    # remove `size` percentage of data from X, y, and data
     if isinstance(X, pd.DataFrame):
-        holdout_X = X.sample(frac=size)
-        X = X.drop(holdout_X.index)
+        holdout = X.sample(frac=size).index
+        holdout_X = X.iloc[holdout]
+        holdout_y = y.iloc[holdout]
+        holdout_data = data.iloc[holdout]
+        X = X.drop(holdout)
+        data = data.drop(holdout)
+        y = y.drop(holdout)
     else:
-        holdout_X = X[rng.choice(
-            X.shape[0], size=int(size*X.shape[0]), replace=False)]
-        X = np.delete(X, np.s_[holdout_X], axis=0)
-
-    if isinstance(y, pd.Series):
-        holdout_y = y.sample(frac=size)
-        y = y.drop(holdout_y.index)
-    else:
-        holdout_y = y[rng.choice(
-            y.shape[0], size=int(size*y.shape[0]), replace=False)]
-        y = np.delete(y, np.s_[holdout_y], axis=0)
+        holdout = X[rng.choice(X.shape[0], size=int(size * X.shape[0]), replace=False)]
+        holdout_X = X[holdout]
+        holdout_y = y[holdout]
+        holdout_data = data[holdout]
+        X = np.delete(X, np.s_[holdout], axis=0)
+        data = np.delete(data, np.s_[holdout], axis=0)
+        y = np.delete(y, np.s_[holdout], axis=0)
 
     # save the holdout
-    pickle.dump((holdout_X, holdout_y), open(str(size) + "_" + S.HOLDOUT_FILE, 'wb'))
+    pickle.dump(
+        (holdout_data, holdout_X, holdout_y),
+        open(str(size) + "_" + S.HOLDOUT_FILE, "wb"),
+    )
 
-    return X, y
+    return data, X, y
 
 
 def get_xy():

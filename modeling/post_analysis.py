@@ -160,7 +160,7 @@ def _load_outputs(data, experiments_dir, y):
 
 def _holdout_probability_histogram(X, y, experiments_dir, holdout_data):
     print("Testing hold-out set")
-    holdout_X, holdout_y = holdout_data
+    holdout_data, holdout_X, holdout_y = holdout_data
     models = list(experiments_dir.glob("**/ensemble.pkl"))
     models += list(experiments_dir.glob("**/best_model.pkl"))
     holdout_probs_lists = []
@@ -192,7 +192,8 @@ def post_analysis(data, X, y, experiments_dir, holdout):
     ) = _load_outputs(data, experiments_dir, y)
 
     column_names_probs = [p[0].name for p in probs_lists]
-    find_most_typical_arias(data, column_names_probs, wrong_indices, percentile=90)
+    find_most_typical_arias(data, column_names_probs, wrong_indices,
+                            percentile=95)
 
     if holdout > 0:
         holdout_data = pickle.load(open(S.HOLDOUT_FILE, "rb"))
@@ -207,7 +208,7 @@ def post_analysis(data, X, y, experiments_dir, holdout):
     _analyze_errors(data, wrong_indices, column_names_probs)
 
 
-def find_most_typical_arias(data, names, wrong_indices, percentile=90):
+def find_most_typical_arias(data, names, wrong_indices, percentile=99):
     """
     Finds the most typical examples by finding the top and bottom percentile
     threshold values for each column in the given pandas DataFrame and then
