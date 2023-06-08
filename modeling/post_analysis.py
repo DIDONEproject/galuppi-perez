@@ -49,6 +49,9 @@ def _analyze_errors(data, wrong_indices, keys_order):
     wrong_abc_intersection = wrong_ab_intersection.intersection(
         set(wrong_indices[keys_order[2]])
     )
+    wrong_ac_intersection = set(wrong_indices[keys_order[0]]).intersection(
+        set(wrong_indices[keys_order[2]])
+    )
     print(f"{C.OKGREEN}Arias predicted wrongly by all of the three models{C.ENDC}")
     df = pd.DataFrame()
     for idx in wrong_abc_intersection:
@@ -60,9 +63,6 @@ def _analyze_errors(data, wrong_indices, keys_order):
     print(df.T)
     print(C.ENDC)
 
-    wrong_ab_union = set(wrong_indices[keys_order[0]]).union(
-        set(wrong_indices[keys_order[1]])
-    )
     print(
         f"{C.OKGREEN}Arias predicted wrongly by the first two ({keys_order[0]}, {keys_order[1]}) but not from the third ({keys_order[2]}){C.ENDC}"
     )
@@ -80,7 +80,33 @@ def _analyze_errors(data, wrong_indices, keys_order):
         f"{C.OKGREEN}Arias predicted wrongly by the third but not from the first two{C.ENDC}"
     )
     df = pd.DataFrame()
-    for idx in set(wrong_indices[keys_order[2]]).difference(wrong_ab_union):
+    for idx in set(wrong_indices[keys_order[2]]).difference(wrong_ab_intersection):
+        aria = data.iloc[idx]
+        df = pd.concat(
+            [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
+        )
+    print(C.OKBLUE)
+    print(df.T)
+    print(C.ENDC)
+    
+    print(
+        f"{C.OKGREEN}Arias predicted wrongly by the first and the third ({keys_order[0]}, {keys_order[2]}) but not from the second ({keys_order[1]}){C.ENDC}"
+    )
+    df = pd.DataFrame()
+    for idx in wrong_ac_intersection.difference(set(wrong_indices[keys_order[1]])):
+        aria = data.iloc[idx]
+        df = pd.concat(
+            [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
+        )
+    print(C.OKBLUE)
+    print(df.T)
+    print(C.ENDC)
+    
+    print(
+        f"{C.OKGREEN}Arias predicted wrongly by the second but not from the first and the third{C.ENDC}"
+    )
+    df = pd.DataFrame()
+    for idx in set(wrong_indices[keys_order[1]]).difference(wrong_ac_intersection):
         aria = data.iloc[idx]
         df = pd.concat(
             [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
