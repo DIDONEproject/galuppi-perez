@@ -188,7 +188,7 @@ def test_novelty_detection():
 def test_suspected_arias(experiments_dir, refit=True):
     data_test, X_test, y_test = pickle.load(open(S.FINAL_TEST_FILE, "rb"))
     if refit:
-        X, y = get_xy()
+        data, X, y = get_xy()
 
     experiments_dir = Path(experiments_dir)
     models = list(experiments_dir.glob("**/ensemble.pkl"))
