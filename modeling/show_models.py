@@ -1,3 +1,4 @@
+from pprint import pp
 import pickle
 from pathlib import Path
 
@@ -20,7 +21,7 @@ def main():
             if hasattr(model, "describe"):
                 model.describe()
             else:
-                print(model)
+                pp(model.get_params())
             print("\n--------\n")
 
 
