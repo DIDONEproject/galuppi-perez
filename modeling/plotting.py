@@ -342,10 +342,11 @@ class DidonePlotter:
     If `output_dir` is not None, plots are saved in that directory.
     """
 
-    def __init__(self, model=None, top_k=0.5):
+    def __init__(self, model=None, top_k=0.5, grid_resolution=100):
         self.top_k = top_k
         self.pool = []
         self.model = model
+        self.grid_resolution = grid_resolution
 
     def push(self, model, weight=1.0, feature_names=None, classes=[]):
         """
@@ -403,10 +404,12 @@ class DidonePlotter:
         dependence_coeff_sign = []
         try:
             angular_coeffs, classes = partial_dependence(
-                self.model, X, y, features, linear=True
+                self.model, X, y, features, linear=True,
+                grid_resolution=self.grid_resolution
             )
         except Exception as e:
             print(f"Cannot compute partial dependence: {e}")
+            __import__('ipdb').set_trace()
             dependence_coeff_sign = {k: True for k in features}
         else:
             # modifying the coeffs so that positive coeffs correspond features

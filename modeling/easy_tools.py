@@ -265,8 +265,6 @@ def custom_inspection(experiments_dir, output_dir, X, y):
         if "blackbox" in dir_name:
             continue
         print(">>> " + dir_name)
-        # loading the bag
-        bag = pickle.load(open(m, "rb"))
         # loading the simpler model
         simple_model = m.parent / "ensemble.pkl"
         if not simple_model.exists():
@@ -274,6 +272,8 @@ def custom_inspection(experiments_dir, output_dir, X, y):
             simple_model = simple_model.with_stem("best_model")
         simple_model = pickle.load(open(simple_model, "rb"))
         simple_model.fit(X, y)
+        # loading the bag
+        bag = pickle.load(open(m, "rb"))
         try:
             plotter = bag.get_plotter(
                 base_model=simple_model, top_k=0.5, feature_names=X.columns

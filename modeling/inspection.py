@@ -285,7 +285,8 @@ def variance_inflation_factor(data, prefix="", output_dir=None):
 
 
 def partial_dependence(
-    model, data, y, features, linear=True, prefix="", output_dir=None
+    model, data, y, features, linear=True, prefix="", output_dir=None,
+    grid_resolution=10
 ):
     """
     Create partial dependence plots according to model on data for the features in
@@ -304,10 +305,6 @@ def partial_dependence(
     print(">>>>> P=0.0 -> " + classes[1])
     print(">>>>> P=1.0 -> " + classes[0])
     angular_coeffs = {}
-    if linear:
-        grid_resolution = 10
-    else:
-        grid_resolution = 100
 
     for feature in features:
         pdp = inspection.partial_dependence(
