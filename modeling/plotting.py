@@ -42,7 +42,11 @@ class InspectionError(RuntimeError):
 def get_feature_category(feature, scale):
     scale = scale[::-1]
     feature = feature.lower()
-    if "interval" in feature:
+    if "js_" in feature:
+        return "jSymbolic", scale[-8]
+    elif "m21_" in feature:
+        return "music21", scale[-9]
+    elif "interval" in feature:
         return "Melodic", scale[-1]
     elif "degree" in feature:
         return "Melodic", scale[-1]
@@ -80,10 +84,6 @@ def get_feature_category(feature, scale):
         return "Ambitus", scale[-6]
     elif "syllab" in feature:
         return "Lyrics", scale[-7]
-    elif "js_" in feature:
-        return "jSymbolic", scale[-8]
-    elif "m21_" in feature:
-        return "music21", scale[-9]
     else:
         print(feature + ": category unknown")
         return "Unknown", scale[-10]
