@@ -45,12 +45,9 @@ class DidoneClassifier(BaseEstimator):
         self.metric = metric
         self.n_jobs = n_jobs
 
-    def fit(self, X, y):
+    def fit_models(self, X, y):
         """
-
-        Fit the ensemble's pipelines. It does a full fit of the ensemble,
-        without bayesian optimization.
-
+        Fit the models but not the ensemble selection
         """
         try:
             X = self.x_encoder.fit_transform(X)
@@ -66,6 +63,16 @@ class DidoneClassifier(BaseEstimator):
         # training the pipelines
         for k, model in self.models.items():
             self.models[k] = model.fit(X, y)
+        return self
+
+    def fit(self, X, y):
+        """
+
+        Fit the ensemble's pipelines. It does a full fit of the ensemble,
+        without bayesian optimization.
+
+        """
+        self.fit_models(X, y)
 
         predictions = self._models_prediction(X)
 
@@ -79,10 +86,10 @@ class DidoneClassifier(BaseEstimator):
             predictions.append(model.predict(X))
         # predictions = Parallel(n_jobs=self.n_jobs)(
         #     delayed(model.predict)(X) for model in self.models.values())
-        return predictions
+        return np.asarray(predictions).T
 
     def _ensemble_prediction(self, predictions):
-        predictions = self.ensemble.predict(predictions)
+        predictions = np.asarray(predictions) @ self.weights
         predictions = np.round(predictions).astype(np.int32)
         predictions = self.y_encoder.inverse_transform(predictions)
         return predictions
@@ -127,17 +134,18 @@ class DidoneClassifier(BaseEstimator):
             decisions.append(
                 weight * model["classifier"].choice.estimator.decision_function(_X)
             )
-        return np.sum(decisions)
+        return np.sum(decisions, axis=0)
 
     def has_predict_proba(self):
-        return any(
-            hasattr(m, "predict_proba")
-            for m in self.models.values()
-        )
+        return any(hasattr(m, "predict_proba") for m in self.models.values())
 
     def predict_proba(self, X):
         probs = [w * m.predict_proba(X) for w, m in self.models_with_weights]
         return np.sum(probs, axis=0)
+
+    @property
+    def weights(self):
+        return np.asarray([w for w, m in self.models_with_weights])
 
     @property
     def models_with_weights(self):

@@ -46,12 +46,16 @@ def _analyze_errors(data, wrong_indices, keys_order):
     wrong_ab_intersection = set(wrong_indices[keys_order[0]]).intersection(
         set(wrong_indices[keys_order[1]])
     )
-    wrong_abc_intersection = wrong_ab_intersection.intersection(
-        set(wrong_indices[keys_order[2]])
-    )
     wrong_ac_intersection = set(wrong_indices[keys_order[0]]).intersection(
         set(wrong_indices[keys_order[2]])
     )
+    wrong_bc_intersection = set(wrong_indices[keys_order[1]]).intersection(
+        set(wrong_indices[keys_order[2]])
+    )
+    wrong_abc_intersection = wrong_ab_intersection.intersection(
+        set(wrong_indices[keys_order[2]])
+    )
+
     print(f"{C.OKGREEN}Arias predicted wrongly by all of the three models{C.ENDC}")
     df = pd.DataFrame()
     for idx in wrong_abc_intersection:
@@ -107,6 +111,32 @@ def _analyze_errors(data, wrong_indices, keys_order):
     )
     df = pd.DataFrame()
     for idx in set(wrong_indices[keys_order[1]]).difference(wrong_ac_intersection):
+        aria = data.iloc[idx]
+        df = pd.concat(
+            [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
+        )
+    print(C.OKBLUE)
+    print(df.T)
+    print(C.ENDC)
+
+    print(
+        f"{C.OKGREEN}Arias predicted wrongly by the first ({keys_order[0]}) but not from the second and the third ({keys_order[1]}, {keys_order[2]}){C.ENDC}"
+    )
+    df = pd.DataFrame()
+    for idx in wrong_bc_intersection.difference(set(wrong_indices[keys_order[0]])):
+        aria = data.iloc[idx]
+        df = pd.concat(
+            [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
+        )
+    print(C.OKBLUE)
+    print(df.T)
+    print(C.ENDC)
+    
+    print(
+        f"{C.OKGREEN}Arias predicted wrongly by the second and the third but not from the first{C.ENDC}"
+    )
+    df = pd.DataFrame()
+    for idx in set(wrong_indices[keys_order[0]]).difference(wrong_bc_intersection):
         aria = data.iloc[idx]
         df = pd.concat(
             [df, aria[["Id", "AriaLabel", "AriaName", S.Y_VARIABLE]]], axis=1
@@ -219,7 +249,7 @@ def post_analysis(data, X, y, experiments_dir, holdout):
 
     column_names_probs = [p[0].name for p in probs_lists]
     find_most_typical_arias(data, column_names_probs, wrong_indices,
-                            percentile=95)
+                            percentile=98)
 
     if holdout > 0:
         holdout_data = pickle.load(open(S.HOLDOUT_FILE, "rb"))

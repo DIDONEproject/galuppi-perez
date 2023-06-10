@@ -6,17 +6,17 @@ echo "Starting at $(date)"
 ####################################
 ####### BACKUP EXPERIMENTS #########
 ####################################
-echo "Backing up old experiments!"
-if [[ -d "experiments.back.1" ]]
-then
-  last_index=$(ls experiments.back.* -d | awk -F '.' '/experiments./{print $3}' | sort -n | tail -1)
-else
-  last_index=0
-fi
-if [[ -d "experiments-holdout_?.?" ]]
-then
-  mv experiments-holdout_?.? experiments.back.$((last_index+1))
-fi
+
+# if [[ -d "experiments.back.1" ]]
+# then
+#   last_index=$(ls experiments.back.* -d | awk -F '.' '/experiments./{print $3}' | sort -n | tail -1)
+# else
+#   last_index=0
+# fi
+# if [[ -d "experiments-holdout_?.?" ]]
+# then
+#   mv experiments-holdout_?.? experiments.back.$((last_index+1))
+# fi
 ####################################
 
 ##########################################
@@ -37,21 +37,21 @@ echo "Starting Experiment with Full AutoML" | tee -a $LOG_FILE
 echo "------------------" >> $LOG_FILE
 echo "------------------" >> $LOG_FILE
 echo "------------------" >> $LOG_FILE
-./dust -m modeling blackbox automl >> $LOG_FILE 2>&1
+./dust -m modeling blackbox automl --skipsearches --skipbagfitting >> $LOG_FILE 2>&1
 
 echo
 echo "Starting Experiment with Linear AutoML" | tee -a $LOG_FILE
 echo "------------------" >> $LOG_FILE
 echo "------------------" >> $LOG_FILE
 echo "------------------" >> $LOG_FILE
-./dust -m modeling linear automl >> $LOG_FILE 2>&1
+./dust -m modeling linear automl --skipsearches --skipbagfitting >> $LOG_FILE 2>&1
 
 echo
 echo "Starting Experiment with Tree AutoML" | tee -a $LOG_FILE
 echo "------------------" >> $LOG_FILE
 echo "------------------" >> $LOG_FILE
 echo "------------------" >> $LOG_FILE
-./dust -m modeling tree automl >> $LOG_FILE 2>&1
+./dust -m modeling tree automl --skipsearches --skipbagfitting >> $LOG_FILE 2>&1
 
 # permutation plot of automl
 # echo
@@ -67,7 +67,7 @@ echo "Starting Baseline grid-search-based methods" | tee -a $LOG_FILE
 echo "------------------" >> $LOG_FILE
 echo "------------------" >> $LOG_FILE
 echo "------------------" >> $LOG_FILE
-./dust -m modeling baseline gridsearch >> $LOG_FILE 2>&1
+# ./dust -m modeling baseline gridsearch >> $LOG_FILE 2>&1
 
 # showing model structure
 echo

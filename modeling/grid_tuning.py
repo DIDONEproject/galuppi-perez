@@ -383,6 +383,10 @@ def gridsearch(data_x_y, splitter, output_dir, skipsearches=False,
     else:
         print("Starting Grid-search")
         model, trajectory = grid_tune_pipeline(X, y, splitter)
+        if not hasattr(model, 'predict_proba'):
+            from sklearn.calibration import CalibratedClassifierCV
+            model = CalibratedClassifierCV(model, cv=splitter, n_jobs=-1)
+            model.fit(X, y)
 
         print("Best model found:")
         print(model)

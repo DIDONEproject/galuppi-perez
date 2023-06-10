@@ -3088,3 +3088,2694 @@ experiments-holdout_0.0/blackbox_automl vs experiments-holdout_0.0/gridsearch 2.
 218   10    Ale03M      Vil_trofeo    Perez
 187  203    Did29M      A_trionfar  Galuppi
 [0m
+--------
+Found a model in experiments-holdout_0.0/linear_automl: ensemble.pkl
+Model number 0
+Weight: 0.6
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'passive_aggressive',
+  'classifier:passive_aggressive:C': 0.019520360365400908,
+  'classifier:passive_aggressive:average': 'True',
+  'classifier:passive_aggressive:fit_intercept': 'True',
+  'classifier:passive_aggressive:loss': 'squared_hinge',
+  'classifier:passive_aggressive:tol': 1.0790059839175527e-05,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'robust_scaler',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_max': 0.8847905296399113,
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_min': 0.2985800823398942,
+  'feature_preprocessor:__choice__': 'fast_ica',
+  'feature_preprocessor:fast_ica:algorithm': 'deflation',
+  'feature_preprocessor:fast_ica:fun': 'cube',
+  'feature_preprocessor:fast_ica:n_components': 101,
+  'feature_preprocessor:fast_ica:whiten': 'True',
+})
+
+Model number 1
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'passive_aggressive',
+  'classifier:passive_aggressive:C': 0.019957507425210484,
+  'classifier:passive_aggressive:average': 'True',
+  'classifier:passive_aggressive:fit_intercept': 'True',
+  'classifier:passive_aggressive:loss': 'hinge',
+  'classifier:passive_aggressive:tol': 1.1097214557189888e-05,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'robust_scaler',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_max': 0.8334905736790241,
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_min': 0.2915296083288938,
+  'feature_preprocessor:__choice__': 'fast_ica',
+  'feature_preprocessor:fast_ica:algorithm': 'deflation',
+  'feature_preprocessor:fast_ica:fun': 'cube',
+  'feature_preprocessor:fast_ica:n_components': 100,
+  'feature_preprocessor:fast_ica:whiten': 'True',
+})
+
+Model number 2
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'none',
+  'classifier:__choice__': 'passive_aggressive',
+  'classifier:passive_aggressive:C': 0.002544810473451216,
+  'classifier:passive_aggressive:average': 'False',
+  'classifier:passive_aggressive:fit_intercept': 'True',
+  'classifier:passive_aggressive:loss': 'hinge',
+  'classifier:passive_aggressive:tol': 2.610158900315943e-05,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'robust_scaler',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_max': 0.8411499081648754,
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_min': 0.2985188647215123,
+  'feature_preprocessor:__choice__': 'fast_ica',
+  'feature_preprocessor:fast_ica:algorithm': 'parallel',
+  'feature_preprocessor:fast_ica:fun': 'exp',
+  'feature_preprocessor:fast_ica:n_components': 100,
+  'feature_preprocessor:fast_ica:whiten': 'True',
+})
+
+
+--------
+
+--------
+Found a model in experiments-holdout_0.0/tree_automl: ensemble.pkl
+Model number 0
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000238529355392,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 16,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 1
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000125548572065,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 13,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 2
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000125548572065,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 16,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 3
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000125548572065,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 14,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'mean',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 4
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.000010978321538,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 16,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+
+--------
+
+--------
+Found a model in experiments-holdout_0.0/blackbox_automl: ensemble.pkl
+Model number 0
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.576742994195023,
+  'classifier:libsvm_svc:coef0': 0.6423467082375856,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.06280360163480139,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.0011894945350739536,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'most_frequent',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 6,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 1
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.204862648588165,
+  'classifier:libsvm_svc:coef0': 0.5432555422737129,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.034643985208159714,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.00022788363615542913,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'most_frequent',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 4,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 2
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.07782597443172756,
+  'classifier:libsvm_svc:coef0': 0.6105666650235957,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.05411571913576818,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.001080597530016856,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'mean',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 4,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 3
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.07782597443172756,
+  'classifier:libsvm_svc:coef0': 0.902026971224396,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.057675985376833376,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.0013741894069488495,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 5,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 4
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.2511156425612656,
+  'classifier:libsvm_svc:coef0': 0.4906489915093011,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.054942431233706325,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'True',
+  'classifier:libsvm_svc:tol': 0.00028417324094134883,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'most_frequent',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6411571591709961,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+
+--------
+
+--------
+Found a model in experiments-holdout_0.0/gridsearch: best_model.pkl
+Pipeline(steps=[('data_preprocessor', StandardScaler()),
+                ('feature_preprocessor',
+                 TruncatedSVD(n_components=259,
+                              random_state=RandomState(MT19937) at 0x7F53DC089140)),
+                ('classifier',
+                 LinearSVC(C=27.825594022071257, class_weight='balanced',
+                           dual=False, max_iter=5000, penalty='l1',
+                           random_state=RandomState(MT19937) at 0x7F53DC089040))])
+
+--------
+
+--------
+Found a model in experiments-holdout_0.0/linear_automl: ensemble.pkl
+Model number 0
+Weight: 0.6
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'passive_aggressive',
+  'classifier:passive_aggressive:C': 0.019520360365400908,
+  'classifier:passive_aggressive:average': 'True',
+  'classifier:passive_aggressive:fit_intercept': 'True',
+  'classifier:passive_aggressive:loss': 'squared_hinge',
+  'classifier:passive_aggressive:tol': 1.0790059839175527e-05,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'robust_scaler',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_max': 0.8847905296399113,
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_min': 0.2985800823398942,
+  'feature_preprocessor:__choice__': 'fast_ica',
+  'feature_preprocessor:fast_ica:algorithm': 'deflation',
+  'feature_preprocessor:fast_ica:fun': 'cube',
+  'feature_preprocessor:fast_ica:n_components': 101,
+  'feature_preprocessor:fast_ica:whiten': 'True',
+})
+
+Model number 1
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'passive_aggressive',
+  'classifier:passive_aggressive:C': 0.019957507425210484,
+  'classifier:passive_aggressive:average': 'True',
+  'classifier:passive_aggressive:fit_intercept': 'True',
+  'classifier:passive_aggressive:loss': 'hinge',
+  'classifier:passive_aggressive:tol': 1.1097214557189888e-05,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'robust_scaler',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_max': 0.8334905736790241,
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_min': 0.2915296083288938,
+  'feature_preprocessor:__choice__': 'fast_ica',
+  'feature_preprocessor:fast_ica:algorithm': 'deflation',
+  'feature_preprocessor:fast_ica:fun': 'cube',
+  'feature_preprocessor:fast_ica:n_components': 100,
+  'feature_preprocessor:fast_ica:whiten': 'True',
+})
+
+Model number 2
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'none',
+  'classifier:__choice__': 'passive_aggressive',
+  'classifier:passive_aggressive:C': 0.002544810473451216,
+  'classifier:passive_aggressive:average': 'False',
+  'classifier:passive_aggressive:fit_intercept': 'True',
+  'classifier:passive_aggressive:loss': 'hinge',
+  'classifier:passive_aggressive:tol': 2.610158900315943e-05,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'robust_scaler',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_max': 0.8411499081648754,
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_min': 0.2985188647215123,
+  'feature_preprocessor:__choice__': 'fast_ica',
+  'feature_preprocessor:fast_ica:algorithm': 'parallel',
+  'feature_preprocessor:fast_ica:fun': 'exp',
+  'feature_preprocessor:fast_ica:n_components': 100,
+  'feature_preprocessor:fast_ica:whiten': 'True',
+})
+
+
+--------
+
+--------
+Found a model in experiments-holdout_0.0/tree_automl: ensemble.pkl
+Model number 0
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000238529355392,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 16,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 1
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000125548572065,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 13,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 2
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000125548572065,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 16,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 3
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000125548572065,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 14,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'mean',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 4
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.000010978321538,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 16,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+
+--------
+
+--------
+Found a model in experiments-holdout_0.0/blackbox_automl: ensemble.pkl
+Model number 0
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.576742994195023,
+  'classifier:libsvm_svc:coef0': 0.6423467082375856,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.06280360163480139,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.0011894945350739536,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'most_frequent',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 6,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 1
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.204862648588165,
+  'classifier:libsvm_svc:coef0': 0.5432555422737129,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.034643985208159714,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.00022788363615542913,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'most_frequent',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 4,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 2
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.07782597443172756,
+  'classifier:libsvm_svc:coef0': 0.6105666650235957,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.05411571913576818,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.001080597530016856,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'mean',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 4,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 3
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.07782597443172756,
+  'classifier:libsvm_svc:coef0': 0.902026971224396,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.057675985376833376,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.0013741894069488495,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 5,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 4
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.2511156425612656,
+  'classifier:libsvm_svc:coef0': 0.4906489915093011,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.054942431233706325,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'True',
+  'classifier:libsvm_svc:tol': 0.00028417324094134883,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'most_frequent',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6411571591709961,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+
+--------
+
+--------
+Found a model in experiments-holdout_0.0/gridsearch: best_model.pkl
+{'memory': None,
+ 'steps': [('data_preprocessor', StandardScaler()),
+           ('feature_preprocessor',
+            TruncatedSVD(n_components=259,
+             random_state=RandomState(MT19937) at 0x7FB17BCC5140)),
+           ('classifier',
+            LinearSVC(C=27.825594022071257, class_weight='balanced', dual=False,
+          max_iter=5000, penalty='l1',
+          random_state=RandomState(MT19937) at 0x7FB17BCC5040))],
+ 'verbose': False,
+ 'data_preprocessor': StandardScaler(),
+ 'feature_preprocessor': TruncatedSVD(n_components=259,
+             random_state=RandomState(MT19937) at 0x7FB17BCC5140),
+ 'classifier': LinearSVC(C=27.825594022071257, class_weight='balanced', dual=False,
+          max_iter=5000, penalty='l1',
+          random_state=RandomState(MT19937) at 0x7FB17BCC5040),
+ 'data_preprocessor__copy': True,
+ 'data_preprocessor__with_mean': True,
+ 'data_preprocessor__with_std': True,
+ 'feature_preprocessor__algorithm': 'randomized',
+ 'feature_preprocessor__n_components': 259,
+ 'feature_preprocessor__n_iter': 5,
+ 'feature_preprocessor__random_state': RandomState(MT19937) at 0x7FB17BCC5140,
+ 'feature_preprocessor__tol': 0.0,
+ 'classifier__C': 27.825594022071257,
+ 'classifier__class_weight': 'balanced',
+ 'classifier__dual': False,
+ 'classifier__fit_intercept': True,
+ 'classifier__intercept_scaling': 1,
+ 'classifier__loss': 'squared_hinge',
+ 'classifier__max_iter': 5000,
+ 'classifier__multi_class': 'ovr',
+ 'classifier__penalty': 'l1',
+ 'classifier__random_state': RandomState(MT19937) at 0x7FB17BCC5040,
+ 'classifier__tol': 0.0001,
+ 'classifier__verbose': 0}
+
+--------
+
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+[1m[94mComputing feature importance and PDP[0m
+>>> linear_automl
+>>> creating partial dependence
+>>>>> P=0.0 -> Perez
+>>>>> P=1.0 -> Galuppi
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+[1m[94mComputing feature importance and PDP[0m
+>>> linear_automl
+>>> creating partial dependence
+>>>>> P=0.0 -> Perez
+>>>>> P=1.0 -> Galuppi
+>>>>> saving
+>>> tree_automl
+>>> gridsearch
+>>> creating partial dependence
+>>>>> P=0.0 -> Perez
+>>>>> P=1.0 -> Galuppi
+>>>>> saving
+[1m[94mComputing VIF on linear automl[0m
+VIF (avg, var, min, max): 1.00e+00, 8.14e-32, 1.00e+00, 1.00e+00
+VIF (avg, var, min, max): 1.00e+00, 6.92e-32, 1.00e+00, 1.00e+00
+VIF (avg, var, min, max): 1.00e+00, 6.28e-32, 1.00e+00, 1.00e+00
+[1m[94mComputing VIF on linear gridsearch[0m
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+[1m[94mComputing VIF on linear gridsearch[0m
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+[1m[94mComputing VIF on linear gridsearch[0m
+
+> [0;32m/home/federico/galuppi-perez/modeling/easy_tools.py[0m(303)[0;36mcustom_inspection[0;34m()[0m
+[0;32m    302 [0;31m        [0m__import__[0m[0;34m([0m[0;34m'ipdb'[0m[0;34m)[0m[0;34m.[0m[0mset_trace[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[0;32m--> 303 [0;31m        [0mm[0m [0;34m=[0m [0mm[0m[0;34m.[0m[0mestimator[0m[0;34m[0m[0;34m[0m[0m
+[0m[0;32m    304 [0;31m    [0mpreprocessor[0m [0;34m=[0m [0mclone[0m[0;34m([0m[0mPipeline[0m[0;34m([0m[0mm[0m[0;34m.[0m[0msteps[0m[0;34m[[0m[0;34m:[0m[0;34m-[0m[0;36m1[0m[0;34m][0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+ipdb> CalibratedClassifierCV(base_estimator=Pipeline(steps=[('data_preprocessor',
+                                                       StandardScaler()),
+                                                      ('feature_preprocessor',
+                                                       TruncatedSVD(n_components=259,
+                                                                    random_state=RandomState(MT19937) at 0x7FF84E8FEE40)),
+                                                      ('classifier',
+                                                       LinearSVC(C=27.825594022071257,
+                                                                 class_weight='balanced',
+                                                                 dual=False,
+                                                                 max_iter=5000,
+                                                                 penalty='l1',
+                                                                 random_state=RandomState(MT19937) at 0x7FF84E8FF440))]),
+                       cv=StratifiedKFold(n_splits=10, random_state=8734, shuffle=True),
+                       n_jobs=-1)
+ipdb> 
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+[1m[94mComputing VIF on linear gridsearch[0m
+VIF (avg, var, min, max): 1.00e+00, 3.08e-10, 1.00e+00, 1.00e+00
+[1m[94mComputing VIF on raw data[0m
+VIF (avg, var, min, max): 3.32e+07, 1.30e+15, 1.19e+06, 2.97e+08
+[1m[94mComputing UMAP embedding[0m
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+
+Number of methods not converged: 0
+Best parameters: None
+Best loss: inf
+Starting Experiment with Full AutoML
+------------------
+------------------
+------------------
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [200, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [200, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [200, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+[Parallel(n_jobs=1)]: Done  10 out of  10 | elapsed:   17.0s finished
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/federico/galuppi-perez/modeling/__main__.py", line 306, in <module>
+    fire.Fire(Model)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/fire/core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/fire/core.py", line 475, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/fire/core.py", line 691, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/home/federico/galuppi-perez/modeling/__main__.py", line 170, in automl
+    automl(
+  File "/home/federico/galuppi-perez/modeling/didone_automl.py", line 259, in automl
+    scores, validation_fig = crossvalidation(
+  File "/home/federico/galuppi-perez/modeling/validation.py", line 193, in crossvalidation
+    [i.eval["matrix"] for i in scores["train_confusion_matrix"]],
+  File "/home/federico/galuppi-perez/modeling/validation.py", line 193, in <listcomp>
+    [i.eval["matrix"] for i in scores["train_confusion_matrix"]],
+AttributeError: 'numpy.float64' object has no attribute 'eval'
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+Evaluating the best automl pipeline
+Avg balanced accuracy: nan
+Std balanced accuracy: nan
+Starting Experiment with Linear AutoML
+------------------
+------------------
+------------------
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [200, 3]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [200, 3]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [200, 3]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 3]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 3]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 3]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 3]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 3]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 3]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 3]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+[Parallel(n_jobs=1)]: Done  10 out of  10 | elapsed:   20.5s finished
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/federico/galuppi-perez/modeling/__main__.py", line 306, in <module>
+    fire.Fire(Model)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/fire/core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/fire/core.py", line 475, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/fire/core.py", line 691, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/home/federico/galuppi-perez/modeling/__main__.py", line 170, in automl
+    automl(
+  File "/home/federico/galuppi-perez/modeling/didone_automl.py", line 259, in automl
+    scores, validation_fig = crossvalidation(
+  File "/home/federico/galuppi-perez/modeling/validation.py", line 193, in crossvalidation
+    [i.eval["matrix"] for i in scores["train_confusion_matrix"]],
+  File "/home/federico/galuppi-perez/modeling/validation.py", line 193, in <listcomp>
+    [i.eval["matrix"] for i in scores["train_confusion_matrix"]],
+AttributeError: 'numpy.float64' object has no attribute 'eval'
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+Evaluating the best automl pipeline
+Avg balanced accuracy: nan
+Std balanced accuracy: nan
+Starting Experiment with Tree AutoML
+------------------
+------------------
+------------------
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [200, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [200, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [200, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py:615: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 598, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/federico/galuppi-perez/modeling/model_wrappers.py", line 80, in fit
+    self.ensemble.fit(predictions, y, list(self.models.keys()), None)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 122, in fit
+    self._fit(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 139, in _fit
+    self._fast(predictions=predictions, X_data=X_data, labels=labels)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/ensembles/ensemble_selection.py", line 198, in _fast
+    losses[j] = calculate_losses(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 637, in calculate_losses
+    score = calculate_scores(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 560, in calculate_scores
+    raise e
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 538, in calculate_scores
+    score_dict[metric_.name] = _compute_single_scorer(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 752, in _compute_single_scorer
+    score = metric(solution, prediction)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/autosklearn/metrics/__init__.py", line 124, in __call__
+    return self._sign * self._score_func(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 182, in mean_absolute_error
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/metrics/_regression.py", line 88, in _check_reg_targets
+    check_consistent_length(y_true, y_pred)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/sklearn/utils/validation.py", line 319, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [201, 5]
+
+  warnings.warn("Estimator fit failed. The score on this train-test"
+[Parallel(n_jobs=1)]: Done  10 out of  10 | elapsed:   47.9s finished
+Traceback (most recent call last):
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/federico/galuppi-perez/modeling/__main__.py", line 306, in <module>
+    fire.Fire(Model)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/fire/core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/fire/core.py", line 475, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/home/federico/galuppi-perez/dustenv/pyenv/versions/3.10.4/lib/python3.10/site-packages/fire/core.py", line 691, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/home/federico/galuppi-perez/modeling/__main__.py", line 170, in automl
+    automl(
+  File "/home/federico/galuppi-perez/modeling/didone_automl.py", line 259, in automl
+    scores, validation_fig = crossvalidation(
+  File "/home/federico/galuppi-perez/modeling/validation.py", line 193, in crossvalidation
+    [i.eval["matrix"] for i in scores["train_confusion_matrix"]],
+  File "/home/federico/galuppi-perez/modeling/validation.py", line 193, in <listcomp>
+    [i.eval["matrix"] for i in scores["train_confusion_matrix"]],
+AttributeError: 'numpy.float64' object has no attribute 'eval'
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+Evaluating the best automl pipeline
+Avg balanced accuracy: nan
+Std balanced accuracy: nan
+Starting Baseline grid-search-based methods
+------------------
+------------------
+------------------
+Showing Model Structures
+------------------
+------------------
+------------------
+--------
+Found a model in experiments-holdout_0.0/linear_automl: ensemble.pkl
+Model number 0
+Weight: 0.6
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'passive_aggressive',
+  'classifier:passive_aggressive:C': 0.019520360365400908,
+  'classifier:passive_aggressive:average': 'True',
+  'classifier:passive_aggressive:fit_intercept': 'True',
+  'classifier:passive_aggressive:loss': 'squared_hinge',
+  'classifier:passive_aggressive:tol': 1.0790059839175527e-05,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'robust_scaler',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_max': 0.8847905296399113,
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_min': 0.2985800823398942,
+  'feature_preprocessor:__choice__': 'fast_ica',
+  'feature_preprocessor:fast_ica:algorithm': 'deflation',
+  'feature_preprocessor:fast_ica:fun': 'cube',
+  'feature_preprocessor:fast_ica:n_components': 101,
+  'feature_preprocessor:fast_ica:whiten': 'True',
+})
+
+Model number 1
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'passive_aggressive',
+  'classifier:passive_aggressive:C': 0.019957507425210484,
+  'classifier:passive_aggressive:average': 'True',
+  'classifier:passive_aggressive:fit_intercept': 'True',
+  'classifier:passive_aggressive:loss': 'hinge',
+  'classifier:passive_aggressive:tol': 1.1097214557189888e-05,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'robust_scaler',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_max': 0.8334905736790241,
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_min': 0.2915296083288938,
+  'feature_preprocessor:__choice__': 'fast_ica',
+  'feature_preprocessor:fast_ica:algorithm': 'deflation',
+  'feature_preprocessor:fast_ica:fun': 'cube',
+  'feature_preprocessor:fast_ica:n_components': 100,
+  'feature_preprocessor:fast_ica:whiten': 'True',
+})
+
+Model number 2
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'none',
+  'classifier:__choice__': 'passive_aggressive',
+  'classifier:passive_aggressive:C': 0.002544810473451216,
+  'classifier:passive_aggressive:average': 'False',
+  'classifier:passive_aggressive:fit_intercept': 'True',
+  'classifier:passive_aggressive:loss': 'hinge',
+  'classifier:passive_aggressive:tol': 2.610158900315943e-05,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'robust_scaler',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_max': 0.8411499081648754,
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:robust_scaler:q_min': 0.2985188647215123,
+  'feature_preprocessor:__choice__': 'fast_ica',
+  'feature_preprocessor:fast_ica:algorithm': 'parallel',
+  'feature_preprocessor:fast_ica:fun': 'exp',
+  'feature_preprocessor:fast_ica:n_components': 100,
+  'feature_preprocessor:fast_ica:whiten': 'True',
+})
+
+
+--------
+
+--------
+Found a model in experiments-holdout_0.0/tree_automl: ensemble.pkl
+Model number 0
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000238529355392,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 16,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 1
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000125548572065,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 13,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 2
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000125548572065,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 16,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 3
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.0000125548572065,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 14,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'mean',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+Model number 4
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'decision_tree',
+  'classifier:decision_tree:criterion': 'gini',
+  'classifier:decision_tree:max_depth_factor': 1.000010978321538,
+  'classifier:decision_tree:max_features': 1.0,
+  'classifier:decision_tree:max_leaf_nodes': 'None',
+  'classifier:decision_tree:min_impurity_decrease': 0.0,
+  'classifier:decision_tree:min_samples_leaf': 5,
+  'classifier:decision_tree:min_samples_split': 16,
+  'classifier:decision_tree:min_weight_fraction_leaf': 0.0,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'power_transformer',
+  'feature_preprocessor:__choice__': 'no_preprocessing',
+})
+
+
+--------
+
+--------
+Found a model in experiments-holdout_0.0/blackbox_automl: ensemble.pkl
+Model number 0
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.576742994195023,
+  'classifier:libsvm_svc:coef0': 0.6423467082375856,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.06280360163480139,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.0011894945350739536,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'most_frequent',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 6,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 1
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.204862648588165,
+  'classifier:libsvm_svc:coef0': 0.5432555422737129,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.034643985208159714,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.00022788363615542913,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'most_frequent',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 4,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 2
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.07782597443172756,
+  'classifier:libsvm_svc:coef0': 0.6105666650235957,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.05411571913576818,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.001080597530016856,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'mean',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 4,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 3
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.07782597443172756,
+  'classifier:libsvm_svc:coef0': 0.902026971224396,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.057675985376833376,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'False',
+  'classifier:libsvm_svc:tol': 0.0013741894069488495,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'median',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6410041188139426,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 5,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+Model number 4
+Weight: 0.2
+Configuration(values={
+  'balancing:strategy': 'weighting',
+  'classifier:__choice__': 'libsvm_svc',
+  'classifier:libsvm_svc:C': 0.2511156425612656,
+  'classifier:libsvm_svc:coef0': 0.4906489915093011,
+  'classifier:libsvm_svc:degree': 4,
+  'classifier:libsvm_svc:gamma': 0.054942431233706325,
+  'classifier:libsvm_svc:kernel': 'poly',
+  'classifier:libsvm_svc:max_iter': -1,
+  'classifier:libsvm_svc:shrinking': 'True',
+  'classifier:libsvm_svc:tol': 0.00028417324094134883,
+  'data_preprocessor:__choice__': 'feature_type',
+  'data_preprocessor:feature_type:numerical_transformer:imputation:strategy': 'most_frequent',
+  'data_preprocessor:feature_type:numerical_transformer:rescaling:__choice__': 'minmax',
+  'feature_preprocessor:__choice__': 'extra_trees_preproc_for_classification',
+  'feature_preprocessor:extra_trees_preproc_for_classification:bootstrap': 'False',
+  'feature_preprocessor:extra_trees_preproc_for_classification:criterion': 'entropy',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_depth': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_features': 0.6411571591709961,
+  'feature_preprocessor:extra_trees_preproc_for_classification:max_leaf_nodes': 'None',
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_impurity_decrease': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_leaf': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_samples_split': 3,
+  'feature_preprocessor:extra_trees_preproc_for_classification:min_weight_fraction_leaf': 0.0,
+  'feature_preprocessor:extra_trees_preproc_for_classification:n_estimators': 100,
+})
+
+
+--------
+
+--------
+Found a model in experiments-holdout_0.0/gridsearch: best_model.pkl
+{'base_estimator__memory': None,
+ 'base_estimator__steps': [('data_preprocessor', StandardScaler()),
+                           ('feature_preprocessor',
+                            TruncatedSVD(n_components=259,
+             random_state=RandomState(MT19937) at 0x7F7A96F5D240)),
+                           ('classifier',
+                            LinearSVC(C=27.825594022071257, class_weight='balanced', dual=False,
+          max_iter=5000, penalty='l1',
+          random_state=RandomState(MT19937) at 0x7F7A96F5D040))],
+ 'base_estimator__verbose': False,
+ 'base_estimator__data_preprocessor': StandardScaler(),
+ 'base_estimator__feature_preprocessor': TruncatedSVD(n_components=259,
+             random_state=RandomState(MT19937) at 0x7F7A96F5D240),
+ 'base_estimator__classifier': LinearSVC(C=27.825594022071257, class_weight='balanced', dual=False,
+          max_iter=5000, penalty='l1',
+          random_state=RandomState(MT19937) at 0x7F7A96F5D040),
+ 'base_estimator__data_preprocessor__copy': True,
+ 'base_estimator__data_preprocessor__with_mean': True,
+ 'base_estimator__data_preprocessor__with_std': True,
+ 'base_estimator__feature_preprocessor__algorithm': 'randomized',
+ 'base_estimator__feature_preprocessor__n_components': 259,
+ 'base_estimator__feature_preprocessor__n_iter': 5,
+ 'base_estimator__feature_preprocessor__random_state': RandomState(MT19937) at 0x7F7A96F5D240,
+ 'base_estimator__feature_preprocessor__tol': 0.0,
+ 'base_estimator__classifier__C': 27.825594022071257,
+ 'base_estimator__classifier__class_weight': 'balanced',
+ 'base_estimator__classifier__dual': False,
+ 'base_estimator__classifier__fit_intercept': True,
+ 'base_estimator__classifier__intercept_scaling': 1,
+ 'base_estimator__classifier__loss': 'squared_hinge',
+ 'base_estimator__classifier__max_iter': 5000,
+ 'base_estimator__classifier__multi_class': 'ovr',
+ 'base_estimator__classifier__penalty': 'l1',
+ 'base_estimator__classifier__random_state': RandomState(MT19937) at 0x7F7A96F5D040,
+ 'base_estimator__classifier__tol': 0.0001,
+ 'base_estimator__classifier__verbose': 0,
+ 'base_estimator': Pipeline(steps=[('data_preprocessor', StandardScaler()),
+                ('feature_preprocessor',
+                 TruncatedSVD(n_components=259,
+                              random_state=RandomState(MT19937) at 0x7F7A96F5D240)),
+                ('classifier',
+                 LinearSVC(C=27.825594022071257, class_weight='balanced',
+                           dual=False, max_iter=5000, penalty='l1',
+                           random_state=RandomState(MT19937) at 0x7F7A96F5D040))]),
+ 'cv': StratifiedKFold(n_splits=10, random_state=8734, shuffle=True),
+ 'ensemble': True,
+ 'method': 'sigmoid',
+ 'n_jobs': -1}
+
+--------
+
+Performing Inspection!
+------------------
+------------------
+------------------
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+[1m[94mComputing VIF on linear gridsearch[0m
+VIF (avg, var, min, max): 1.00e+00, 3.08e-10, 1.00e+00, 1.00e+00
+[1m[94mComputing VIF on raw data[0m
+VIF (avg, var, min, max): 3.32e+07, 1.30e+15, 1.19e+06, 2.97e+08
+[1m[94mComputing UMAP embedding[0m
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+metric is neither callable nor a recognised string
+
+Number of methods not converged: 0
+Best parameters: None
+Best loss: inf
+Performing Post-hoc analysis!
+------------------
+------------------
+------------------
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+[92mAnalyzing errors for experiments-holdout_0.0/linear_automl/crossval_scores.pkl[0m
+[96m
+Wrong arias:
+              AriaName Composer
+187         A_trionfar  Galuppi
+12   Misero_pargoletto    Perez
+105            Voi_che    Perez
+177           Se_dalle  Galuppi
+219          Non_sarei  Galuppi
+20        Va_crescendo  Galuppi
+151           Nel_duol  Galuppi
+53          Ombra_dell    Perez
+184       Va_crescendo    Perez
+67           Se_troppo    Perez
+96       Tu_mi_disarmi    Perez
+174     Per_pieta_bell  Galuppi
+33            E_prezzo    Perez
+[0m
+[92mAnalyzing errors for experiments-holdout_0.0/tree_automl/crossval_scores.pkl[0m
+no decision function available
+[92mAnalyzing errors for experiments-holdout_0.0/blackbox_automl/crossval_scores.pkl[0m
+[96m
+Wrong arias:
+           AriaName Composer
+187      A_trionfar  Galuppi
+11      Di_rendermi    Perez
+20     Va_crescendo  Galuppi
+58        Cadra_fra    Perez
+103        Diro_che  Galuppi
+151        Nel_duol  Galuppi
+96    Tu_mi_disarmi    Perez
+174  Per_pieta_bell  Galuppi
+218      Vil_trofeo    Perez
+33         E_prezzo    Perez
+[0m
+[92mAnalyzing errors for experiments-holdout_0.0/gridsearch/crossval_scores.pkl[0m
+[96m
+Wrong arias:
+              AriaName Composer
+70            Chi_vive    Perez
+109     Finche_rimango  Galuppi
+12   Misero_pargoletto    Perez
+219          Non_sarei  Galuppi
+178           Ardi_per  Galuppi
+20        Va_crescendo  Galuppi
+58           Cadra_fra    Perez
+151           Nel_duol  Galuppi
+13            Chi_vive    Perez
+139             Odo_il  Galuppi
+184       Va_crescendo    Perez
+67           Se_troppo    Perez
+96       Tu_mi_disarmi    Perez
+174     Per_pieta_bell  Galuppi
+33            E_prezzo    Perez
+69          Son_regina  Galuppi
+[0m
+[92m[1mMost typical arias:
+      AriaName Composer  linear_automl  blackbox_automl  gridsearch
+194     Il_suo    Perez       0.899301         0.971059    0.975677
+77   La_destra    Perez       0.907685         0.964571    0.991797
+62      Se_mai    Perez       0.867592         0.944264    0.989340
+
+         AriaName Composer  linear_automl  blackbox_automl  gridsearch
+73      Veggio_la  Galuppi       0.078195         0.045620    0.021271
+50         Se_mai  Galuppi       0.141722         0.031270    0.007968
+158  Tu_mi_scorgi  Galuppi       0.092838         0.041712    0.029224
+[0m
+Computing histograms of probabilities.
+[92mBonferroni-Holm corrected McNemar p-values:[0m
+p-value order:
+linear_automl blackbox_automl
+linear_automl gridsearch
+blackbox_automl gridsearch
+[1. 1. 1.]
+
+Statified table summary (statsmodels)
+                   Estimate   LCB     UCB  
+-------------------------------------------
+Pooled odds         305.872 156.039 599.578
+Pooled log odds       5.723   5.050   6.396
+Pooled risk ratio    19.169                
+                                           
+                 Statistic P-value 
+-----------------------------------
+Test of OR=1       530.211   0.000 
+Test constant OR     0.543   0.762 
+                      
+----------------------
+Number of tables   3  
+Min n            223  
+Max n            223  
+Avg n            223  
+Total n          669  
+----------------------
+[92mKruskal-Wallis p-values:[0m
+KruskalResult(statistic=0.011956969230428603, pvalue=0.9940393509629888)
+[92mBonferroni-Holm corrected Wilcoxon p-values:[0m
+p-values:
+experiments-holdout_0.0/linear_automl vs experiments-holdout_0.0/blackbox_automl 1.0
+experiments-holdout_0.0/linear_automl vs experiments-holdout_0.0/gridsearch 1.0
+experiments-holdout_0.0/blackbox_automl vs experiments-holdout_0.0/gridsearch 1.0
+[92mArias predicted wrongly by all of the three models[0m
+[94m
+      Id AriaLabel        AriaName Composer
+96   180    Did11M   Tu_mi_disarmi    Perez
+33     1    Ale01M        E_prezzo    Perez
+174  110    Art04M  Per_pieta_bell  Galuppi
+20   206    Did31M    Va_crescendo  Galuppi
+151  205    Did30M        Nel_duol  Galuppi
+[0m
+[92mArias predicted wrongly by the first two (linear_automl, blackbox_automl) but not from the third (gridsearch)[0m
+[94m
+      Id AriaLabel    AriaName Composer
+187  203    Did29M  A_trionfar  Galuppi
+[0m
+[92mArias predicted wrongly by the third but not from the first two[0m
+[94m
+      Id AriaLabel           AriaName Composer
+67    80    Ale24M          Se_troppo    Perez
+69   167    Did03M         Son_regina  Galuppi
+70    15    Ale04M           Chi_vive    Perez
+139  155    Dem23M             Odo_il  Galuppi
+12   152    Dem22M  Misero_pargoletto    Perez
+109   85    Ale27M     Finche_rimango  Galuppi
+13    18    Ale04M           Chi_vive    Perez
+178  189    Did16M           Ardi_per  Galuppi
+184  207    Did31M       Va_crescendo    Perez
+58   210    Did33M          Cadra_fra    Perez
+219   54    Ale12M          Non_sarei  Galuppi
+[0m
+[92mArias predicted wrongly by the first and the third (linear_automl, gridsearch) but not from the second (blackbox_automl)[0m
+[94m
+      Id AriaLabel           AriaName Composer
+184  207    Did31M       Va_crescendo    Perez
+67    80    Ale24M          Se_troppo    Perez
+12   152    Dem22M  Misero_pargoletto    Perez
+219   54    Ale12M          Non_sarei  Galuppi
+[0m
+[92mArias predicted wrongly by the second but not from the first and the third[0m
+[94m
+      Id AriaLabel     AriaName Composer
+58   210    Did33M    Cadra_fra    Perez
+103  162    Did02M     Diro_che  Galuppi
+11    77    Ale22M  Di_rendermi    Perez
+218   10    Ale03M   Vil_trofeo    Perez
+187  203    Did29M   A_trionfar  Galuppi
+[0m
+[92mArias predicted wrongly by the first (linear_automl) but not from the second and the third (blackbox_automl, gridsearch)[0m
+[94m
+     Id AriaLabel   AriaName Composer
+58  210    Did33M  Cadra_fra    Perez
+[0m
+[92mArias predicted wrongly by the second and the third but not from the first[0m
+[94m
+      Id AriaLabel           AriaName Composer
+67    80    Ale24M          Se_troppo    Perez
+105   44    Ale10M            Voi_che    Perez
+12   152    Dem22M  Misero_pargoletto    Perez
+187  203    Did29M         A_trionfar  Galuppi
+177  174    Did06M           Se_dalle  Galuppi
+53   102    Ale31M         Ombra_dell    Perez
+184  207    Did31M       Va_crescendo    Perez
+219   54    Ale12M          Non_sarei  Galuppi
+[0m
+Final Test on Suspected Arias!
+------------------
+------------------
+------------------
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+[92mPredictions using experiments-holdout_0.0/linear_automl/ensemble.pkl[0m
+[96m
+      Pred   DecFunc      P(0)  ...   Id AriaLabel       AriaName
+0  Galuppi -0.148146  0.536752  ...  118    Dem04M  Sperai_vicino
+1  Galuppi -0.096218  0.523868  ...   55    Ale12M      Non_sarei
+2  Galuppi -0.159286  0.539444  ...  131    Dem10M         Tu_sai
+
+[3 rows x 8 columns]
+[0m
+
+------
+
+[92mPredictions using experiments-holdout_0.0/tree_automl/ensemble.pkl[0m
+[91mCannot predict with this model due to the following error:
+None
+[0m
+
+------
+
+[92mPredictions using experiments-holdout_0.0/blackbox_automl/ensemble.pkl[0m
+[96m
+      Pred   DecFunc      P(0)  ...   Id AriaLabel       AriaName
+0  Galuppi -0.140620  0.535096  ...  118    Dem04M  Sperai_vicino
+1  Galuppi -0.139635  0.534851  ...   55    Ale12M      Non_sarei
+2  Galuppi -0.139820  0.534897  ...  131    Dem10M         Tu_sai
+
+[3 rows x 8 columns]
+[0m
+
+------
+
+[92mPredictions using experiments-holdout_0.0/gridsearch/best_model.pkl[0m
+[96m
+      Pred   DecFunc      P(0)  ...   Id AriaLabel       AriaName
+0    Perez  0.323418  0.538221  ...  118    Dem04M  Sperai_vicino
+1  Galuppi -1.549093  0.765533  ...   55    Ale12M      Non_sarei
+2  Galuppi -1.742323  0.843424  ...  131    Dem10M         Tu_sai
+
+[3 rows x 8 columns]
+[0m
+
+------
+
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+[92mPredictions using experiments-holdout_0.0/linear_automl/ensemble.pkl[0m
+[96m
+      Pred   DecFunc      P(0)  ...   Id AriaLabel       AriaName
+0  Galuppi -0.148146  0.536752  ...  118    Dem04M  Sperai_vicino
+1  Galuppi -0.096218  0.523868  ...   55    Ale12M      Non_sarei
+2  Galuppi -0.159286  0.539444  ...  131    Dem10M         Tu_sai
+
+[3 rows x 8 columns]
+[0m
+
+------
+
+[92mPredictions using experiments-holdout_0.0/tree_automl/ensemble.pkl[0m
+[91mCannot predict with this model due to the following error:
+None
+[0m
+
+------
+
+[92mPredictions using experiments-holdout_0.0/blackbox_automl/ensemble.pkl[0m
+[96m
+      Pred   DecFunc      P(0)  ...   Id AriaLabel       AriaName
+0  Galuppi -0.140620  0.535096  ...  118    Dem04M  Sperai_vicino
+1  Galuppi -0.139635  0.534851  ...   55    Ale12M      Non_sarei
+2  Galuppi -0.139820  0.534897  ...  131    Dem10M         Tu_sai
+
+[3 rows x 8 columns]
+[0m
+
+------
+
+[92mPredictions using experiments-holdout_0.0/gridsearch/best_model.pkl[0m
+[96m
+      Pred   DecFunc      P(0)  ...   Id AriaLabel       AriaName
+0  Galuppi  0.323418  0.538221  ...  118    Dem04M  Sperai_vicino
+1  Galuppi -1.549093  0.765533  ...   55    Ale12M      Non_sarei
+2  Galuppi -1.742323  0.843424  ...  131    Dem10M         Tu_sai
+
+[3 rows x 8 columns]
+[0m
+
+------
+
+[92mNum of arias in train: 223
+    of which by Perez: 116
+    of which by Galuppi: 107
+Num of arias in test: 3
+Number of features: 650[0m
+[92mPredictions using experiments-holdout_0.0/linear_automl/ensemble.pkl[0m
+[96m
+      Pred      P(0)      P(1)     Label   Id AriaLabel       AriaName
+0  Galuppi  0.536752  0.463248   Galuppi  118    Dem04M  Sperai_vicino
+1  Galuppi  0.523868  0.476132  Composer   55    Ale12M      Non_sarei
+2  Galuppi  0.539444  0.460556   Galuppi  131    Dem10M         Tu_sai
+[0m
+
+------
+
+[92mPredictions using experiments-holdout_0.0/tree_automl/ensemble.pkl[0m
+[96m
+    Pred     P(0)     P(1)     Label   Id AriaLabel       AriaName
+0  Perez  0.41953  0.58047   Galuppi  118    Dem04M  Sperai_vicino
+1  Perez  0.41953  0.58047  Composer   55    Ale12M      Non_sarei
+2  Perez  0.41953  0.58047   Galuppi  131    Dem10M         Tu_sai
+[0m
+
+------
+
+[92mPredictions using experiments-holdout_0.0/blackbox_automl/ensemble.pkl[0m
+[96m
+      Pred      P(0)      P(1)     Label   Id AriaLabel       AriaName
+0  Galuppi  0.535096  0.464904   Galuppi  118    Dem04M  Sperai_vicino
+1  Galuppi  0.534851  0.465149  Composer   55    Ale12M      Non_sarei
+2  Galuppi  0.534897  0.465103   Galuppi  131    Dem10M         Tu_sai
+[0m
+
+------
+
+[92mPredictions using experiments-holdout_0.0/gridsearch/best_model.pkl[0m
+[96m
+      Pred      P(0)      P(1)     Label   Id AriaLabel       AriaName
+0  Galuppi  0.538221  0.461779   Galuppi  118    Dem04M  Sperai_vicino
+1  Galuppi  0.765533  0.234467  Composer   55    Ale12M      Non_sarei
+2  Galuppi  0.843424  0.156576   Galuppi  131    Dem10M         Tu_sai
+[0m
+
+------
+
