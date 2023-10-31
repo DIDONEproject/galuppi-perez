@@ -69,7 +69,7 @@ class Model(object):
         self.skipbagfitting = skipbagfitting
         self.prehook = prehook
         self.holdout = holdout
-        if self.holdout > 0.:
+        if self.holdout > 0.0:
             print("Using holdout, disregarding prehook option.")
             self.prehook = "select_galuppi_perez"
         output_dir = Path(str(output_dir) + f"-holdout_{self.holdout}")
@@ -121,12 +121,13 @@ class Model(object):
     def __load_data(self):
         data, X, y = load_features(S.Y_VARIABLE)
         self.data, self.X, self.y = getattr(easy_tools, self.prehook)(
-            data, X, y, holdout=self.holdout)
+            data, X, y, holdout=self.holdout
+        )
         # reset index to prevent possible mismatching inserted by `prehook`
         self.X.reset_index(drop=True, inplace=True)
         self.y.reset_index(drop=True, inplace=True)
         self.data.reset_index(drop=True, inplace=True)
-        assert all(self.data['Composer'] == self.y)
+        assert all(self.data["Composer"] == self.y)
         self.splitter = sklearn.model_selection.StratifiedKFold(
             n_splits=S.FOLDS, shuffle=True, random_state=8734
         )
@@ -222,6 +223,7 @@ class Model(object):
         Extract features using musif and cached data
         """
         from musif.extract.extract import FeaturesExtractor
+
         from .feature_extraction.custom_conf import CustomConf
         from .feature_extraction.processor_didone import DataProcessorDidone
 
@@ -241,13 +243,14 @@ class Model(object):
         # this creates a large dataframe with all data in it (metadata, labels,
         # features)
         raw_df = FeaturesExtractor(
-            CustomConf(S.DATA_DIR / "config_extraction.yml",
-                       xml_dir=xml_dir,
-                       musescore_dir=musescore_dir,
-                       # cache_dir=S.DATA_DIR / "cache",
-                       metadata_dir=S.DATA_DIR / "metadata",
-                       ),
-            limit_files=limit_files
+            CustomConf(
+                S.DATA_DIR / "config_extraction.yml",
+                xml_dir=xml_dir,
+                musescore_dir=musescore_dir,
+                cache_dir=S.DATA_DIR / "cache",
+                metadata_dir=S.DATA_DIR / "metadata",
+            ),
+            limit_files=limit_files,
         ).extract()
 
         raw_df.to_pickle(S.DATA_DIR / "raw_df.pkl")
@@ -256,8 +259,7 @@ class Model(object):
         # this post-processes the dataframe, removing some features used for computing
         # other features, removing nans, etc.
         p = DataProcessorDidone(
-            raw_df, S.DATA_DIR / "config_postprocess.yml",
-            merge_voices=False
+            raw_df, S.DATA_DIR / "config_postprocess.yml", merge_voices=False
         )
         p.process()
 
