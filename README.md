@@ -8,6 +8,9 @@ Uninstall: remove this directory.
 
 ## Reproducible research
 
+When the corpus will be released, download it and put it in the "data/corpus" folder.
+Otherwise, the extraction will be based on the "data/cache" folder.
+
 Extract the features: `./dust -m modeling features`
 
 Run the experiments: `./run.sh`
@@ -26,7 +29,7 @@ from modeling import easy_tools
 from modeling.data import load_features
 from modeling import automl
 
-# load the dataframes
+# load the dataframes and sets 'Composer' as y column
 data, X, y = load_features('Composer')
 
 # 1. select only Galuppi and Perez (no needed if using corpus from this repo)
@@ -55,7 +58,7 @@ The list and definition of all the features is avalable [here](https://musif.did
 #### Cache objects
 
 We provide the cached musiF's `SmartModuleCache` objects that contain all the
-information needed to recompute the features and were created suing the musif's [caching
+information needed to recompute the features and were created using the musif's [caching
 system](https://musif.didone.eu/Caching.html).
 
 Such objects behaves exactly like `music21` objects. To inspect them, you can look into
@@ -74,19 +77,19 @@ this same dataset. To load these files, you can unpickle them or use the functio
 `musif.cache.load_score_df`. The object contained is a dictionary where the keys are the
 names of the parts and the values are dataframes with the following columns:
 
-  * "Type": A string identifying the type of object. Possible values: ``"Note"``,
-  ``"Rest"``, ``"Measure"``,  ``"Time Signature"``
-  * "Name": A string with the name of the note in Common Western Notation or with
+- "Type": A string identifying the type of object. Possible values: `"Note"`,
+  `"Rest"`, `"Measure"`, `"Time Signature"`
+- "Name": A string with the name of the note in Common Western Notation or with
   the time signature string for time signatures; for measures and rests, the value
-  ``"-"`` is used.
-  * "Value": The midi pitch for notes, -1 for others
-  * "Measure Onset": The beat position of the object in reference to the beginning
+  `"-"` is used.
+- "Value": The midi pitch for notes, -1 for others
+- "Measure Onset": The beat position of the object in reference to the beginning
   of the measure, -1 for measures
-  * "Part Onset": The onset position of the object in reference to the beginning
+- "Part Onset": The onset position of the object in reference to the beginning
   of the part
-  * "Duration": The duration of the object, -1 for time signatures
-  * "Tie": If a tie is applied to the note, its type is there (one of ``"start"``,
-  ``"continue"``, ``"stop"``), otherwise ``"-"`` is used
+- "Duration": The duration of the object, -1 for time signatures
+- "Tie": If a tie is applied to the note, its type is there (one of `"start"`,
+  `"continue"`, `"stop"`), otherwise `"-"` is used
 
 This Corpus is a subset of the corpus created by the [Didone](https://didone.eu)
 project. As such, the original scores will be released all together to the rest of the corpus.
