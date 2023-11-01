@@ -2,7 +2,7 @@ expand_repeats: false
 dfs_dir: data/dfs
 window_size: null
 overlap: null
-# parallel is the number of parallel processes to be used as defined by joblib: 
+# parallel is the number of parallel processes to be used as defined by joblib:
 # 1 => no parallel
 # 2 => 2 processes
 # -1 => all available virtual cores
@@ -12,7 +12,11 @@ log:
   file_path: logs/musif_test.log
   file_level: INFO
   console_level: INFO
-basic_modules_addresses: ["musif.extract.basic_modules", "modeling.feature_extraction.custom_basic_modules"]
+basic_modules_addresses:
+  [
+    "musif.extract.basic_modules",
+    "modeling.feature_extraction.custom_basic_modules",
+  ]
 
 ignore_errors: false
 
@@ -33,14 +37,14 @@ features:
   - scale
   - scale_relative
   - key
-  - dynamics    
+  - dynamics
   - rhythm
   - music21
   - jsymbolic
 
 jsymbolic_try_without_repeats: true
 
-split_keywords:  # Used to split the possible layers present depending on the instrument name
+split_keywords: # Used to split the possible layers present depending on the instrument name
   - woodwind
   - brass
   - wind
@@ -48,7 +52,7 @@ split_keywords:  # Used to split the possible layers present depending on the in
   - strings.cello
   - bass
   - oboi
-  
+
 parts_filter:
   # - vnI
   # - vnII

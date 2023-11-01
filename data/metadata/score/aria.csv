@@ -2044,75 +2044,370 @@ Id,Form,Character,Gender,RoleType,City,Territory
 2043,A,Arbace,Male,Primo soprano,Vienna,Empire
 2044,Dal segno,Arbace,Male,Primo soprano,Munich,Empire
 2045,Dal segno,Megabise,Male,Parte ultima,Munich,Empire
-2046,,,Male,,,
-2047,,,Male,,,
-2048,,,Male,,,
-2049,,,Male,,,
-2050,,,Male,,,
-2051,,,Male,,,
-2052,,,Male,,,
-2053,,,Male,,,
-2054,,,Male,,,
-2055,,,Male,,,
-2056,,,Male,,,
-2057,,,Male,,,
-2058,,,Male,,,
-2059,,,Male,,,
-2060,,,Male,,,
-2061,,,Male,,,
-2062,,,Male,,,
-2063,,,Male,,,
-2064,,,Male,,,
-2065,,,Male,,,
-2066,,,Male,,,
-2067,,,Male,,,
-2068,,,Male,,,
-2069,,,Male,,,
-2070,,,Male,,,
-2071,,,Male,,,
-2072,,,Male,,,
-2073,,,Male,,,
-2074,,,Male,,,
-2075,,,Male,,,
-2076,,,Male,,,
-2077,,,Male,,,
-2078,,,Male,,,
-2079,,,Male,,,
-2080,,,Male,,,
-2081,,,Male,,,
-2082,,,Male,,,
-2083,,,Male,,,
-2084,,,Male,,,
-2085,,,Male,,,
-2086,,,Male,,,
-2087,,,Male,,,
-2088,,,Male,,,
-2089,,,Male,,,
-2090,,,Male,,,
-2091,,,Male,,,
-2092,,,Male,,,
-2093,,,Male,,,
-2094,,,Male,,,
-2095,,,Male,,,
-2096,,,Male,,,
-2097,,,Male,,,
-2098,,,Male,,,
-2099,,,Male,,,
-2100,,,Male,,,
-2101,,,Male,,,
-2102,,,Male,,,
-2103,,,Male,,,
-2104,,,Male,,,
-2105,,,Male,,,
-2106,,,Male,,,
-2107,,,Male,,,
-2108,,,Male,,,
-2109,,,Male,,,
-2110,,,Male,,,
-2111,,,Male,,,
-2112,,,Male,,,
-2113,,,Male,,,
-2114,,,Male,,,
-2115,,,Male,,,
-2116,,,Male,,,
-2117,,,Male,,,
+2046,Dal segno,Semira,Male,Seconda donna,Venice,Italy
+2047,Dal segno,Mandane,Male,Prima donna,Venice,Italy
+2048,Da capo,Artabano,Male,Tenore,Venice,Italy
+2049,Dal segno,Megabise,Male,Parte ultima,Munich,Empire
+2050,Dal segno,"Mandane,Arbace",Male&Male,"Prima donna,Primo soprano",Vienna,Empire
+2051,A,Didone,Male,Prima donna,London,England
+2052,Dal segno,Arbace,Male,Primo soprano,Munich,Empire
+2053,Dal segno,Artaserse,Male,Secondo uomo,Munich,Empire
+2054,Da capo,Mandane,Male,Prima donna,Vienna,Empire
+2055,Dal segno,Mandane,Male,Prima donna,Venice,Italy
+2056,Dal segno,Artaserse,Male,Secondo uomo,Munich,Empire
+2057,Dal segno,Artaserse,Male,Secondo uomo,Munich,Empire
+2058,Dal segno,Semira,Male,Seconda donna,Rome,Italy
+2059,Dal segno,Arbace,Male,Primo soprano,Venice,Italy
+2060,Dal segno,Artaserse,Male,Secondo uomo,Munich,Empire
+2061,Dal segno,Megabise,Male,Parte ultima,Munich,Empire
+2062,Dal segno,Semira,Male,Seconda donna,Munich,Empire
+2063,Dal segno,Mandane,Male,Prima donna,Venice,Italy
+2064,Dal segno,Semira,Male,Seconda donna,Munich,Empire
+2065,Dal segno,Megabise,Male,Parte ultima,Munich,Empire
+2066,Dal segno,Semira,Male,Seconda donna,Venice,Italy
+2067,Dal segno,Artaserse,Male,Secondo uomo,Munich,Empire
+2068,Dal segno,Artabano,Male,Tenore,Munich,Empire
+2069,Dal segno,Mandane,Male,Prima donna,Venice,Italy
+2070,Da capo,Arbace,Male,Primo soprano,Rome,Italy
+2071,Dal segno,Arbace,Male,Primo soprano,Venice,Italy
+2072,Dal segno,Mandane,Male,Prima donna,Munich,Empire
+2073,Dal segno,Semira,Male,Seconda donna,Munich,Empire
+2074,Dal segno,Semira,Male,Seconda donna,Munich,Empire
+2075,Da capo,Semira,Male,Seconda donna,Venice,Italy
+2076,Dal segno,Artabano,Male,Tenore,Venice,Italy
+2077,Dal segno,Arbace,Male,Primo soprano,Munich,Empire
+2078,Dal segno,Artaserse,Male,Secondo uomo,Venice,Italy
+2079,Dal segno,Semira,Male,Seconda donna,Munich,Empire
+2080,Dal segno,Artabano,Male,Tenore,Venice,Italy
+2081,Dal segno,Megabise,Male,Parte ultima,Munich,Empire
+2082,Dal segno,Mandane,Male,Prima donna,Venice,Italy
+2083,Dal segno,Artabano,Male,Tenore,Munich,Empire
+2084,Dal segno,Artabano,Male,Tenore,Munich,Empire
+2085,Da capo,Mandane,Male,Prima donna,Rome,Italy
+2086,Dal segno,Semira,Male,Seconda donna,Munich,Empire
+2087,Da capo,Timante,Male,Primo soprano,Salzburg,Empire
+2088,Dal segno,Semira,Male,Seconda donna,Venice,Italy
+2089,Dal segno,Megabise,Male,Parte ultima,Venice,Italy
+2090,Dal segno,Arbace,Male,Primo soprano,Munich,Empire
+2091,Da capo,Artabano,Male,Tenore,Munich,Empire
+2092,Dal segno,Arbace,Male,Primo soprano,Rome,Italy
+2093,Dal segno,Megabise,Male,Parte ultima,Venice,Italy
+2094,ABABA,Mandane,Male,Prima donna,Munich,Empire
+2095,Dal segno,Arbace,Male,Primo soprano,Venice,Italy
+2096,Dal segno,Mandane,Male,Prima donna,Munich,Empire
+2097,Dal segno,Mandane,Male,Prima donna,Munich,Empire
+2098,Dal segno,Artaserse,Male,Secondo uomo,Rome,Italy
+2099,Da capo,Arbace,Male,Primo soprano,Rome,Italy
+2100,Dal segno,Semira,Male,Seconda donna,Munich,Empire
+2101,ABA,Arbace,Male,Primo soprano,Munich,Empire
+2102,Dal segno,Artabano,Male,Tenore,Munich,Empire
+2103,Dal segno,Mandane,Male,Prima donna,Munich,Empire
+2104,Dal segno,Arbace,Male,Primo soprano,Munich,Empire
+2105,Dal segno,"Mandane,Arbace",Male&Male,"Prima donna,Primo soprano",Venice,Italy
+2106,Dal segno,Mandane,Male,Prima donna,Munich,Empire
+2107,Dal segno,Semira,Male,Seconda donna,Munich,Empire
+2108,Dal segno,Artabano,Male,Tenore,Venice,Italy
+2109,Dal segno,Arbace,Male,Primo soprano,Venice,Italy
+2110,Dal segno,Artabano,Male,Tenore,Munich,Empire
+2111,Dal segno,Artaserse,Male,Secondo uomo,Munich,Empire
+2112,Dal segno,Mandane,Male,Prima donna,Munich,Empire
+2113,Dal segno,Artabano,Male,Tenore,Munich,Empire
+2114,Dal segno,"Mandane,Arbace",Male&Male,"Prima donna,Primo soprano",Munich,Empire
+2115,Da capo,Mandane,Male,Prima donna,Rome,Italy
+2116,Da capo,Mandane,Male,Prima donna,Naples,Italy
+2117,Dal segno,Artaserse,Male,Secondo uomo,Rome,Italy
+2118,Dal segno,Arbace,Male,Primo soprano,Naples,Italy
+2119,Dal segno,Arbace,Male,Primo soprano,Munich,Empire
+2120,Da capo,Mandane,Male,Prima donna,Rome,Italy
+2121,Da capo,Artaserse,Male,Secondo uomo,Naples,Italy
+2122,Da capo,Artaserse,Male,Secondo uomo,Rome,Italy
+2123,Da capo,Arbace,Male,Primo soprano,Rome,Italy
+2124,Dal segno,Arbace,Male,Primo soprano,Munich,Empire
+2125,Dal segno,Artaserse,Male,Secondo uomo,Munich,Empire
+2126,Dal segno,"Mandane,Arbace",Male&Male,"Prima donna,Primo soprano",Munich,Empire
+2127,Dal segno,Megabise,Male,Parte ultima,Naples,Italy
+2128,Dal segno,Artaserse,Male,Secondo uomo,Naples,Italy
+2129,Dal segno,Artabano,Male,Tenore,Naples,Italy
+2130,Da capo,Semira,Male,Seconda donna,Naples,Italy
+2131,ABA,Semira,Male,Seconda donna,Naples,Italy
+2132,ABA,Artaserse,Male,Secondo uomo,Naples,Italy
+2133,Dal segno,Arbace,Male,Primo soprano,Naples,Italy
+2134,Dal segno,Arbace,Male,Primo soprano,Naples,Italy
+2135,Da capo,Semira,Male,Seconda donna,Venice,Italy
+2136,Da capo,Artaserse,Male,Secondo uomo,Venice,Italy
+2137,ABA,Semira,Male,Seconda donna,Naples,Italy
+2138,Dal segno,Megabise,Male,Parte ultima,Naples,Italy
+2139,Da capo,Semira,Male,Seconda donna,Venice,Italy
+2140,Dal segno,Mandane,Male,Prima donna,Naples,Italy
+2141,ABA,Arbace,Male,Primo soprano,Venice,Italy
+2142,Da capo,Semira,Male,Seconda donna,Naples,Italy
+2143,Da capo,Mandane,Male,Prima donna,Venice,Italy
+2144,ABA,Arbace,Male,Primo soprano,Naples,Italy
+2145,ABA,Mandane,Male,Prima donna,Naples,Italy
+2146,Dal segno,Arbace,Male,Primo soprano,Naples,Italy
+2147,Dal segno,Mandane,Male,Prima donna,Naples,Italy
+2148,Da capo,"Mandane,Arbace",Male&Male,"Prima donna,Primo soprano",Venice,Italy
+2149,Dal segno,Artaserse,Male,Secondo uomo,Naples,Italy
+2150,ABA,Artabano,Male,Tenore,Naples,Italy
+2151,Da capo,Mandane,Male,Prima donna,Venice,Italy
+2152,Da capo,Artaserse,Male,Secondo uomo,Venice,Italy
+2153,ABA,Mandane,Male,Prima donna,Naples,Italy
+2154,ABA,Mandane,Male,Prima donna,Naples,Italy
+2155,AB,"Mandane,Arbace",Male&Male,"Prima donna,Primo soprano",Naples,Italy
+2156,ABA,Artaserse,Male,Secondo uomo,Naples,Italy
+2157,ABA,Megabise,Male,Parte ultima,Naples,Italy
+2158,Da capo,Artabano,Male,Tenore,Rome,Italy
+2159,Dal segno,Artabano,Male,Tenore,Naples,Italy
+2160,Da capo,Artabano,Male,Tenore,Rome,Italy
+2161,Dal segno,Arbace,Male,Primo soprano,Naples,Italy
+2162,Dal segno,Artabano,Male,Tenore,Naples,Italy
+2163,Dal segno,Mandane,Male,Prima donna,Naples,Italy
+2164,Dal segno,Mandane,Male,Prima donna,Rome,Italy
+2165,Dal segno,Semira,Male,Seconda donna,Naples,Italy
+2166,Da capo,Semira,Male,Seconda donna,Venice,Italy
+2167,Dal segno,Arbace,Male,Primo soprano,Naples,Italy
+2168,Dal segno,Arbace,Male,Primo soprano,Rome,Italy
+2169,Da capo,Semira,Male,Seconda donna,Rome,Italy
+2170,Da capo,Araspe,Male,Secondo uomo,Reggio Emilia,Italy
+2171,Da capo,Arbace,Male,Primo soprano,Venice,Italy
+2172,Da capo,Enea,Male,Primo soprano,Reggio Emilia,Italy
+2173,Da capo,Iarba,Male,Tenore,Reggio Emilia,Italy
+2174,Da capo,Artaserse,Male,Secondo uomo,Rome,Italy
+2175,Dal segno,Enea,Male,Primo soprano,Reggio Emilia,Italy
+2176,Da capo,Iarba,Male,Tenore,Reggio Emilia,Italy
+2177,ABA,Artabano,Male,Tenore,Naples,Italy
+2178,Da capo,Didone,Male,Prima donna,Reggio Emilia,Italy
+2179,Da capo,Artabano,Male,Tenore,Rome,Italy
+2180,Da capo,Enea,Male,Primo soprano,Reggio Emilia,Italy
+2181,Da capo,Iarba,Male,Tenore,Reggio Emilia,Italy
+2182,Da capo,Artaserse,Male,Secondo uomo,Venice,Italy
+2183,Da capo,Selene,Male,Seconda donna,Reggio Emilia,Italy
+2184,A,Didone,Male,Prima donna,Reggio Emilia,Italy
+2185,Da capo,Araspe,Male,Secondo uomo,Reggio Emilia,Italy
+2186,AB,Arbace,Male,Primo soprano,Naples,Italy
+2187,ABA,Artabano,Male,Tenore,Naples,Italy
+2188,Dal segno,Mandane,Male,Prima donna,,
+2189,Da capo,Dircea,Male,Prima donna,Naples,Italy
+2190,Dal segno,Arbace,Male,Primo soprano,Bonn,Empire
+2191,Dal segno,Demofoonte,Male,Tenore,Naples,Italy
+2192,Da capo,Mandane,Male,Prima donna,Venice,Italy
+2193,Dal segno,Arbace,Male,Primo soprano,Bonn,Empire
+2194,Da capo,Semira,Male,Seconda donna,,
+2195,Da capo,Timante,Male,Primo soprano,Naples,Italy
+2196,Da capo,Arbace,Male,Primo soprano,Bonn,Empire
+2197,ABAB,Artabano,Male,Tenore,Modena,Italy
+2198,Da capo,Arbace,Male,Primo soprano,,
+2199,Da capo,Creusa,Male,Seconda donna,Naples,Italy
+2200,Dal segno,Mandane,Male,Prima donna,Parma,Italy
+2201,Da capo,Mandane,Male,Prima donna,Venice,Italy
+2202,ABA,Artaserse,Male,Secondo uomo,Modena,Italy
+2203,ABA,Semira,Male,Seconda donna,Modena,Italy
+2204,Da capo,Cherinto,Male,Secondo uomo,Naples,Italy
+2205,Da capo,Artaserse,Male,Secondo uomo,Parma,Italy
+2206,Da capo,Dircea,Male,Prima donna,Naples,Italy
+2207,Da capo,Cherinto,Male,Secondo uomo,Naples,Italy
+2208,Da capo,Creusa,Male,Seconda donna,Naples,Italy
+2209,Da capo,Timante,Male,Primo soprano,Naples,Italy
+2210,Dal segno,Timante,Male,Primo soprano,Naples,Italy
+2211,Da capo,Semira,Male,Seconda donna,Venice,Italy
+2212,Da capo,Matusio,Male,Parte ultima,Naples,Italy
+2213,A,Tamiri,Male,Seconda donna,London,England
+2214,Da capo,Demofoonte,Male,Tenore,Naples,Italy
+2215,Da capo,Creusa,Male,Seconda donna,Naples,Italy
+2216,Da capo,Arbace,Male,Primo soprano,Venice,Italy
+2217,Da capo,Matusio,Male,Parte ultima,Naples,Italy
+2218,Da capo,Semira,Male,Seconda donna,Turin,Italy
+2219,Da capo,Arbace,Male,Primo soprano,Turin,Italy
+2220,Da capo,Arbace,Male,Primo soprano,,
+2221,Da capo,Artaserse,Male,Secondo uomo,,
+2222,Dal segno,Arbace,Male,Primo soprano,Milan,Italy
+2223,Dal segno,Arbace,Male,Primo soprano,Milan,Italy
+2224,Da capo,Matusio,Male,Parte ultima,Naples,Italy
+2225,Da capo,Semira,Male,Seconda donna,Bologna,Italy
+2226,Dal segno,Demofoonte,Male,Tenore,Naples,Italy
+2227,Da capo,Dircea,Male,Prima donna,Naples,Italy
+2228,AB,Megabise,Male,Parte ultima,Modena,Italy
+2229,Dal segno,Artabano,Male,Tenore,Modena,Italy
+2230,Dal segno,"Mandane,Arbace",Male&Male,"Prima donna,Primo soprano",,
+2231,Da capo,Creusa,Male,Seconda donna,Naples,Italy
+2232,Dal segno,Mandane,Male,Prima donna,Modena,Italy
+2233,Da capo,"Mandane,Arbace",Male&Male,"Prima donna,Primo soprano",Rome,Italy
+2234,Dal segno,Demofoonte,Male,Tenore,Naples,Italy
+2235,ABA,Semira,Male,Seconda donna,Modena,Italy
+2236,Dal segno,Cherinto,Male,Secondo uomo,Naples,Italy
+2237,Da capo,Semira,Male,Seconda donna,Rome,Italy
+2238,ABA,Megabise,Male,Parte ultima,Modena,Italy
+2239,ABAB,Arbace,Male,Primo soprano,Modena,Italy
+2240,Dal segno,Artaserse,Male,Secondo uomo,Venice,Italy
+2241,Da capo,Mandane,Male,Prima donna,Turin,Italy
+2242,,,Male,,,
+2243,,,Male,,,
+2244,,,Male,,,
+2245,,,Male,,,
+2246,,,Male,,,
+2247,,,Male,,,
+2248,,,Male,,,
+2249,,,Male,,,
+2250,,,Male,,,
+2251,,,Male,,,
+2252,,,Male,,,
+2253,,,Male,,,
+2254,,,Male,,,
+2255,,,Male,,,
+2256,,,Male,,,
+2257,,,Male,,,
+2258,,,Male,,,
+2259,,,Male,,,
+2260,,,Male,,,
+2261,,,Male,,,
+2262,,,Male,,,
+2263,,,Male,,,
+2264,,,Male,,,
+2265,,,Male,,,
+2266,,,Male,,,
+2267,,,Male,,,
+2268,,,Male,,,
+2269,,,Male,,,
+2270,,,Male,,,
+2271,,,Male,,,
+2272,,,Male,,,
+2273,,,Male,,,
+2274,,,Male,,,
+2275,,,Male,,,
+2276,,,Male,,,
+2277,,,Male,,,
+2278,,,Male,,,
+2279,,,Male,,,
+2280,,,Male,,,
+2281,,,Male,,,
+2282,,,Male,,,
+2283,,,Male,,,
+2284,,,Male,,,
+2285,,,Male,,,
+2286,,,Male,,,
+2287,,,Male,,,
+2288,,,Male,,,
+2289,,,Male,,,
+2290,,,Male,,,
+2291,,,Male,,,
+2292,,,Male,,,
+2293,,,Male,,,
+2294,,,Male,,,
+2295,,,Male,,,
+2296,,,Male,,,
+2297,,,Male,,,
+2298,,,Male,,,
+2299,,,Male,,,
+2300,,,Male,,,
+2301,,,Male,,,
+2302,,,Male,,,
+2303,,,Male,,,
+2304,,,Male,,,
+2305,,,Male,,,
+2306,,,Male,,,
+2307,,,Male,,,
+2308,,,Male,,,
+2309,,,Male,,,
+2310,,,Male,,,
+2311,,,Male,,,
+2312,,,Male,,,
+2313,,,Male,,,
+2314,,,Male,,,
+2315,,,Male,,,
+2316,,,Male,,,
+2317,,,Male,,,
+2318,,,Male,,,
+2319,,,Male,,,
+2320,,,Male,,,
+2321,,,Male,,,
+2322,,,Male,,,
+2323,,,Male,,,
+2324,,,Male,,,
+2325,,,Male,,,
+2326,,,Male,,,
+2327,,,Male,,,
+2328,,,Male,,,
+2329,,,Male,,,
+2330,,,Male,,,
+2331,,,Male,,,
+2332,,,Male,,,
+2333,,,Male,,,
+2334,,,Male,,,
+2335,,,Male,,,
+2336,,,Male,,,
+2337,,,Male,,,
+2338,,,Male,,,
+2339,,,Male,,,
+2340,,,Male,,,
+2341,,,Male,,,
+2342,,,Male,,,
+2343,,,Male,,,
+2344,,,Male,,,
+2345,,,Male,,,
+2346,,,Male,,,
+2347,,,Male,,,
+2348,,,Male,,,
+2349,,,Male,,,
+2350,,,Male,,,
+2351,,,Male,,,
+2352,,,Male,,,
+2353,,,Male,,,
+2354,,,Male,,,
+2355,,,Male,,,
+2356,,,Male,,,
+2357,,,Male,,,
+2358,,,Male,,,
+2359,,,Male,,,
+2360,,,Male,,,
+2361,,,Male,,,
+2362,,,Male,,,
+2363,,,Male,,,
+2364,,,Male,,,
+2365,,,Male,,,
+2366,,,Male,,,
+2367,,,Male,,,
+2368,,,Male,,,
+2369,,,Male,,,
+2370,,,Male,,,
+2371,,,Male,,,
+2372,,,Male,,,
+2373,,,Male,,,
+2374,,,Male,,,
+2375,,,Male,,,
+2376,,,Male,,,
+2377,,,Male,,,
+2378,,,Male,,,
+2379,,,Male,,,
+2380,,,Male,,,
+2381,,,Male,,,
+2382,,,Male,,,
+2383,,,Male,,,
+2384,,,Male,,,
+2385,,,Male,,,
+2386,,,Male,,,
+2387,,,Male,,,
+2388,,,Male,,,
+2389,,,Male,,,
+2390,,,Male,,,
+2391,,,Male,,,
+2392,,,Male,,,
+2393,,,Male,,,
+2394,,,Male,,,
+2395,,,Male,,,
+2396,,,Male,,,
+2397,,,Male,,,
+2398,,,Male,,,
+2399,,,Male,,,
+2400,,,Male,,,
+2401,,,Male,,,
+2402,,,Male,,,
+2403,,,Male,,,
+2404,,,Male,,,
+2405,,,Male,,,
+2406,,,Male,,,
+2407,,,Male,,,
+2408,,,Male,,,
+2409,,,Male,,,
+2410,,,Male,,,
+2411,,,Male,,,
+2412,,,Male,,,
