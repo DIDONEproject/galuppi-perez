@@ -349,5 +349,5 @@ class DidoneBagging(BaseEstimator):
             resample_size=1.0,
             replacement=True,
             random_state=756,
-            n_jobs=1,
+            n_jobs=-1,
         )
