@@ -36,7 +36,6 @@ class DidoneClassifier(BaseEstimator):
         standardize=True,
         n_jobs=-1,
     ):
-
         self.standardize = standardize
         self.x_encoder = x_encoder
         self.y_encoder = y_encoder
@@ -77,6 +76,13 @@ class DidoneClassifier(BaseEstimator):
         predictions = self._models_prediction(X)
 
         self.ensemble.metric = self.metric
+        # one-hot encoding of targets
+        y = pd.get_dummies(y).to_numpy()
+        # one-hot encoding of predictions
+        predictions = [
+            pd.get_dummies(predictions[:, k]).to_numpy()
+            for k in range(predictions.shape[1])
+        ]
         self.ensemble.fit(predictions, y, list(self.models.keys()), None)
         return self
 
@@ -188,7 +194,6 @@ class DidoneBagging(BaseEstimator):
         random_state=None,
         n_jobs=-1,
     ):
-
         self.estimator = estimator
         self.n_resamples = n_resamples
         self.resample_size = resample_size
@@ -214,7 +219,6 @@ class DidoneBagging(BaseEstimator):
         return (predictions / L).to_numpy()
 
     def _predict(self, X):
-
         classes = self.bag[0].classes_
 
         def predict_parallel(m, classes):
@@ -225,7 +229,7 @@ class DidoneBagging(BaseEstimator):
                 predictions.loc[i, p] = 1
             return predictions
 
-        predictions = Parallel(n_jobs=-1)(
+        predictions = Parallel(n_jobs=self.n_jobs)(
             delayed(predict_parallel)(m, classes) for m in self.bag
         )
         predictions = functools.reduce(lambda x, y: x.add(y, fill_value=0), predictions)
@@ -252,6 +256,7 @@ class DidoneBagging(BaseEstimator):
                 random_state = (self.random_state + i + 1) * N
             k = 0  # this counts how many trials we do
             while True:
+                k += 1
                 if self.random_state is None:
                     random_state = None
                 else:
@@ -266,8 +271,11 @@ class DidoneBagging(BaseEstimator):
                 )
                 try:
                     m = clone(self.estimator).fit(X_r, y_r)
-                except Exception:
-                    if k >= self.n_trials:
+                except Exception as e:
+                    if k > self.n_trials:
+                        import traceback
+
+                        traceback.print_exception(e)
                         raise Exception("Cannot found a resample without errors!")
                     else:
                         warnings.warn(
@@ -339,6 +347,6 @@ class DidoneBagging(BaseEstimator):
             n_trials=20,
             resample_size=1.0,
             replacement=True,
-            random_state=856,
+            random_state=756,
             n_jobs=-1,
         )
