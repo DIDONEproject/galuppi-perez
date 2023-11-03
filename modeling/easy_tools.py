@@ -69,8 +69,8 @@ def select_galuppi_perez(data, X, y, holdout=0.0):
 
     # computing columns that are valid for both X_train and X_test
     X_columns = (
-        pd.concat([X_test, X_train]).dropna(axis=1).select_dtypes([float]).columns
-    )
+        pd.concat([X_test, X_train]).dropna(axis=1).columns
+    )  # .select_dtypes([int, float]).columns
     X_test = X_test[X_columns]
     X_train = X_train[X_columns]
 
@@ -214,7 +214,7 @@ def test_suspected_arias(experiments_dir, refit=True):
             # if isinstance(m, CalibratedClassifierCV):
             #     decfunc = m.base_estimator.decision_function(X_test)
             # else:
-                # decfunc = m.decision_function(X_test)
+            # decfunc = m.decision_function(X_test)
             # pred["DecFunc"] = decfunc
 
             if hasattr(m, "predict_proba"):
@@ -264,9 +264,9 @@ def custom_inspection(experiments_dir, output_dir, X, y):
     import pickle
 
     from sklearn.base import clone
+    from sklearn.calibration import CalibratedClassifierCV
     from sklearn.pipeline import Pipeline
     from sklearn.preprocessing import StandardScaler
-    from sklearn.calibration import CalibratedClassifierCV
 
     from .inspection import umap_plot, variance_inflation_factor
     from .plotting import InspectionError
@@ -295,7 +295,6 @@ def custom_inspection(experiments_dir, output_dir, X, y):
     #         del bag, plotter
     #     except InspectionError:
     #         pass
-
     # print(C.BOLD + C.OKBLUE + "Computing VIF on linear automl" + C.ENDC)
     # m = experiments_dir / "linear_automl" / "ensemble.pkl"
     # m = pickle.load(open(m, "rb"))
