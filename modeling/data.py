@@ -1,19 +1,19 @@
-import pandas as pd
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
+from sklearn.preprocessing import OrdinalEncoder
 
 from .settings import DATA_DIR
 
-
-LABELS_CSV = 'extraction_labels.csv'
-FEATURES_CSV = 'extraction_features.csv'
-METADATA_CSV = 'extraction_metadata.csv'
+LABELS_CSV = "extraction_labels.csv"
+FEATURES_CSV = "extraction_features.csv"
+METADATA_CSV = "extraction_metadata.csv"
 
 
 def normalize_strings(X):
     # Fixing composers
-    X.Composer = X.Composer.str.split(' ').str[-1].str.title()
+    X.Composer = X.Composer.str.split(" ").str[-1].str.title()
     return X
 
 
@@ -53,9 +53,11 @@ def load_features(label=None):
     """
     metadata = pd.read_csv(Path(DATA_DIR) / METADATA_CSV)
     X = pd.read_csv(Path(DATA_DIR) / FEATURES_CSV)
-    assert np.all(metadata['AriaId'] == X['AriaId']), 'Error in metadata.AriaId == X.AriaId'
-    del X['AriaId']
-    del X['WindowId'], metadata['WindowId']
+    assert np.all(
+        metadata["AriaId"] == X["AriaId"]
+    ), "Error in metadata.AriaId == X.AriaId"
+    del X["AriaId"]
+    del X["WindowId"], metadata["WindowId"]
     data = pd.concat([metadata, X], axis=1)
     data = data.sample(frac=1.0, random_state=987)
 
@@ -78,13 +80,14 @@ def load_features(label=None):
 
     # only select numbers, categories, and strings
     # for now, only float (with encoded features something doesn't work)
-    data_ = data.select_dtypes(include=['number', 'category'])
-    X_ = X.select_dtypes(include=['number', 'category'])
+    data_ = data.select_dtypes(include=["number", "category"])
+    X_ = X.select_dtypes(include=["number", "category"])
     data = pd.concat([data_, __remove_string_cols(data)], axis=1)
     X = pd.concat([X_, __remove_string_cols(X)], axis=1)
 
-    # # encoding X
-    # feature_names = X.columns
-    # X = OrdinalEncoder().fit_transform(X)
-    # X = pd.DataFrame(X, columns=feature_names).copy()
-    return data, X, y
+    # encoding X
+    feature_names = X.columns
+    X_encoder = OrdinalEncoder()
+    X = X_encoder.fit_transform(X)
+    X = pd.DataFrame(X, columns=feature_names).copy()
+    return data, X, y, X_encoder

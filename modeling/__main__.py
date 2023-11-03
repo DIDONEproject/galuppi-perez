@@ -114,11 +114,12 @@ class Model(object):
         return self
 
     def __load_data(self):
-        data, X, y = load_features(S.Y_VARIABLE)
+        data, X, y, X_encoder = load_features(S.Y_VARIABLE)
         self.data, self.X, self.y = getattr(easy_tools, self.prehook)(
             data, X, y, holdout=self.holdout
         )
         # reset index to prevent possible mismatching inserted by `prehook`
+        self.X_encoder = X_encoder
         self.X.reset_index(drop=True, inplace=True)
         self.y.reset_index(drop=True, inplace=True)
         self.data.reset_index(drop=True, inplace=True)
