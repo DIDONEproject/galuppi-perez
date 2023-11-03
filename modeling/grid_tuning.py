@@ -306,6 +306,8 @@ def grid_tune_pipeline(X, y, splitter):
                         error_score=0.0,
                         scoring=make_scorer(balanced_accuracy_score),
                     )
+                else:
+                    model.param_grid = param_grid  # avoid errors when computing the number of hyper-parameters
                 delayed_fittings.append((X, y, deepcopy(model), deepcopy(pipeline)))
             else:
                 iterate_step(step_idx + 1)
@@ -363,8 +365,9 @@ def grid_tune_pipeline(X, y, splitter):
     return best_model, results
 
 
-def gridsearch(data_x_y, splitter, output_dir, skipsearches=False,
-               skipbagfitting=False):
+def gridsearch(
+    data_x_y, splitter, output_dir, skipsearches=False, skipbagfitting=False
+):
     """
     1. Performs a grid_search on `get_custom_grid(X, y)` using train_idx.
     2. Saves the best model and the list of grid-search objects in `output_dir`
@@ -375,16 +378,17 @@ def gridsearch(data_x_y, splitter, output_dir, skipsearches=False,
     6. Saves figures of the analysis in `output_dir`
     """
     X, y = data_x_y
-    
+
     output_dir = Path(output_dir)
 
     if skipsearches:
-        model = pickle.load(open(output_dir / 'best_model.pkl', 'rb'))
+        model = pickle.load(open(output_dir / "best_model.pkl", "rb"))
     else:
         print("Starting Grid-search")
         model, trajectory = grid_tune_pipeline(X, y, splitter)
-        if not hasattr(model, 'predict_proba'):
+        if not hasattr(model, "predict_proba"):
             from sklearn.calibration import CalibratedClassifierCV
+
             model = CalibratedClassifierCV(model, cv=splitter, n_jobs=-1)
             model.fit(X, y)
 
