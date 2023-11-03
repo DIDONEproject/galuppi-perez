@@ -20,11 +20,6 @@ class Model(object):
 
         - baseline gridsearch
 
-        - baseline permutation
-        - ensemble permutation
-        - linear permutation
-        - tree permutation
-
         - test
         - baseline test
         - ensemble test
