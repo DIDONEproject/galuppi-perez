@@ -55,27 +55,20 @@ For extracting features, we use the [musif](https://musif.didone.eu) python pack
 
 The list and definition of all the features is avalable [here](https://musif.didone.eu/Feature_definition.html).
 
-#### Cache objects
-
-We provide the cached musiF's `SmartModuleCache` objects that contain all the
-information needed to recompute the features and were created using the musif's [caching
-system](https://musif.didone.eu/Caching.html).
-
-Such objects behaves exactly like `music21` objects. To inspect them, you can look into
-the `cache` attribute, where you will find all the attributes that were cached in a
-dictionary. Most of them will be other `SmartModuleCache` objects, while some of them
-will be `MethodCache` objects. Long story short, you can access any value in the `cache`
-dictionary as if it was an attribute. `MethodCache` objects behave similarly, meaning
-that they can be called as if they were methods, but in the `cache`, they store the
-arguments with which they were called and the corresponding value.
+The source scores will be released in the context of the [Didone ERC
+project](https://didone.eu). For later reference, in this project we used the dataset as
+of 21 November 2023, git hash `a3e30ac20f6df909065f75425da36e8f7819bcfe`.
 
 #### Dataframe music scores
 
-To provide an easier method to deal with the corpus, we also provide some dataframes in
-the `data/dfs` folder. They are not used in this code, but may be useful for working on
-this same dataset. To load these files, you can unpickle them or use the function
-`musif.cache.load_score_df`. The object contained is a dictionary where the keys are the
-names of the parts and the values are dataframes with the following columns:
+To provide an alternative method to deal with the corpus, we also provide some dataframes in
+the `data/dfs` folder. Note that we extract features starting from MusicXML and
+MuseScore files and these dataframes are not used in this code. However, they may be
+useful for working on this same dataset using different approaches (neural networks,
+HMM, etc.). To load these files, you can unpickle them or
+use the function `musif.cache.load_score_df`. The object contained is a dictionary where
+the keys are the names of the parts and the values are dataframes with the following
+columns:
 
 - "Type": A string identifying the type of object. Possible values: `"Note"`,
   `"Rest"`, `"Measure"`, `"Time Signature"`
