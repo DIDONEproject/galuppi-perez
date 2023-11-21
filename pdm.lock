@@ -450,8 +450,8 @@ dependencies = [
 
 [[package]]
 name = "music21"
-version = "8.3.0"
-requires_python = ">=3.8"
+version = "9.1.0"
+requires_python = ">=3.10"
 summary = "A Toolkit for Computer-Aided Musical Analysis and Computational Musicology."
 dependencies = [
     "chardet",
@@ -466,14 +466,14 @@ dependencies = [
 
 [[package]]
 name = "musif"
-version = "1.1.3"
+version = "1.1.4"
 requires_python = ">=3.10"
 summary = "Music feature extraction library from the DIDONE project"
 dependencies = [
     "deepdiff>=6.2.1",
     "joblib>=1.0.0",
     "ms3>=1.2.0",
-    "music21<9,>=8",
+    "music21>=9.1",
     "pandas>=1.3.3",
     "pyyaml>=5.4.1",
     "roman>=3.3",
@@ -959,7 +959,7 @@ summary = "Backport of pathlib-compatible object wrapper for zip files"
 
 [metadata]
 lock_version = "4.1"
-content_hash = "sha256:b34ec52f41769e03fc4bdabc614d9e01a3b3eb0f24b257168393053e84da1ce9"
+content_hash = "sha256:a192c40239c88dd2b12f8466ef4a4363852b2a136f5bffe99021794b2f8cb7b6"
 
 [metadata.files]
 "appnope 0.1.3" = [
@@ -1683,13 +1683,13 @@ content_hash = "sha256:b34ec52f41769e03fc4bdabc614d9e01a3b3eb0f24b257168393053e8
     {url = "https://files.pythonhosted.org/packages/eb/97/d96514a4702697d52074b65c7e53b7557654f492f5233e2b84d4b374a932/multiprocess-0.70.14-pp38-pypy38_pp73-macosx_10_9_x86_64.whl", hash = "sha256:40a5e3685462079e5fdee7c6789e3ef270595e1755199f0d50685e72523e1d2a"},
     {url = "https://files.pythonhosted.org/packages/f1/00/c1b90843cb80e6a1911f480e92a92b1258efcdd32ed4fe87449703416fc4/multiprocess-0.70.14-py37-none-any.whl", hash = "sha256:93a8208ca0926d05cdbb5b9250a604c401bed677579e96c14da3090beb798193"},
 ]
-"music21 8.3.0" = [
-    {url = "https://files.pythonhosted.org/packages/28/dc/ab7cfcd91b8bddcc556f7c39f2770a660d5352b3fb45e0841b0577519e09/music21-8.3.0.tar.gz", hash = "sha256:28627bf5e47707ac5e6ae5161c3a2160f154b796cf4aca992e5d46847caa7ca6"},
-    {url = "https://files.pythonhosted.org/packages/ca/d3/df576214c634abf1ff0a6d03137a5f9272266fd87e7abef3adc0962ba0f0/music21-8.3.0-py3-none-any.whl", hash = "sha256:02e602e99fdac7528d42c41aac635a4de070cd41478dea30c7c2c08d79960be4"},
+"music21 9.1.0" = [
+    {url = "https://files.pythonhosted.org/packages/5a/b3/cec3c86368e1d5726104f04fbc4e091c12dd190232e73d339e30115ce40b/music21-9.1.0.tar.gz", hash = "sha256:6c61425c7af5bf54e120afebabcffdb22be32620b0ea22b0d8e36ac5eafaefc8"},
+    {url = "https://files.pythonhosted.org/packages/a1/1b/ef7bdf01df19cc7ac9294531a9c991c6d382bde6bc15c9d106b9a5e547ef/music21-9.1.0-py3-none-any.whl", hash = "sha256:f3d312159be73867bd86fb0b6f201fc7285e5f6886d6f0c0a115eeeff0e67741"},
 ]
-"musif 1.1.3" = [
-    {url = "https://files.pythonhosted.org/packages/5a/e6/8852852b37dfeb4e5cf6d6fb2e85854c15aaef7ab0cfe1e70b7eb87a7d7c/musif-1.1.3.tar.gz", hash = "sha256:c95205b0b329a9ec7c228d577c67147772a94db514b5b51457dc63e69ae99e53"},
-    {url = "https://files.pythonhosted.org/packages/f0/79/9f723cbf2249fbae08a4d468d73fc22be0cb672395c702c2b4fb6cda6143/musif-1.1.3-py3-none-any.whl", hash = "sha256:5b98f9caa4e0670b47c6515a778cc6c347916d6d15de22ff8785ee0abe1e689a"},
+"musif 1.1.4" = [
+    {url = "https://files.pythonhosted.org/packages/1a/4b/5a734542719fd7970cd18ee7ee0f6c1d4771b92106a965a4cdb23a3021cc/musif-1.1.4-py3-none-any.whl", hash = "sha256:4708d3e9ed82cf501460b22f5a8de50b8c1e265f7ab8dd6cf798b85f100f3968"},
+    {url = "https://files.pythonhosted.org/packages/bc/e0/efd12c2d9c89b1b69cfc32424a473a08717e3a80500e15aa47db71620ba6/musif-1.1.4.tar.gz", hash = "sha256:0992b0601d9fc24cf74342adaba78e90d9981a54bc9f0b3d52db37c8f5269630"},
 ]
 "numba 0.57.0" = [
     {url = "https://files.pythonhosted.org/packages/13/96/359afa8f47b7ea7ce3e025431f489666076b184dd2df56ba7113bd195c15/numba-0.57.0-cp39-cp39-win32.whl", hash = "sha256:83d4f21c98eed3001e9896a43a1ce9c825999c03f7eb39ddd1c2d07a76708392"},
