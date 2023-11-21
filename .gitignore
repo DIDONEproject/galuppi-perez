@@ -43,3 +43,4 @@ data/raw_df.pkl
 musif.log*
 data/cache
 experiments
+experiments.log.bak
