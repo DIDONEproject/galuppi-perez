@@ -241,9 +241,8 @@ class Model(object):
         raw_df = FeaturesExtractor(
             CustomConf(
                 S.DATA_DIR / "config_extraction.yml",
-                xml_dir=xml_dir,
+                data_dir=xml_dir,
                 musescore_dir=musescore_dir,
-                # cache_dir=S.DATA_DIR / "cache",
                 metadata_dir=S.DATA_DIR / "metadata",
             ),
             limit_files=limit_files,
