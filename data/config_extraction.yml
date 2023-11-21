@@ -1,5 +1,6 @@
 expand_repeats: false
 dfs_dir: data/dfs
+cache_dir: null
 window_size: null
 overlap: null
 # parallel is the number of parallel processes to be used as defined by joblib:
@@ -7,7 +8,7 @@ overlap: null
 # 2 => 2 processes
 # -1 => all available virtual cores
 # -2 => all available virtual cores except 1
-parallel: 4
+parallel: 3
 log:
   file_path: logs/musif_test.log
   file_level: INFO
@@ -43,6 +44,8 @@ features:
   - jsymbolic
 
 jsymbolic_try_without_repeats: true
+
+jsymbolic_max_ram: "8g"
 
 split_keywords: # Used to split the possible layers present depending on the instrument name
   - woodwind
