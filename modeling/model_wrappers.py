@@ -156,7 +156,7 @@ class DidoneClassifier(BaseEstimator):
     @property
     def models_with_weights(self):
         ret = self.ensemble.get_identifiers_with_weights()
-        return [(w, self.models[k]) for k, w in ret]
+        return [(w, self.models[k]) for k, w in ret if w > 0.0]
 
     def get_plotter(self, top_k=0.5, feature_names=None):
         """
