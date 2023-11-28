@@ -64,6 +64,9 @@ def load_features(label=None):
     data = normalize_strings(data).copy()
     # data has been shuffled, need to retake X
     X = data[X.columns].copy()
+    # removing the id column from X but keeping it in data (so we an print it when
+    # testing on the suspect arias
+    del X["Id"]
 
     # taking the label
     if label:
