@@ -201,12 +201,6 @@ def test_suspected_arias(experiments_dir, refit=True):
         try:
             m = pickle.load(open(mfile, "rb"))
             if refit or (hasattr(m, "fitted") and not m.fitted):
-                if "X" not in vars():
-                    # same as `if not refit`
-                    X, y = get_xy()
-                # if hasattr(m, "fit_models"):
-                #     m.fit_models(X, y)
-                # else:
                 m.fit(X, y)
 
             pred = m.predict(X_test)

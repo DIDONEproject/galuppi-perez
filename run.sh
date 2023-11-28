@@ -37,21 +37,21 @@ echo "Starting Experiment with Full AutoML" | tee -a $LOG_FILE
 echo "------------------" >>$LOG_FILE
 echo "------------------" >>$LOG_FILE
 echo "------------------" >>$LOG_FILE
-./dust -m modeling blackbox automl --debug >>$LOG_FILE 2>&1
+./dust -m modeling blackbox automl >>$LOG_FILE 2>&1
 
 echo
 echo "Starting Experiment with Linear AutoML" | tee -a $LOG_FILE
 echo "------------------" >>$LOG_FILE
 echo "------------------" >>$LOG_FILE
 echo "------------------" >>$LOG_FILE
-./dust -m modeling linear automl --debug >>$LOG_FILE 2>&1
+./dust -m modeling linear automl >>$LOG_FILE 2>&1
 
 echo
 echo "Starting Experiment with Tree AutoML" | tee -a $LOG_FILE
 echo "------------------" >>$LOG_FILE
 echo "------------------" >>$LOG_FILE
 echo "------------------" >>$LOG_FILE
-./dust -m modeling tree automl --debug >>$LOG_FILE 2>&1
+./dust -m modeling tree automl >>$LOG_FILE 2>&1
 
 # baseline
 echo
@@ -59,7 +59,7 @@ echo "Starting Baseline grid-search-based methods" | tee -a $LOG_FILE
 echo "------------------" >>$LOG_FILE
 echo "------------------" >>$LOG_FILE
 echo "------------------" >>$LOG_FILE
-./dust -m modeling baseline gridsearch --debug >>$LOG_FILE 2>&1
+./dust -m modeling baseline gridsearch >>$LOG_FILE 2>&1
 
 # showing model structure
 echo
