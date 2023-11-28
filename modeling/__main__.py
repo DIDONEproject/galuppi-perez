@@ -116,7 +116,7 @@ class Model(object):
     def __load_data(self):
         data, X, y, X_encoder = load_features(S.Y_VARIABLE)
         self.data, self.X, self.y = getattr(easy_tools, self.prehook)(
-            data, X, y, holdout=self.holdout
+            data, X, y, X_encoder, holdout=self.holdout
         )
         # reset index to prevent possible mismatching inserted by `prehook`
         self.X_encoder = X_encoder
