@@ -6,7 +6,8 @@ from pathlib import Path
 
 import numpy as np
 from autosklearn.classification import AutoSklearnClassifier
-from autosklearn.metrics import balanced_accuracy as autosklearn_balanced_accuracy
+from autosklearn.metrics import \
+    balanced_accuracy as autosklearn_balanced_accuracy
 from autosklearn.metrics import mean_absolute_error as autosklearn_mae
 from sklearn import model_selection
 from sklearn.exceptions import ConvergenceWarning
@@ -236,12 +237,11 @@ def automl(
             standardize=False,
             n_jobs=our_autosklearn_kwargs["n_jobs"],
         )
+        classifier.fit(X, y)
 
         if output_dir:
             time_stamp = datetime.now().strftime("%m_%d-%H_%M")
-            pickle.dump(
-                ensemble, open(output_dir / f"automl-{time_stamp}.pkl", "wb")
-            )
+            pickle.dump(ensemble, open(output_dir / f"automl-{time_stamp}.pkl", "wb"))
             plot_time_performance(
                 ensemble, fname=output_dir / f"automl_optimization-{time_stamp}.svg"
             )
