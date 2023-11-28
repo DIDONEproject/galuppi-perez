@@ -237,7 +237,6 @@ def automl(
             standardize=False,
             n_jobs=our_autosklearn_kwargs["n_jobs"],
         )
-        classifier.fit(X, y)
 
         if output_dir:
             time_stamp = datetime.now().strftime("%m_%d-%H_%M")
