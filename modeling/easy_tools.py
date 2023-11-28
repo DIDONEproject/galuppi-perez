@@ -40,7 +40,7 @@ def select_dummy(data, X, y, **kwargs):
     return X[idx], y[idx]
 
 
-def select_galuppi_perez(data, X, y, holdout=0.0):
+def select_galuppi_perez(data, X, y, X_encoder, holdout=0.0):
     """
     This takes care of keeping only the data that we want.
 
@@ -271,40 +271,41 @@ def custom_inspection(experiments_dir, output_dir, X, y):
     from .inspection import umap_plot, variance_inflation_factor
     from .plotting import InspectionError
 
-    # print(C.BOLD + C.OKBLUE + "Computing feature importance and PDP" + C.ENDC)
-    # for m in experiments_dir.glob("**/bag.pkl"):
-    #     # computing and plotting most important features
-    #     dir_name = m.parent.name
-    #     if "blackbox" in dir_name:
-    #         continue
-    #     print(">>> " + dir_name)
-    #     # loading the simpler model
-    #     simple_model = m.parent / "ensemble.pkl"
-    #     if not simple_model.exists():
-    #         # gridsearch...
-    #         simple_model = simple_model.with_stem("best_model")
-    #     simple_model = pickle.load(open(simple_model, "rb"))
-    #     simple_model.fit(X, y)
-    #     # loading the bag
-    #     bag = pickle.load(open(m, "rb"))
-    #     try:
-    #         plotter = bag.get_plotter(
-    #             base_model=simple_model, top_k=0.5, feature_names=X.columns
-    #         )
-    #         plotter.plot(X, y, output_dir, prefix=dir_name)
-    #         del bag, plotter
-    #     except InspectionError:
-    #         pass
-    # print(C.BOLD + C.OKBLUE + "Computing VIF on linear automl" + C.ENDC)
-    # m = experiments_dir / "linear_automl" / "ensemble.pkl"
-    # m = pickle.load(open(m, "rb"))
-    # for idx, (w, model) in enumerate(m.models_with_weights):
-    #     preprocessor = clone(Pipeline(model.steps[:-1]))
-    #     variance_inflation_factor(
-    #         preprocessor.fit_transform(X.to_numpy()),
-    #         prefix=f"linear_automl_{idx}",
-    #         output_dir=output_dir,
-    #     )
+    print(C.BOLD + C.OKBLUE + "Computing feature importance and PDP" + C.ENDC)
+    for m in experiments_dir.glob("**/bag.pkl"):
+        # computing and plotting most important features
+        dir_name = m.parent.name
+        if "blackbox" in dir_name:
+            continue
+        print(">>> " + dir_name)
+        # loading the simpler model
+        simple_model = m.parent / "ensemble.pkl"
+        if not simple_model.exists():
+            # gridsearch...
+            simple_model = simple_model.with_stem("best_model")
+        else:
+            continue
+
+        simple_model = pickle.load(open(simple_model, "rb"))
+        simple_model.fit(X, y)
+        # loading the bag
+        bag = pickle.load(open(m, "rb"))
+        plotter = bag.get_plotter(
+            base_model=simple_model, top_k=0.5, feature_names=X.columns
+        )
+        plotter.plot(X, y, output_dir, prefix=dir_name)
+        del bag, plotter
+
+    print(C.BOLD + C.OKBLUE + "Computing VIF on linear automl" + C.ENDC)
+    m = experiments_dir / "linear_automl" / "ensemble.pkl"
+    m = pickle.load(open(m, "rb"))
+    for idx, (w, model) in enumerate(m.models_with_weights):
+        preprocessor = clone(Pipeline(model.steps[:-1]))
+        variance_inflation_factor(
+            preprocessor.fit_transform(X.to_numpy()),
+            prefix=f"linear_automl_{idx}",
+            output_dir=output_dir,
+        )
 
     print(C.BOLD + C.OKBLUE + "Computing VIF on linear gridsearch" + C.ENDC)
     m = experiments_dir / "gridsearch" / "best_model.pkl"
@@ -325,4 +326,4 @@ def custom_inspection(experiments_dir, output_dir, X, y):
 
     print(C.BOLD + C.OKBLUE + "Computing UMAP embedding" + C.ENDC)
     data_test, X_test, y_test = pickle.load(open(S.FINAL_TEST_FILE, "rb"))
-    umap_plot(X, X_test, colors=y, output_dir=output_dir)
+    # umap_plot(X, X_test, colors=y, output_dir=output_dir)

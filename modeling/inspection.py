@@ -159,11 +159,11 @@ def umap_plot(data, suspected_data, colors=None, output_dir=None):
     import warnings
 
     from sklearn.decomposition import PCA
+    from sklearn.pipeline import make_pipeline
     from sklearn.preprocessing import StandardScaler
+    from tqdm import tqdm
     # from sklearn.manifold import TSNE
     from umap import UMAP
-    from sklearn.pipeline import make_pipeline
-    from tqdm import tqdm
 
     from .plotting import plotly_save
 
@@ -194,7 +194,7 @@ def umap_plot(data, suspected_data, colors=None, output_dir=None):
                 "canberra",
             ]
         ):
-            for min_dist in np.geomspace(0.01, 1., 10):
+            for min_dist in np.geomspace(0.01, 1.0, 10):
                 for learning_rate in np.linspace(0.01, 800, 5):
                     try:
                         embedder = make_pipeline(
@@ -285,8 +285,14 @@ def variance_inflation_factor(data, prefix="", output_dir=None):
 
 
 def partial_dependence(
-    model, data, y, features, linear=True, prefix="", output_dir=None,
-    grid_resolution=10
+    model,
+    data,
+    y,
+    features,
+    linear=True,
+    prefix="",
+    output_dir=None,
+    grid_resolution=10,
 ):
     """
     Create partial dependence plots according to model on data for the features in

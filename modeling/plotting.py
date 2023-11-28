@@ -4,33 +4,27 @@ import graphviz as gv
 import numpy as np
 import pandas as pd
 import plotly.express as px
-
 # from glmnet import LogitNet
 import plotly.graph_objects as go
 import sklearn
-from autosklearn.pipeline.components.classification import (
-    decision_tree,
-    lda,
-    liblinear_svc,
-    passive_aggressive,
-    sgd,
-)
+from autosklearn.pipeline.components.classification import (decision_tree, lda,
+                                                            liblinear_svc,
+                                                            passive_aggressive,
+                                                            sgd)
 from plotly.subplots import make_subplots
 from scipy import stats
-from sklearn import linear_model, tree
+from sklearn import calibration, linear_model, tree
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.linear_model import (
-    LogisticRegressionCV,
-    PassiveAggressiveClassifier,
-    RidgeClassifierCV,
-    SGDClassifier,
-)
+from sklearn.linear_model import (LogisticRegressionCV,
+                                  PassiveAggressiveClassifier,
+                                  RidgeClassifierCV, SGDClassifier)
 from sklearn.metrics import balanced_accuracy_score, make_scorer
 from sklearn.svm import LinearSVC
 from sklearn.tree import export_graphviz
 
 from .easy_tools import get_xy
-from .inspection import FeatureDimredError, partial_dependence, pipeline_backtrack
+from .inspection import (FeatureDimredError, partial_dependence,
+                         pipeline_backtrack)
 
 balanced_accuracy = make_scorer(balanced_accuracy_score)
 
@@ -284,12 +278,17 @@ def get_classifier_type(model, feature_names=None):
     Returns the type of a classifier. Supported: 'didone', 'tree' and 'linear'.
     If the classifier is a pipeline, performs backtracking of the features.
 
+    CalibratedClassifierCV is supported only if `ensemble` is False.
+
     Returns:
         * type of classifier as string
         * classifier
         * backtracked features
     """
     # backtracking features
+    if type(model) is calibration.CalibratedClassifierCV:
+        model = model.calibrated_classifiers_[0].base_estimator
+
     cls = type(model)
     if sklearn.pipeline.Pipeline in cls.mro():
         try:
@@ -404,12 +403,16 @@ class DidonePlotter:
         dependence_coeff_sign = []
         try:
             angular_coeffs, classes = partial_dependence(
-                self.model, X, y, features, linear=True,
-                grid_resolution=self.grid_resolution
+                self.model,
+                X,
+                y,
+                features,
+                linear=True,
+                grid_resolution=self.grid_resolution,
             )
         except Exception as e:
             print(f"Cannot compute partial dependence: {e}")
-            __import__('ipdb').set_trace()
+            __import__("ipdb").set_trace()
             dependence_coeff_sign = {k: True for k in features}
         else:
             # modifying the coeffs so that positive coeffs correspond features
@@ -479,9 +482,10 @@ class DidonePlotter:
                 ],
             )
             hide_duplicate_traces_from_legend(fig)
-            fig.update_layout(xaxis=dict(tickmode="linear", tick0=0.5,
-                                         dtick=0.75),                 title=f"Features for {prefix}, empty -> positive slope"
-)
+            fig.update_layout(
+                xaxis=dict(tickmode="linear", tick0=0.5, dtick=0.75),
+                title=f"Features for {prefix}, empty -> positive slope",
+            )
             figures.append(fig)
 
         self._save_figs(figures, output_dir, prefix)

@@ -389,7 +389,9 @@ def gridsearch(
         if not hasattr(model, "predict_proba"):
             from sklearn.calibration import CalibratedClassifierCV
 
-            model = CalibratedClassifierCV(model, cv=splitter, n_jobs=-1)
+            model = CalibratedClassifierCV(
+                model, ensemble=False, cv=splitter, n_jobs=-1
+            )
             model.fit(X, y)
 
         print("Best model found:")
