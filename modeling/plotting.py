@@ -76,11 +76,13 @@ def get_feature_category(feature, scale):
         return "Ambitus", scale[-6]
     elif "highestnoteindex" in feature:
         return "Ambitus", scale[-6]
+    elif "lowestnoteindex" in feature:
+        return "Ambitus", scale[-6]
     elif "syllab" in feature:
         return "Lyrics", scale[-7]
     else:
-        print(feature + ": category unknown")
-        return "Unknown", scale[-10]
+        print(feature + ": category `Other`")
+        return "Other", scale[-10]
 
 
 def hide_duplicate_traces_from_legend(fig):
