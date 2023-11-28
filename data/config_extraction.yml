@@ -8,7 +8,7 @@ overlap: null
 # 2 => 2 processes
 # -1 => all available virtual cores
 # -2 => all available virtual cores except 1
-parallel: 3
+parallel: 1
 log:
   file_path: logs/musif_test.log
   file_level: INFO
@@ -45,7 +45,7 @@ features:
 
 jsymbolic_try_without_repeats: true
 
-jsymbolic_max_ram: "8g"
+jsymbolic_max_ram: "12g"
 
 split_keywords: # Used to split the possible layers present depending on the instrument name
   - woodwind
