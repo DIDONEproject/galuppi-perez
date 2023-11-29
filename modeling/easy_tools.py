@@ -277,8 +277,6 @@ def custom_inspection(experiments_dir, output_dir, X, y):
         if not simple_model.exists():
             # gridsearch...
             simple_model = simple_model.with_stem("best_model")
-        else:
-            continue
 
         simple_model = pickle.load(open(simple_model, "rb"))
         simple_model.fit(X, y)
