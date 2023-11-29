@@ -269,7 +269,7 @@ def custom_inspection(experiments_dir, output_dir, X, y):
     for m in experiments_dir.glob("**/bag.pkl"):
         # computing and plotting most important features
         dir_name = m.parent.name
-        if "blackbox" in dir_name:
+        if "blackbox" in dir_name or "tree" in dir_name:
             continue
         print(">>> " + dir_name)
         # loading the simpler model
