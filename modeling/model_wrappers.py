@@ -88,7 +88,7 @@ class DidoneClassifier(BaseEstimator):
 
     def _models_prediction(self, X):
         predictions = []
-        for model in self.models.values():
+        for _, model in self.models_with_weights:
             predictions.append(model.predict(X))
         # predictions = Parallel(n_jobs=self.n_jobs)(
         #     delayed(model.predict)(X) for model in self.models.values())
